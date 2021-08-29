@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IngameMgr : MonoBehaviour
+public class TitleMgr : MonoBehaviour
 {
     public Fade fade;
 
     void Start()
     {
         fade = GetComponent<Fade>();
-        StartCoroutine(fade.FadeIn());
     }
 
     public void FadeIn()
@@ -17,8 +16,8 @@ public class IngameMgr : MonoBehaviour
         StartCoroutine(fade.FadeIn());
     }
 
-    public void SceneChange()
+    public void StartBtn()
     {
-        LoadingSceneController.LoadScene("end");
+        StartCoroutine(fade.FadeOut("GameScene"));
     }
 }
