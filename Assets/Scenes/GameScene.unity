@@ -1116,8 +1116,8 @@ MonoBehaviour:
   info:
     name: "\uC6A9\uC7AC"
     sentences:
-    - "\uC548\uB155\uD558\uC138\uC694 \uC6A9\uC7AC\uC785\uB2C8\uB2E4"
-    - "\uC774 \uB300\uD654\uB294 \uD14C\uC2A4\uD2B8 \uC785\uB2C8\uB2E4"
+    - "\uC548\uB155\uD558\uC138\uC694 \uC6A9\uC7AC\uC785\uB2C8\uB2E4\n2\n3\n4\n5\n6\n7\n8\n"
+    - "\uC774 \uB300\uD654\uB294 \uD14C\uC2A4\uD2B8 \uC785\uB2C8\uB2E4\n2\n3\n4\n5\n"
     - "\uC0B4\uB824\uC8FC\uC138\uC694 \uB2F9\uADFC\uB2F9\uADFC"
 --- !u!1 &1970859583
 GameObject:
