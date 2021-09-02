@@ -35,7 +35,7 @@ public class DialogueMgr : MonoBehaviour
 
     // 대화 캐릭터 스프라이트 선언
     [Header("대화할 캐릭터 이미지, 애니메이션")]
-    public SpriteRenderer rendererSprite;
+    public Image rendererSprite;
     public Animator animSprite;
 
     // 대화창 이미지 선언
@@ -138,6 +138,36 @@ public class DialogueMgr : MonoBehaviour
 
     }
 
+    public void Next()
+    {
+        //if (talking && keyActivated)
+        {
+            // 스페이스 이외 다른 키 입력 X
+            keyActivated = false;
+            count++;
+            text.text = "";
+            Name.text = "";
+            if (count == listSentences.Count)
+            {
+                // 대화 수 카운트가 설정한 대화 수일 때 실행
+                StopAllCoroutines();
+                Exitdialogue();
+            }
+            else
+            {
+                // 아닐 시 계속 다이로그 실행
+                StopAllCoroutines();
+                StartCoroutine(StartDialogueCoroutine());
+            }
+            /*
+            if (Input.GetMouseButtonDown(0))
+            {
+                dialogSpeed = 0.001f;
+            }
+            */
+        }
+    }
+
     IEnumerator StartDialogueCoroutine()
     {
         Name.text += listNames[count];
@@ -166,7 +196,7 @@ public class DialogueMgr : MonoBehaviour
                 {
                     animSprite.SetBool("Change", true);
                     yield return new WaitForSeconds(0.1f);
-                    rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
+                    rendererSprite.GetComponent<Image>().sprite = listSprites[count];
                     animSprite.SetBool("Change", false);
                 }
                 else
@@ -178,8 +208,8 @@ public class DialogueMgr : MonoBehaviour
         // count가 0보다 크지 않을 때 리스트 스프라이트에 저장된 스프라이트를 렌더러로 불러옴, 리스트 다이로그 윈도우에 저장된 다이로그를 렌더러로 불러옴
         else
         {
-            rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
-            rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
+            rendererSprite.GetComponent<Image>().sprite = listSprites[count];
+            rendererDialogueWindow.GetComponent<Image>().sprite = listDialogueWindows[count];
         }
         // 키 입력 허용
         keyActivated = true;
@@ -206,33 +236,6 @@ public class DialogueMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (talking && keyActivated)
-        {
-            if (Input.GetKeyDown(KeyCode.Space)) // 이 키가 눌렸을 경우 다음 문장 실행
-            {
-                // 스페이스 이외 다른 키 입력 X
-                keyActivated = false;
-                count++;
-                text.text = "";
-                Name.text = "";
-                if (count == listSentences.Count)
-                {
-                    // 대화 수 카운트가 설정한 대화 수일 때 실행 
-                    StopAllCoroutines();
-                    Exitdialogue();
-                }
-                else
-                {
-                    // 아닐 시 계속 다이로그 실행
-                    StopAllCoroutines();
-                    StartCoroutine(StartDialogueCoroutine());
-                }
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                dialogSpeed = 0.001f;
-            }
-        }
+        
     }
 }

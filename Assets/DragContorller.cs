@@ -11,7 +11,7 @@ public class DragContorller : MonoBehaviour
 
     private Vector3 _worldPosition;
 
-    private Draggable _lastDraggerd;
+    //private Draggable _lastDraggerd;
 
     // Update is called once per frame
     void Update()
