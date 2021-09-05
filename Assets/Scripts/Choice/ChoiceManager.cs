@@ -40,7 +40,7 @@ public class ChoiceManager : MonoBehaviour
 
     [Header("답변 텍스트")]
     public Text[] answer_Text;
-    [Header("답변 텍스트")]
+    [Header("답변 버튼")]
     public GameObject[] answer_Panel;
     [Header("답변 애니메이션")]
     public Animator anim;
