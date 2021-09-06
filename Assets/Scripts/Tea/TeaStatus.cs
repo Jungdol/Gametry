@@ -17,10 +17,11 @@ public class TeaStatus
     public TeaMaterial teaMaterial { get; }
     public string name { get; set; }
     public string efficacy { get; set; }
-
     public TeaStatus()
     { 
+
     }
+
 
     public TeaStatus(TeaMaterial _teaMaterial, string _name, string _efficacy)
     {
@@ -51,7 +52,7 @@ public class TeaStatus
                 teaStatus = new TeaStatus(teaMaterial, "E", "효능E");
                 break;
             case TeaMaterial.F:
-                teaStatus = new TeaStatus(teaMaterial, "G", "효능F");
+                teaStatus = new TeaStatus(teaMaterial, "F", "효능F");
                 break;
             case TeaMaterial.G:
                 teaStatus = new TeaStatus(teaMaterial, "G", "효능G");
