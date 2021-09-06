@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443059863}
+      - m_Target: {fileID: 381615651}
         m_MethodName: TeaSelects
         m_Mode: 1
         m_Arguments:
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443059863}
+      - m_Target: {fileID: 436399174}
         m_MethodName: TeaSelects
         m_Mode: 1
         m_Arguments:
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443059863}
+      - m_Target: {fileID: 668578370}
         m_MethodName: TeaSelects
         m_Mode: 1
         m_Arguments:
@@ -2008,7 +2008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &891293970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443059863}
+      - m_Target: {fileID: 944814501}
         m_MethodName: TeaSelects
         m_Mode: 1
         m_Arguments:
@@ -3303,7 +3303,6 @@ GameObject:
   - component: {fileID: 1443059861}
   - component: {fileID: 1443059860}
   - component: {fileID: 1443059863}
-  - component: {fileID: 1443059864}
   m_Layer: 5
   m_Name: ingredientBtn7
   m_TagString: Untagged
@@ -3434,25 +3433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 6
---- !u!114 &1443059864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443059858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - sentences: 
-    names: 
-    Sprites: {fileID: 0}
-    SpriteState: 
-    dialogueWindows: {fileID: 0}
-    choiceContents: {fileID: 0}
 --- !u!1 &1488125420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3923,7 +3903,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443059863}
+      - m_Target: {fileID: 1736072162}
         m_MethodName: TeaSelects
         m_Mode: 1
         m_Arguments:
@@ -4669,7 +4649,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443059863}
+      - m_Target: {fileID: 2002982527}
         m_MethodName: TeaSelects
         m_Mode: 1
         m_Arguments:

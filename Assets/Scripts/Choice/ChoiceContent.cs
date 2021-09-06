@@ -26,7 +26,6 @@ public class ChoiceContent : MonoBehaviour
         yield return new WaitUntil(() => !system.isChoice);
 
         result = system.GetResult();
-        Debug.Log(system.GetResult());
         flag = false;
     }
 

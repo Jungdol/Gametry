@@ -108,8 +108,6 @@ public class DialogueManager : MonoBehaviour
             listChoiceContents.Add(dialogue[i].choiceContents);
         }
         // 스프라이트 애니메이션 실행
-        //animImage.SetBool("Appear", true);
-        animDialogueWindow.SetBool("Appear", true);
         //NextDialogue(dialogue);
         go.SetActive(true);
         StartCoroutine(StartDialogueCoroutine());
@@ -164,7 +162,6 @@ public class DialogueManager : MonoBehaviour
             if (count == dialogue.Length)
             {
                 // 대화 수 카운트가 설정한 대화 수일 때 실행
-                Debug.Log(count);
                 if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
                     listChoiceContents[count - 1].Trigger(); // 선택지 작동
 
@@ -175,7 +172,6 @@ public class DialogueManager : MonoBehaviour
             else if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
             {
                 StartCoroutine(ChoiceCoroutine()); // 선택지 작동
-                Debug.Log("작동");
             }
 
             else
@@ -200,7 +196,6 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator ChoiceCoroutine()
     {
-        Debug.Log(listChoiceContents[count - 1]);
         animDialogueWindow.SetBool("Appear", false);
         listChoiceContents[count - 1].Trigger();
         yield return new WaitUntil(() => !listChoiceContents[count - 1].flag);

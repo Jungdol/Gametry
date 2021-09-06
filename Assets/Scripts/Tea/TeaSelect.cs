@@ -9,12 +9,11 @@ public class TeaSelect : MonoBehaviour
     public TeaStatus teaStatus;
     public TeaMaterial teaMaterial;
 
-
-
     public void TeaSelects()
     {
         teaStatus = new TeaStatus();
         teaStatus = teaStatus.SetTeaStatus(teaMaterial);
+        Debug.Log(teaStatus.name);
     }
 
 }

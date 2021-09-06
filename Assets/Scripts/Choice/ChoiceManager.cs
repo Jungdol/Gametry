@@ -50,7 +50,6 @@ public class ChoiceManager : MonoBehaviour
     public string enterSound;
 
     public bool isChoice; // 선택지 대기
-    private bool keyInput; // 키 처리 활성, 비활성화
 
     private int count;
 
@@ -72,7 +71,6 @@ public class ChoiceManager : MonoBehaviour
 
     public void ShowChoice(Choice _choice)
     {
-        Debug.Log("실행");
         go.SetActive(true);
         isChoice = true;
         result = 0;
@@ -90,7 +88,6 @@ public class ChoiceManager : MonoBehaviour
 
         anim.SetBool("Appear", true);
         StartCoroutine(ChoiceCoroutine());
-        Debug.Log(go.activeSelf);
     }
 
     public void ExitChoice()
@@ -129,8 +126,6 @@ public class ChoiceManager : MonoBehaviour
             StartCoroutine(TypingAnswer_2());
 
         yield return new WaitForSeconds(0.5f);
-
-        keyInput = true;
     }
 
     IEnumerator TypingAnswer_0()
