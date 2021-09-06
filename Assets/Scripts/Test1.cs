@@ -17,6 +17,7 @@ public class Test1 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Image.SetActive(true);
+
         yield return new WaitForSeconds(0.5f);
         dialogueTrigger.Trigger();
     }

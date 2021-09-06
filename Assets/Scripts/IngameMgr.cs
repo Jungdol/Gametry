@@ -14,7 +14,7 @@ public class IngameMgr : MonoBehaviour
     [Header("애니메이션")]
     public Animator animWindow;
 
-    WaitForSeconds waitforSec = new WaitForSeconds(0.5f);
+    WaitForSeconds waitforSec = new WaitForSeconds(0.375f);
 
     void Start()
     {
@@ -40,13 +40,13 @@ public class IngameMgr : MonoBehaviour
 
     public void ExitTeaScene()
     {
-        MakeTeaWindow.SetActive(false);
-        animWindow.SetBool("Appear" ,false);
-
+        animWindow.SetBool("Appear", false);
+        StartCoroutine(SetActiveDelay());
     }
 
-    IEnumerator delay()
+    IEnumerator SetActiveDelay()
     {
         yield return waitforSec;
+        MakeTeaWindow.SetActive(false);
     }
 }

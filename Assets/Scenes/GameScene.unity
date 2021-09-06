@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 221210034}
   - component: {fileID: 221210032}
   m_Layer: 0
-  m_Name: Test
+  m_Name: Conversation_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221210031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1211.6024, y: 303.1405, z: -51.603878}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 674046313}
   - component: {fileID: 674046312}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MemoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2008,7 +2008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &891293970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4505,7 +4505,7 @@ GameObject:
   - component: {fileID: 1996503047}
   - component: {fileID: 1996503046}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Happiness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4723,7 +4723,7 @@ GameObject:
   - component: {fileID: 2019947925}
   - component: {fileID: 2019947924}
   m_Layer: 0
-  m_Name: Image
+  m_Name: GuestImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4968,7 +4968,7 @@ GameObject:
   - component: {fileID: 2135709557}
   - component: {fileID: 2135709556}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: HappinessIndex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
