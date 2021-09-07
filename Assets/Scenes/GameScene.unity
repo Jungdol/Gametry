@@ -668,6 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 3
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &436399169
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 0
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &439461066
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,12 +942,12 @@ GameObject:
   - component: {fileID: 475368702}
   - component: {fileID: 475368701}
   m_Layer: 5
-  m_Name: cancelBtn
+  m_Name: resetBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &475368700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -957,7 +961,7 @@ RectTransform:
   m_Children:
   - {fileID: 1349084882}
   m_Father: {fileID: 772972459}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1006,7 +1010,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 475368702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1443059863}
+        m_MethodName: TeaReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &475368702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,6 +1377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 5
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &674046310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &772972459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1700,8 +1717,8 @@ RectTransform:
   m_Children:
   - {fileID: 1316745079}
   - {fileID: 1394213665}
-  - {fileID: 475368700}
   - {fileID: 1488125421}
+  - {fileID: 475368700}
   - {fileID: 1886498131}
   - {fileID: 436399170}
   - {fileID: 944814497}
@@ -2208,6 +2225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 1
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &956665155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,6 +3452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 6
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &1488125420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3486,7 @@ RectTransform:
   m_Children:
   - {fileID: 963043544}
   m_Father: {fileID: 772972459}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3964,6 +3985,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 2
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &1779643081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4028,7 +4051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1886498131
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4710,6 +4733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 4
+  resetBtn: {fileID: 475368699}
+  makeTeaBtn: {fileID: 1886498130}
 --- !u!1 &2019947922
 GameObject:
   m_ObjectHideFlags: 0
