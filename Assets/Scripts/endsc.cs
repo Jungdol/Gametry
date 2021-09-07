@@ -19,4 +19,9 @@ public class endsc : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GameSave()
+    {
+
+    }
 }
