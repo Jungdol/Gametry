@@ -13,8 +13,15 @@ public class TeaSelect : MonoBehaviour
     public static int chance = 0;
     public static bool stoping = true;
 
+    [Header("버튼 UI")]
     public GameObject resetBtn;
     public GameObject makeTeaBtn;
+
+
+    [Header("차 재료 설명 UI")]
+    public Text TeaIngName;
+    public Text TeaDes;
+    public GameObject TeaDes_Window;
 
 
     //차 재료 선택 함수
@@ -29,6 +36,9 @@ public class TeaSelect : MonoBehaviour
                 chance = 1;
                 teaStatus1 = new TeaStatus();
                 teaStatus1 = teaStatus1.SetTeaStatus(teaMaterial);
+                TeaDes_Window.SetActive(true);
+                TeaIngName.text = teaStatus1.name;
+                TeaDes.text = teaStatus1.efficacy;
                 Debug.Log(teaStatus1.name);
             }
             //두번째 선택
@@ -37,6 +47,8 @@ public class TeaSelect : MonoBehaviour
                 Debug.Log("2번째 선택");
                 teaStatus2 = new TeaStatus();
                 teaStatus2 = teaStatus2.SetTeaStatus(teaMaterial);
+                TeaIngName.text = teaStatus2.name;
+                TeaDes.text = teaStatus2.efficacy;
                 Debug.Log(teaStatus2.name);
 
                 //만약 똑같은 재료 클릭시 무효처리
@@ -64,20 +76,21 @@ public class TeaSelect : MonoBehaviour
             Debug.Log("더이상 선택할 수 없습니다.");
         }
     }
-
     //선택한 모든 재료를 리셋하기
     public void TeaReset()
     {
         chance = 0;
         stoping = true;
+        TeaDes_Window.SetActive(false);
         teaStatus1 = null;
         teaStatus2 = null;
         resetBtn.SetActive(false);
         makeTeaBtn.SetActive(false);
 
-        Debug.Log("리셋!");
-        Debug.Log("재료1 :"+ teaStatus1.name+" 재료2 :"+teaStatus2.name);
 
+
+        Debug.Log("리셋!");
+        Debug.Log("재료1 :"+ teaStatus1.name+" 재료2 :"+teaStatus2.name); //출력할 때 오류가 난다면 초기화가 정상 작동 한 것
     }
 
 }

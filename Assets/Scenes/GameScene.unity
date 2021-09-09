@@ -670,6 +670,9 @@ MonoBehaviour:
   teaMaterial: 3
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &436399169
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +818,9 @@ MonoBehaviour:
   teaMaterial: 0
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &439461066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1385,9 @@ MonoBehaviour:
   teaMaterial: 5
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &674046310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,6 +2236,9 @@ MonoBehaviour:
   teaMaterial: 1
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &956665155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,7 +2785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1213251837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3454,6 +3466,9 @@ MonoBehaviour:
   teaMaterial: 6
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &1488125420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,6 +4002,9 @@ MonoBehaviour:
   teaMaterial: 2
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &1779643081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,6 +4753,9 @@ MonoBehaviour:
   teaMaterial: 4
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
+  TeaIngName: {fileID: 1900647596}
+  TeaDes: {fileID: 2025140730}
+  TeaDes_Window: {fileID: 1213251836}
 --- !u!1 &2019947922
 GameObject:
   m_ObjectHideFlags: 0
