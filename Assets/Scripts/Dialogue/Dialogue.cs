@@ -16,4 +16,5 @@ public class Dialogue
 
     public Sprite dialogueWindows;
     public ChoiceContent choiceContents;
+    public bool makeTea;
 }

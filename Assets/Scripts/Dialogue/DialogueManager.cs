@@ -50,6 +50,10 @@ public class DialogueManager : MonoBehaviour
     public Image rendererDialogueWindow;
     public Animator animDialogueWindow;
 
+    // 차 제작 버튼 선언
+    [Header("차 만들기 버튼")]
+    public GameObject makeTeaBtn;
+
     // 대화창 중 대화 내용들, 이름들을 List<Sprite>로 선언
     private List<string> listNames;
     private List<string> listSentences;
@@ -64,6 +68,9 @@ public class DialogueManager : MonoBehaviour
 
     // 선택지 실행하는 ChoiceContent 선언
     private List<ChoiceContent> listChoiceContents;
+
+    // 차 제작 버튼 SetActive List<bool> 설정
+    private List<bool> listMakeTea;
     // 대화 진행 상황 카운트 int 선언
     private int count;
 
@@ -90,6 +97,9 @@ public class DialogueManager : MonoBehaviour
         listDialogueWindows = new List<Sprite>();
 
         listChoiceContents = new List<ChoiceContent>();
+
+        listMakeTea = new List<bool>();
+
         dialogSpeedSave();
     }
 
@@ -106,6 +116,7 @@ public class DialogueManager : MonoBehaviour
             listSpriteState.Add(dialogue[i].SpriteState);
             listDialogueWindows.Add(dialogue[i].dialogueWindows);
             listChoiceContents.Add(dialogue[i].choiceContents);
+            listMakeTea.Add(dialogue[i].makeTea);
         }
         // 스프라이트 애니메이션 실행
         //NextDialogue(dialogue);
@@ -178,7 +189,12 @@ public class DialogueManager : MonoBehaviour
             {
                 ConvertDialogue();
             }
-                
+
+            if (listMakeTea[count - 1] == true) // 선택지가 있을 때
+            {
+                makeTeaBtn.SetActive(true); // 선택지 작동
+            }
+
             /*
             if (Input.GetMouseButtonDown(0))
             {
