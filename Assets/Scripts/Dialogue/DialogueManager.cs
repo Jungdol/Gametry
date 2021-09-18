@@ -170,6 +170,12 @@ public class DialogueManager : MonoBehaviour
             count++;
             text.text = "";
             Name.text = "";
+
+            if (listMakeTea[count - 1] == true) // 선택지가 있을 때
+            {
+                makeTeaBtn.SetActive(true); // 선택지 작동
+            }
+
             if (count == dialogue.Length)
             {
                 // 대화 수 카운트가 설정한 대화 수일 때 실행
@@ -178,21 +184,18 @@ public class DialogueManager : MonoBehaviour
 
                 StopAllCoroutines();
                 Exitdialogue();
+                rendererDialogueWindow.gameObject.SetActive(false);
             }
 
             else if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
             {
                 StartCoroutine(ChoiceCoroutine()); // 선택지 작동
+                rendererDialogueWindow.gameObject.SetActive(false);
             }
 
             else
             {
                 ConvertDialogue();
-            }
-
-            if (listMakeTea[count - 1] == true) // 선택지가 있을 때
-            {
-                makeTeaBtn.SetActive(true); // 선택지 작동
             }
 
             /*
@@ -207,6 +210,7 @@ public class DialogueManager : MonoBehaviour
     void ConvertDialogue()
     {
         StopAllCoroutines();
+        rendererDialogueWindow.gameObject.SetActive(true);
         StartCoroutine(StartDialogueCoroutine());
     }
 

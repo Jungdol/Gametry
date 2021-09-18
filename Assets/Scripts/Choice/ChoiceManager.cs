@@ -27,7 +27,6 @@ public class ChoiceManager : MonoBehaviour
     #endregion Singleton
 
     //private AudioManager theAudio; 아직 오디오 매니저 스크립트 없음
-    private string question;
     private List<string> answerList;
 
     [Header("선택창")]
