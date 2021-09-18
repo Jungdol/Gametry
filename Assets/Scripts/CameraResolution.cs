@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraResolution : MonoBehaviour
 {
+    /*
     void Awake()
     {
         Camera camera = GetComponent<Camera>();
@@ -22,4 +23,5 @@ public class CameraResolution : MonoBehaviour
         }
         camera.rect = rect;
     }
+    */
 }

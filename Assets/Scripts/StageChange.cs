@@ -8,14 +8,21 @@ public class StageChange : MonoBehaviour
     public float happyIndex = 0;
     float happyMax = 100;
     public Image happyBar;
-    public Image stageBackground;
+    public SpriteRenderer stageBackground;
+    public Image table;
     public Sprite[] stages;
+    public Sprite[] tables;
     int stage = 0;
 
     public void Trigger()
     {
         happyIndex += 10;
     }
+    private void Start()
+    {
+        stageBackground.sprite = stages[0];
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +32,7 @@ public class StageChange : MonoBehaviour
         {
             stageBackground.sprite = stages[stage];
             stage++;
+            table.sprite = tables[stage];
             happyIndex = 0;
         }
     }
