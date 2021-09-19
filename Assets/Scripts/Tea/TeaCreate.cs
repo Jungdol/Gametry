@@ -32,7 +32,7 @@ public class TeaCreate : MonoBehaviour
     //차 버리기
     public void ThrowAway()
     {
-        if(throw_awayChance != 0)
+        if(throw_awayChance != -1)
         {
             throw_awayText.text = "차 버리기 " + "X"+throw_awayChance;
             throw_awayChance -= 1;
@@ -40,11 +40,6 @@ public class TeaCreate : MonoBehaviour
             teaSelect.TeaReset();
 
         }
-        else if(throw_awayChance == 0)
-        {
-            throw_awayBtn.SetActive(false);
-        }
-
     }
 
     //차 대접하기
