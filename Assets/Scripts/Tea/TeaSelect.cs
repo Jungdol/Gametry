@@ -176,8 +176,6 @@ public class TeaSelect : MonoBehaviour
                         tea_number = 21;
                     }
 
-                    Debug.Log(tea_number);
-
                     stoping = false;
                 }
             }
