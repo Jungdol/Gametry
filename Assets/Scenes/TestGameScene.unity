@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 3
-  teaSelectwindow: {fileID: 0}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 0
-  teaSelectwindow: {fileID: 0}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
@@ -1300,84 +1300,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475368699}
-  m_CullTransparentMesh: 0
---- !u!1 &487504393
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 487504394}
-  - component: {fileID: 487504396}
-  - component: {fileID: 487504395}
-  m_Layer: 5
-  m_Name: teaEfficacy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &487504394
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487504393}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 663663935}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7999878, y: -23.6}
-  m_SizeDelta: {x: -436.9579, y: -482.55408}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &487504395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487504393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 28138db616098dc45aec1d8d572f39b7, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Tea efficacy
---- !u!222 &487504396
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487504393}
   m_CullTransparentMesh: 0
 --- !u!1 &503920596
 GameObject:
@@ -1755,7 +1677,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCC28 \uC81C\uC870"
+  m_Text: "\uCC28 \uB300\uC811\uD558\uAE30"
 --- !u!222 &551769168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1987,7 +1909,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 487504394}
+  - {fileID: 1755938676}
+  - {fileID: 1971948004}
   m_Father: {fileID: 992292016}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2219,7 +2142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 5
-  teaSelectwindow: {fileID: 0}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
@@ -3019,7 +2942,7 @@ GameObject:
   - component: {fileID: 874718999}
   - component: {fileID: 874718998}
   m_Layer: 5
-  m_Name: Text
+  m_Name: throwAwayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3076,7 +2999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB300\uD654\n\uB2E4\uC2DC\uBCF4\uAE30"
+  m_Text: "\uCC28 \uBC84\uB9AC\uAE30 X3"
 --- !u!222 &874718999
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3302,7 +3225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 1
-  teaSelectwindow: {fileID: 0}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
@@ -3575,7 +3498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &992292016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3612,11 +3535,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87f26207e45efb48bc628ab3dd065e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teaSelect: {fileID: 1443059863}
+  ingameMgr: {fileID: 1138251838}
   teafinish: {fileID: 992292015}
-  tea_name: {fileID: 487504395}
+  tea_name: {fileID: 1755938677}
+  tea_efficacy: {fileID: 1971948005}
   des_win: {fileID: 663663934}
   throw_awayBtn: {fileID: 1292091945}
+  throw_awayText: {fileID: 874718998}
   treatBtn: {fileID: 1843630015}
+  throw_awayChance: 3
 --- !u!95 &992292018
 Animator:
   serializedVersion: 3
@@ -4127,10 +4055,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happyIndex: 0
   happyBar: {fileID: 2135709556}
-  stageBackground: {fileID: 503920598}
+  stageBackground: {fileID: 0}
+  table: {fileID: 0}
   stages:
   - {fileID: 21300000, guid: 8817b3022238f224a890e49cfb12a28f, type: 3}
   - {fileID: 21300000, guid: bb7e06cd31369a54596af4f16e857024, type: 3}
+  tables: []
 --- !u!1 &1160765133
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,7 +4378,7 @@ GameObject:
   - component: {fileID: 1292091948}
   - component: {fileID: 1292091947}
   m_Layer: 5
-  m_Name: backBtn
+  m_Name: throwAwayBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4517,8 +4447,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1138251838}
-        m_MethodName: ExitTeaScene
+      - m_Target: {fileID: 992292017}
+        m_MethodName: ThrowAway
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5138,7 +5068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 6
-  teaSelectwindow: {fileID: 772972458}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
@@ -5918,13 +5848,91 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 2
-  teaSelectwindow: {fileID: 0}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
   send_num: 0
+--- !u!1 &1755938675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755938676}
+  - component: {fileID: 1755938678}
+  - component: {fileID: 1755938677}
+  m_Layer: 5
+  m_Name: teaName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1755938676
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755938675}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 663663935}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.6000366, y: 116.90021}
+  m_SizeDelta: {x: -443.75784, y: -573.7346}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1755938677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755938675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b83d06a11a439444fa2e02525114d593, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 60
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Tea name
+--- !u!222 &1755938678
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755938675}
+  m_CullTransparentMesh: 0
 --- !u!1 &1779643081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,7 +5998,7 @@ GameObject:
   - component: {fileID: 1843630018}
   - component: {fileID: 1843630017}
   m_Layer: 5
-  m_Name: makeTeaBtn
+  m_Name: treatTeaBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6522,6 +6530,84 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 560}
   m_SizeDelta: {x: 750, y: 365}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1971948003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971948004}
+  - component: {fileID: 1971948006}
+  - component: {fileID: 1971948005}
+  m_Layer: 5
+  m_Name: teaEfficacy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1971948004
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971948003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 663663935}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 1.7999878, y: -23.6}
+  m_SizeDelta: {x: -436.9579, y: -482.55408}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1971948005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971948003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 28138db616098dc45aec1d8d572f39b7, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Tea efficacy
+--- !u!222 &1971948006
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971948003}
+  m_CullTransparentMesh: 0
 --- !u!1 &1996503044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6739,7 +6825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teaMaterial: 4
-  teaSelectwindow: {fileID: 0}
+  teaCreate: {fileID: 992292017}
   resetBtn: {fileID: 475368699}
   makeTeaBtn: {fileID: 1886498130}
   TeaIngName: {fileID: 1900647596}
