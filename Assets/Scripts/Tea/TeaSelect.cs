@@ -10,12 +10,11 @@ public class TeaSelect : MonoBehaviour
     public static TeaStatus teaStatus2;
     public TeaMaterial teaMaterial;
 
-    private TeaCreate teaCreate;
+    public TeaCreate teaCreate;
 
     static int chance = 0;
     static bool stoping = true;
 
-    public GameObject teaSelectwindow;
 
     [Header("버튼 UI")]
     public GameObject resetBtn;
@@ -211,7 +210,6 @@ public class TeaSelect : MonoBehaviour
     {
         Debug.Log(tea_number);
         send_num = tea_number;
-        teaSelectwindow.SetActive(false);
 
         teaCreate.FinishTea();
     }
