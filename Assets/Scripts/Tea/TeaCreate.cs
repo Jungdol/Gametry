@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TeaCreate : MonoBehaviour
 {
-    private TeaSelect teaSelect;
+    public TeaSelect teaSelect;
 
 
     public GameObject teafinish;
