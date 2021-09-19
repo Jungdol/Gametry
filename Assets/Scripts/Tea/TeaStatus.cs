@@ -37,25 +37,25 @@ public class TeaStatus
         switch (_teaMaterial)
         {
             case TeaMaterial.A:
-                teaStatus = new TeaStatus(teaMaterial, "A", "효능A");
+                teaStatus = new TeaStatus(TeaMaterial.A, "A", "효능A");
                 break;
             case TeaMaterial.B:
-                teaStatus = new TeaStatus(teaMaterial, "B", "효능B");
+                teaStatus = new TeaStatus(TeaMaterial.B, "B", "효능B");
                 break;
             case TeaMaterial.C:
-                teaStatus = new TeaStatus(teaMaterial, "C", "효능C");
+                teaStatus = new TeaStatus(TeaMaterial.C, "C", "효능C");
                 break;
             case TeaMaterial.D:
-                teaStatus = new TeaStatus(teaMaterial, "D", "효능D");
+                teaStatus = new TeaStatus(TeaMaterial.D, "D", "효능D");
                 break;
             case TeaMaterial.E:
-                teaStatus = new TeaStatus(teaMaterial, "E", "효능E");
+                teaStatus = new TeaStatus(TeaMaterial.E, "E", "효능E");
                 break;
             case TeaMaterial.F:
-                teaStatus = new TeaStatus(teaMaterial, "F", "효능F");
+                teaStatus = new TeaStatus(TeaMaterial.F, "F", "효능F");
                 break;
             case TeaMaterial.G:
-                teaStatus = new TeaStatus(teaMaterial, "G", "효능G");
+                teaStatus = new TeaStatus(TeaMaterial.G, "G", "효능G");
                 break;
         }
         return teaStatus;

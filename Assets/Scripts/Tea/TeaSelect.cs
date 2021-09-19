@@ -31,6 +31,13 @@ public class TeaSelect : MonoBehaviour
     public static int tea_number = 0;
     public int send_num;
 
+    bool isTwoCases(TeaMaterial _teaMaterial1, TeaMaterial _teaMaterial2)
+    {
+        if (teaStatus1.teaMaterial == _teaMaterial1 && teaStatus2.teaMaterial == _teaMaterial2 || teaStatus1.teaMaterial == _teaMaterial2 && teaStatus2.teaMaterial == _teaMaterial1)
+            return true;
+        else
+            return false;
+    }
 
     //차 재료 선택 함수
     public void TeaSelects()
@@ -44,9 +51,12 @@ public class TeaSelect : MonoBehaviour
                 chance = 1;
                 teaStatus1 = new TeaStatus();
                 teaStatus1 = teaStatus1.SetTeaStatus(teaMaterial);
+
                 TeaDes_Window.SetActive(true);
+
                 TeaIngName.text = teaStatus1.name;
                 TeaDes.text = teaStatus1.efficacy;
+
                 Debug.Log(teaStatus1.name);
             }
             //두번째 선택
@@ -55,12 +65,14 @@ public class TeaSelect : MonoBehaviour
                 Debug.Log("2번째 선택");
                 teaStatus2 = new TeaStatus();
                 teaStatus2 = teaStatus2.SetTeaStatus(teaMaterial);
+
                 TeaIngName.text = teaStatus2.name;
                 TeaDes.text = teaStatus2.efficacy;
-                Debug.Log(teaStatus2.name);
+
+                Debug.Log(teaStatus2.teaMaterial);
 
                 //만약 똑같은 재료 클릭시 무효처리
-                if(teaStatus1.name == teaStatus2.name)
+                if(teaStatus1.teaMaterial == teaStatus2.teaMaterial)
                 {
                     Debug.Log("이미 선택한 재료입니다"); 
                     teaStatus2 = null;
@@ -69,102 +81,102 @@ public class TeaSelect : MonoBehaviour
                 else if(teaStatus1.name != teaStatus2.name)
                 {
                     Debug.Log("차를 제작할 수 있습니다");
-                    Debug.Log("재료1 : "+ teaStatus1.name+" 재료2 : "+teaStatus2.name);
+                    Debug.Log("재료1 : "+ teaStatus1.teaMaterial+" 재료2 : "+teaStatus2.teaMaterial);
 
                     resetBtn.SetActive(true);
                     makeTeaBtn.SetActive(true);
 
-                    if(teaStatus1.name == "A" && teaStatus2.name == "B" || teaStatus1.name == "B" && teaStatus2.name == "A")
+                    if(isTwoCases(TeaMaterial.A, TeaMaterial.B))
                     {
                         tea_number = 1;
                     }
-                    else if(teaStatus1.name == "A" && teaStatus2.name == "C" || teaStatus1.name == "C" && teaStatus2.name == "A")
+                    else if(isTwoCases(TeaMaterial.A, TeaMaterial.C))
                     {
                         tea_number = 2;
                     }
-                    else if(teaStatus1.name == "A" && teaStatus2.name == "D" || teaStatus1.name == "D" && teaStatus2.name == "A")
+                    else if(isTwoCases(TeaMaterial.A, TeaMaterial.D))
                     {
                         tea_number = 3;
                     }
-                    else if(teaStatus1.name == "A" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "A")
+                    else if(isTwoCases(TeaMaterial.A, TeaMaterial.E))
                     {
                         tea_number = 4;
                     }
-                    else if(teaStatus1.name == "A" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "A")
+                    else if(isTwoCases(TeaMaterial.A, TeaMaterial.F))
                     {
                         tea_number = 5;
                     }
-                    else if(teaStatus1.name == "A" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "A")
+                    else if(isTwoCases(TeaMaterial.A, TeaMaterial.G))
                     {
                         tea_number = 6;
                     }
 
-                    else if(teaStatus1.name == "B" && teaStatus2.name == "C" || teaStatus1.name == "C" && teaStatus2.name == "B")
+                    else if(isTwoCases(TeaMaterial.B, TeaMaterial.C))
                     {
                         tea_number = 7;
                     }
-                    else if(teaStatus1.name == "B" && teaStatus2.name == "D" || teaStatus1.name == "D" && teaStatus2.name == "B")
+                    else if(isTwoCases(TeaMaterial.B, TeaMaterial.D))
                     {
                         tea_number = 8;
                     }
-                    else if(teaStatus1.name == "B" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "B")
+                    else if(isTwoCases(TeaMaterial.B, TeaMaterial.E))
                     {
                         tea_number = 9;
                     }
-                    else if(teaStatus1.name == "B" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "B")
+                    else if(isTwoCases(TeaMaterial.B, TeaMaterial.F))
                     {
                         tea_number = 10;
                     }
-                    else if(teaStatus1.name == "B" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "B")
+                    else if(isTwoCases(TeaMaterial.B, TeaMaterial.G))
                     {
                         tea_number = 11;
                     }
                     
-                    else if(teaStatus1.name == "C" && teaStatus2.name == "D" || teaStatus1.name == "D" && teaStatus2.name == "C")
+                    else if(isTwoCases(TeaMaterial.C, TeaMaterial.D))
                     {
                         tea_number = 12;
                     }
-                    else if(teaStatus1.name == "C" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "C")
+                    else if(isTwoCases(TeaMaterial.C, TeaMaterial.E))
                     {
                         tea_number = 13;
                     }
-                    else if(teaStatus1.name == "C" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "C")
+                    else if(isTwoCases(TeaMaterial.C, TeaMaterial.F))
                     {
                         tea_number = 14;
                     }
-                    else if(teaStatus1.name == "C" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "C")
+                    else if(isTwoCases(TeaMaterial.C, TeaMaterial.G))
                     {
                         tea_number = 15;
                     }
 
-                    else if(teaStatus1.name == "D" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "D")
+                    else if(isTwoCases(TeaMaterial.D, TeaMaterial.E))
                     {
                         tea_number = 16;
                     }
-                    else if(teaStatus1.name == "D" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "D")
+                    else if(isTwoCases(TeaMaterial.D, TeaMaterial.F))
                     {
                         tea_number = 17;
                     }
-                    else if(teaStatus1.name == "D" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "D")
+                    else if(isTwoCases(TeaMaterial.D, TeaMaterial.G))
                     {
                         tea_number = 18;
                     }
 
-                    else if(teaStatus1.name == "E" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "E")
+                    else if(isTwoCases(TeaMaterial.E, TeaMaterial.F))
                     {
                         tea_number = 19;
                     }
-                    else if(teaStatus1.name == "E" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "E")
+                    else if(isTwoCases(TeaMaterial.E, TeaMaterial.G))
                     {
                         tea_number = 20;
                     }
                     
-                    else if(teaStatus1.name == "G" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "G")
+                    else if(isTwoCases(TeaMaterial.G, TeaMaterial.F))
                     {
                         tea_number = 21;
                     }
 
-                    
+                    Debug.Log(tea_number);
 
                     stoping = false;
                 }
@@ -182,8 +194,10 @@ public class TeaSelect : MonoBehaviour
         chance = 0;
         stoping = true;
         TeaDes_Window.SetActive(false);
+
         teaStatus1 = null;
         teaStatus2 = null;
+
         resetBtn.SetActive(false);
         makeTeaBtn.SetActive(false);
 
@@ -200,8 +214,5 @@ public class TeaSelect : MonoBehaviour
         teaSelectwindow.SetActive(false);
 
         teaCreate.FinishTea();
-
-
     }
-
 }
