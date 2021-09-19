@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,8 +10,12 @@ public class TeaSelect : MonoBehaviour
     public static TeaStatus teaStatus2;
     public TeaMaterial teaMaterial;
 
-    public static int chance = 0;
-    public static bool stoping = true;
+    private TeaCreate teaCreate;
+
+    static int chance = 0;
+    static bool stoping = true;
+
+    public GameObject teaSelectwindow;
 
     [Header("버튼 UI")]
     public GameObject resetBtn;
@@ -22,6 +26,10 @@ public class TeaSelect : MonoBehaviour
     public Text TeaIngName;
     public Text TeaDes;
     public GameObject TeaDes_Window;
+
+
+    public static int tea_number = 0;
+    public int send_num;
 
 
     //차 재료 선택 함수
@@ -66,6 +74,98 @@ public class TeaSelect : MonoBehaviour
                     resetBtn.SetActive(true);
                     makeTeaBtn.SetActive(true);
 
+                    if(teaStatus1.name == "A" && teaStatus2.name == "B" || teaStatus1.name == "B" && teaStatus2.name == "A")
+                    {
+                        tea_number = 1;
+                    }
+                    else if(teaStatus1.name == "A" && teaStatus2.name == "C" || teaStatus1.name == "C" && teaStatus2.name == "A")
+                    {
+                        tea_number = 2;
+                    }
+                    else if(teaStatus1.name == "A" && teaStatus2.name == "D" || teaStatus1.name == "D" && teaStatus2.name == "A")
+                    {
+                        tea_number = 3;
+                    }
+                    else if(teaStatus1.name == "A" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "A")
+                    {
+                        tea_number = 4;
+                    }
+                    else if(teaStatus1.name == "A" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "A")
+                    {
+                        tea_number = 5;
+                    }
+                    else if(teaStatus1.name == "A" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "A")
+                    {
+                        tea_number = 6;
+                    }
+
+                    else if(teaStatus1.name == "B" && teaStatus2.name == "C" || teaStatus1.name == "C" && teaStatus2.name == "B")
+                    {
+                        tea_number = 7;
+                    }
+                    else if(teaStatus1.name == "B" && teaStatus2.name == "D" || teaStatus1.name == "D" && teaStatus2.name == "B")
+                    {
+                        tea_number = 8;
+                    }
+                    else if(teaStatus1.name == "B" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "B")
+                    {
+                        tea_number = 9;
+                    }
+                    else if(teaStatus1.name == "B" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "B")
+                    {
+                        tea_number = 10;
+                    }
+                    else if(teaStatus1.name == "B" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "B")
+                    {
+                        tea_number = 11;
+                    }
+                    
+                    else if(teaStatus1.name == "C" && teaStatus2.name == "D" || teaStatus1.name == "D" && teaStatus2.name == "C")
+                    {
+                        tea_number = 12;
+                    }
+                    else if(teaStatus1.name == "C" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "C")
+                    {
+                        tea_number = 13;
+                    }
+                    else if(teaStatus1.name == "C" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "C")
+                    {
+                        tea_number = 14;
+                    }
+                    else if(teaStatus1.name == "C" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "C")
+                    {
+                        tea_number = 15;
+                    }
+
+                    else if(teaStatus1.name == "D" && teaStatus2.name == "E" || teaStatus1.name == "E" && teaStatus2.name == "D")
+                    {
+                        tea_number = 16;
+                    }
+                    else if(teaStatus1.name == "D" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "D")
+                    {
+                        tea_number = 17;
+                    }
+                    else if(teaStatus1.name == "D" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "D")
+                    {
+                        tea_number = 18;
+                    }
+
+                    else if(teaStatus1.name == "E" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "E")
+                    {
+                        tea_number = 19;
+                    }
+                    else if(teaStatus1.name == "E" && teaStatus2.name == "G" || teaStatus1.name == "G" && teaStatus2.name == "E")
+                    {
+                        tea_number = 20;
+                    }
+                    
+                    else if(teaStatus1.name == "G" && teaStatus2.name == "F" || teaStatus1.name == "F" && teaStatus2.name == "G")
+                    {
+                        tea_number = 21;
+                    }
+
+                    
+
                     stoping = false;
                 }
             }
@@ -91,6 +191,17 @@ public class TeaSelect : MonoBehaviour
 
         Debug.Log("리셋!");
         Debug.Log("재료1 :"+ teaStatus1.name+" 재료2 :"+teaStatus2.name); //출력할 때 오류가 난다면 초기화가 정상 작동 한 것
+    }
+
+    public void TeaMake()
+    {
+        Debug.Log(tea_number);
+        send_num = tea_number;
+        teaSelectwindow.SetActive(false);
+
+        teaCreate.FinishTea();
+
+
     }
 
 }
