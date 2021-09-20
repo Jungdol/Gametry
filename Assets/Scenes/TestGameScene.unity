@@ -5276,8 +5276,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 99473376}
   goImage: {fileID: 826275687}
-  Choice1Image: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
-  Choice2Image: {fileID: 21300000, guid: bfda2f05027170040a75b61adc7ed3c1, type: 3}
   answer_Text:
   - {fileID: 1620892882}
   - {fileID: 735168577}
@@ -6058,7 +6056,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307824956}
-  - component: {fileID: 1307824957}
   m_Layer: 5
   m_Name: SelectEnergy
   m_TagString: Untagged
@@ -6099,26 +6096,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1307824957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307824955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8360d1d9f9881f4eba7ad2276048b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  sprite:
-  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
-  - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
-  - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
-  - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
-  - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
-  Energy_num: 1
 --- !u!1 &1316745078
 GameObject:
   m_ObjectHideFlags: 0
