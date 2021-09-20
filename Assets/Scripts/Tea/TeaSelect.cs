@@ -206,7 +206,7 @@ public class TeaSelect : MonoBehaviour
 
     public void TeaMake()
     {
-        Debug.Log(tea_number);
+        Debug.Log("차 번호 : " + tea_number);
         send_num = tea_number;
 
         teaCreate.FinishTea();

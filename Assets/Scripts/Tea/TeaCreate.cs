@@ -32,20 +32,24 @@ public class TeaCreate : MonoBehaviour
     //차 버리기
     public void ThrowAway()
     {
-        if(throw_awayChance != -1)
+        if(throw_awayChance > -1)
         {
             throw_awayText.text = "차 버리기 " + "X"+throw_awayChance;
+            Debug.Log("차 버릴 수 있는 기회 : " + throw_awayChance);
             throw_awayChance -= 1;
             teafinish.SetActive(false);
             teaSelect.TeaReset();
-
+        }
+        else
+        {
+           Debug.Log("더 이상 차를 버릴 수 없습니다");
         }
     }
 
     //차 대접하기
     public void TreatTea()
     {
-
+        Debug.Log("차 제조 끝!");
     }
 
     //결과 출력

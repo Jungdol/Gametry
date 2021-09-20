@@ -3498,7 +3498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &992292016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3544,7 +3544,6 @@ MonoBehaviour:
   throw_awayBtn: {fileID: 1292091945}
   throw_awayText: {fileID: 874718998}
   treatBtn: {fileID: 1843630015}
-  throw_awayChance: 3
 --- !u!95 &992292018
 Animator:
   serializedVersion: 3
@@ -6067,8 +6066,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TeaMake
+      - m_Target: {fileID: 992292017}
+        m_MethodName: TreatTea
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
