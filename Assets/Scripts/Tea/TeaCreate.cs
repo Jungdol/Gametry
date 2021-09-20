@@ -73,8 +73,8 @@ public class TeaCreate : MonoBehaviour
                 tea_efficacy.text = "몽환의 안엔 누가 있을까요";
                 break;
             case 3:
-                tea_name.text = "밤바다";
-                tea_efficacy.text = "검푸른 물안은 따뜻할까요";
+                tea_name.text = "꿈";
+                tea_efficacy.text = "꿈에 삼켜지고 싶었던 적이 있나요";
                 break;
             case 4:
                 tea_name.text = "밤하늘";
@@ -85,8 +85,8 @@ public class TeaCreate : MonoBehaviour
                 tea_efficacy.text = "달빛의 향은 무엇일까요";
                 break;
             case 6:
-                tea_name.text = "별빛";
-                tea_efficacy.text = "눈부신 별의 노래를 들어보셨나요";
+                tea_name.text = "금빛 하루";
+                tea_efficacy.text = "완벽한 하루는 어떤 하루일까요";
                 break;
             case 7:
                 tea_name.text = "노을";
@@ -97,12 +97,12 @@ public class TeaCreate : MonoBehaviour
                 tea_efficacy.text = "초록빛 향으로 가득한 차예요";
                 break;
             case 9:
-                tea_name.text = "오늘의 하늘";
+                tea_name.text = "하늘";
                 tea_efficacy.text = "오늘의 하늘은 어땠나요";
                 break;
             case 10:
-                tea_name.text = "푸른 밤";
-                tea_efficacy.text = "새벽 공기 끝자락의 밤은 어떤 향일까요";
+                tea_name.text = "푸른 새벽";
+                tea_efficacy.text = "새벽녘의 차가움을 느껴보셨나요";
                 break;
             case 11:
                 tea_name.text = "파도";
@@ -113,40 +113,40 @@ public class TeaCreate : MonoBehaviour
                 tea_efficacy.text = "시린 겨울에도 나무를 덮어주는 이는 있답니다";
                 break;
             case 13:
-                tea_name.text = "가을의 향기";
-                tea_efficacy.text = "";
+                tea_name.text = "안개";
+                tea_efficacy.text = "은빛으로 잠긴 세상은 어떤가요";
                 break;
             case 14:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "연못";
+                tea_efficacy.text = "연못에 발을 담가 흔적을 남겨보아요";
                 break;
             case 15:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "오로라";
+                tea_efficacy.text = "행복에 색이 있다면 무슨 색일까요";
                 break;
             case 16:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "잠수";
+                tea_efficacy.text = "모든 게 물 속에 잠긴다면 다 괜찮을까요";
                 break;
             case 17:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "낙엽";
+                tea_efficacy.text = "둘의 이별은 아름다울까요";
                 break;
             case 18:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "봄꽃";
+                tea_efficacy.text = "두근거림은 어디서 온 선물일까요";
                 break;
             case 19:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "겨울";
+                tea_efficacy.text = "겨울의 따스함은 어디서 올까요";
                 break;
             case 20:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "해야";
+                tea_efficacy.text = "태양이 녹아내린다면 어떤 모습일까요";
                 break;
             case 21:
-                tea_name.text = "";
-                tea_efficacy.text = "";
+                tea_name.text = "어스름";
+                tea_efficacy.text = "낮과 밤의 사이는 누가 가른 걸까요";
                 break;
         }
     }

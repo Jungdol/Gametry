@@ -31,8 +31,8 @@ public class StageChange : MonoBehaviour
         if (happyIndex >= 100)
         {
             stageBackground.sprite = stages[stage];
-            stage++;
             table.sprite = tables[stage];
+            stage++;
             happyIndex = 0;
         }
     }
