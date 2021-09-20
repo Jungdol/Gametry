@@ -25,6 +25,8 @@ public class TeaCreate : MonoBehaviour
     [Header("차 대접 버튼 / 텍스트")]
     public GameObject treatBtn;
 
+    Animator finishTeaAnim;
+
     //제어 변수
     public static int throw_awayChance = 2;
 
@@ -56,8 +58,11 @@ public class TeaCreate : MonoBehaviour
     public void FinishTea()
     {
         teafinish.SetActive(true);
+        finishTeaAnim = GetComponent<Animator>();
 
-        switch(teaSelect.send_num)
+        finishTeaAnim.SetBool("Appear", true);
+
+        switch (teaSelect.send_num)
         {
             case 1:
                 tea_name.text = "조각 구름";

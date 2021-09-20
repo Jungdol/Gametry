@@ -26,7 +26,7 @@ public class ChoiceManager : MonoBehaviour
     }
     #endregion Singleton
 
-    //private AudioManager theAudio; 아직 오디오 매니저 스크립트 없음
+    private AudioManager theAudio;
     private List<string> answerList;
 
     [Header("선택창")]
@@ -41,8 +41,10 @@ public class ChoiceManager : MonoBehaviour
     public Text[] answer_Text;
     [Header("답변 버튼")]
     public GameObject[] answer_Panel;
-    [Header("답변 애니메이션")]
-    public Animator anim;
+    [Header("답변 게임오브젝트")]
+    public GameObject answerGo;
+
+    Animator anim;
 
     [Header("사운드")]
     public string keySound;
@@ -59,7 +61,8 @@ public class ChoiceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //theAudio = FindObjectOfType<AudioManager>(); // 아직 오디오 매니저 스크립트 없음
+        anim = answerGo.GetComponentInParent<Animator>();
+        theAudio = FindObjectOfType<AudioManager>();
         answerList = new List<string>();
         for(int i = 0; i <= 2; i++) // 원래는 answer_Text.Length 로 해야하지만 2개의 선택지도 있기에 3번째가 초기화가 안되므로 3개로 설정
         {
@@ -96,6 +99,7 @@ public class ChoiceManager : MonoBehaviour
             answer_Text[i].text = "";
             answer_Panel[i].SetActive(false);
         }
+        theAudio.Play(enterSound);
 
         isChoice = false;
         answerList.Clear();
@@ -154,6 +158,38 @@ public class ChoiceManager : MonoBehaviour
         {
             answer_Text[2].text += answerList[2][i];
             yield return waitTime;
+        }
+    }
+
+    IEnumerator MoveAnswer(string dir)
+    {
+        float timer = 0;
+        if (timer <= 1)
+            timer += Time.deltaTime;
+        yield return null;
+    }
+
+    public void ArrowBtn(string dir)
+    {
+        if (dir == "Left")
+        {
+            theAudio.Play(keySound);
+            if (result > 0)
+            {
+                result--;
+            }
+                
+            else
+                result = count;
+        }
+        else if (dir == "Right")
+        {
+            if (result < 0)
+            {
+                result++;
+            }
+            else
+                result = count;
         }
     }
 }
