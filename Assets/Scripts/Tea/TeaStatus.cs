@@ -37,25 +37,25 @@ public class TeaStatus
         switch (_teaMaterial)
         {
             case TeaMaterial.A:
-                teaStatus = new TeaStatus(TeaMaterial.A, "산호초", "효능A");
+                teaStatus = new TeaStatus(TeaMaterial.A, "죽어가는 산호초", "잠에 취하게 한다.");
                 break;
             case TeaMaterial.B:
-                teaStatus = new TeaStatus(TeaMaterial.B, "보랏빛 버섯", "효능B");
+                teaStatus = new TeaStatus(TeaMaterial.B, "보랏빛 버섯", "불안함을 없앤다.");
                 break;
             case TeaMaterial.C:
-                teaStatus = new TeaStatus(TeaMaterial.C, "요상한 잡초", "효능C");
+                teaStatus = new TeaStatus(TeaMaterial.C, "요상한 잡초", "식욕이 돌아오게 한다.");
                 break;
             case TeaMaterial.D:
-                teaStatus = new TeaStatus(TeaMaterial.D, "자작나무 껍질", "효능D");
+                teaStatus = new TeaStatus(TeaMaterial.D, "자작나무 껍질", "무기력함을 없앤다.");
                 break;
             case TeaMaterial.E:
-                teaStatus = new TeaStatus(TeaMaterial.E, "이슬", "효능E");
+                teaStatus = new TeaStatus(TeaMaterial.E, "이슬", "소화를 돕는다.");
                 break;
             case TeaMaterial.F:
-                teaStatus = new TeaStatus(TeaMaterial.F, "선인장의 꽃", "효능F");
+                teaStatus = new TeaStatus(TeaMaterial.F, "선인장의 꽃", "몸을 개운하게 만든다.");
                 break;
             case TeaMaterial.G:
-                teaStatus = new TeaStatus(TeaMaterial.G, "축소된 바오밥나무", "효능G");
+                teaStatus = new TeaStatus(TeaMaterial.G, "봉황의 깃털", "몸을 따뜻하게 만든다.");
                 break;
         }
         return teaStatus;
