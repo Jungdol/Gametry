@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Energy_select : MonoBehaviour
 {
-    public Energy_switch energy;
+    public Energy_switch energy1;
+    public Energy_switch energy2;
 
     public void changeMood()
     {
-        switch(energy.enerSentNum)
+        switch(Energy_switch.Energy_num)
         {
             case 0:
                 Debug.Log("노랑!");

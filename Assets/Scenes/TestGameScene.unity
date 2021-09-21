@@ -1892,12 +1892,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1392976536}
   sprite:
+  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
   - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
   - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
   - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
   - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
-  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
-  Energy_num: 0
+  enerSentNum: 0
 --- !u!1 &436399169
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,6 +6516,7 @@ GameObject:
   - component: {fileID: 1392976537}
   - component: {fileID: 1392976536}
   - component: {fileID: 1392976535}
+  - component: {fileID: 1392976539}
   m_Layer: 5
   m_Name: Energy_typeBtn
   m_TagString: Untagged
@@ -6584,7 +6585,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1392976536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1392976539}
+        m_MethodName: changeMood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1392976536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6622,6 +6634,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392976533}
   m_CullTransparentMesh: 0
+--- !u!114 &1392976539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392976533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f27dbe24b63eb34da7983cd1a81102a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy1: {fileID: 431296438}
+  energy2: {fileID: 1950687456}
 --- !u!1 &1414143371
 GameObject:
   m_ObjectHideFlags: 0
@@ -9254,12 +9280,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1392976536}
   sprite:
+  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
   - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
   - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
   - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
   - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
-  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
-  Energy_num: 0
+  enerSentNum: 0
 --- !u!1 &1950742767
 GameObject:
   m_ObjectHideFlags: 0
