@@ -26,7 +26,7 @@ public class ChoiceManager : MonoBehaviour
     }
     #endregion Singleton
 
-    //private AudioManager theAudio;
+    private AudioManager theAudio;
     private List<string> answerList;
 
     [Header("선택창")]
@@ -64,7 +64,7 @@ public class ChoiceManager : MonoBehaviour
     void Start()
     {
         anim = go.GetComponentInChildren<Animator>();
-        //theAudio = FindObjectOfType<AudioManager>();
+        theAudio = FindObjectOfType<AudioManager>();
         answerList = new List<string>();
         for(int i = 0; i <= 2; i++) // 원래는 answer_Text.Length 로 해야하지만 2개의 선택지도 있기에 3번째가 초기화가 안되므로 3개로 설정
         {
@@ -99,7 +99,7 @@ public class ChoiceManager : MonoBehaviour
             answer_Text[i].text = "";
             answer_Panel[i].SetActive(false);
         }
-        //theAudio.Play(enterSound);
+        theAudio.Play(enterSound);
 
         isChoice = false;
         answerList.Clear();
@@ -213,7 +213,7 @@ public class ChoiceManager : MonoBehaviour
     {
         if (dir == "Left")
         {
-            //theAudio.Play(keySound);
+            theAudio.Play(keySound);
             if (result > 0 && !isCoroutine)
             {
                 result--;
@@ -230,7 +230,7 @@ public class ChoiceManager : MonoBehaviour
         }
         else if (dir == "Right")
         {
-            //theAudio.Play(keySound);
+            theAudio.Play(keySound);
             if (result < count && !isCoroutine)
             {
                 result++;
