@@ -26,9 +26,19 @@ public class TeaSelect : MonoBehaviour
     public Text TeaDes;
     public GameObject TeaDes_Window;
 
+    [Header("사운드")]
+    public string buttonSound;
+
+    AudioManager theAudio;
+
 
     public static int tea_number = 0;
     public int send_num;
+
+    private void Start()
+    {
+        theAudio = FindObjectOfType<AudioManager>();
+    }
 
     bool isTwoCases(TeaMaterial _teaMaterial1, TeaMaterial _teaMaterial2)
     {
@@ -46,7 +56,10 @@ public class TeaSelect : MonoBehaviour
             //첫번째 선택
             if(chance == 0)
             {
+                theAudio.Play(buttonSound);
+
                 Debug.Log("1번째 선택");
+
                 chance = 1;
                 teaStatus1 = new TeaStatus();
                 teaStatus1 = teaStatus1.SetTeaStatus(teaMaterial);
@@ -61,7 +74,10 @@ public class TeaSelect : MonoBehaviour
             //두번째 선택
             else if(chance == 1)
             {
+                theAudio.Play(buttonSound);
+
                 Debug.Log("2번째 선택");
+
                 teaStatus2 = new TeaStatus();
                 teaStatus2 = teaStatus2.SetTeaStatus(teaMaterial);
 
@@ -201,7 +217,7 @@ public class TeaSelect : MonoBehaviour
 
 
         Debug.Log("리셋!");
-        Debug.Log("재료1 :"+ teaStatus1.name+" 재료2 :"+teaStatus2.name); //출력할 때 오류가 난다면 초기화가 정상 작동 한 것
+        //Debug.Log("재료1 :"+ teaStatus1.name+" 재료2 :"+teaStatus2.name); //출력할 때 오류가 난다면 초기화가 정상 작동 한 것
     }
 
     public void TeaMake()

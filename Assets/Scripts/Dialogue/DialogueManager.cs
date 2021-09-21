@@ -54,6 +54,10 @@ public class DialogueManager : MonoBehaviour
     [Header("차 만들기 버튼")]
     public GameObject makeTeaBtn;
 
+    // 사운드 선언
+    [Header("사운드")]
+    public string buttonSound;
+
     // 대화창 중 대화 내용들, 이름들을 List<Sprite>로 선언
     private List<string> listNames;
     private List<string> listSentences;
@@ -81,8 +85,13 @@ public class DialogueManager : MonoBehaviour
     [HideInInspector]
     public bool talking = false;
 
+    // AudioManager 선언
+    AudioManager theAudio;
+
+
     void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
         // 초기 실행 시 변수 설정
         count = 0;
         Name.text = "";
@@ -170,6 +179,8 @@ public class DialogueManager : MonoBehaviour
             count++;
             text.text = "";
             Name.text = "";
+
+            theAudio.Play(buttonSound);
 
             if (listMakeTea[count - 1] == true) // 선택지가 있을 때
             {
