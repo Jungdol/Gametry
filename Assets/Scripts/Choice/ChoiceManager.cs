@@ -166,7 +166,7 @@ public class ChoiceManager : MonoBehaviour
     IEnumerator MoveAnswer(int _result, string dir)
     {
         if (timer < 1)
-            timer += Time.fixedDeltaTime * 1.5f;
+            timer += Time.fixedDeltaTime * 1.75f;
 
         if (_result == 0)
         {
