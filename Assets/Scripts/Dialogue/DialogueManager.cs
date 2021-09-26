@@ -50,6 +50,9 @@ public class DialogueManager : MonoBehaviour
     public Image rendererDialogueWindow;
     public Animator animDialogueWindow;
 
+    [Header("기 버튼")]
+    public GameObject energyBtn;
+
     // 차 제작 버튼 선언
     [Header("차 만들기 버튼")]
     public GameObject makeTeaBtn;
@@ -75,6 +78,9 @@ public class DialogueManager : MonoBehaviour
 
     // 차 제작 버튼 SetActive List<bool> 설정
     private List<bool> listMakeTea;
+
+    // 기 버튼 SetActive List<bool> 설정
+    private List<bool> listEnergy;
     // 대화 진행 상황 카운트 int 선언
     private int count;
 
@@ -109,6 +115,8 @@ public class DialogueManager : MonoBehaviour
 
         listMakeTea = new List<bool>();
 
+        listEnergy = new List<bool>();
+
         dialogSpeedSave();
     }
 
@@ -126,6 +134,7 @@ public class DialogueManager : MonoBehaviour
             listDialogueWindows.Add(dialogue[i].dialogueWindows);
             listChoiceContents.Add(dialogue[i].choiceContents);
             listMakeTea.Add(dialogue[i].makeTea);
+            listEnergy.Add(dialogue[i].energy);
         }
         // 스프라이트 애니메이션 실행
         //NextDialogue(dialogue);
@@ -182,10 +191,11 @@ public class DialogueManager : MonoBehaviour
 
             theAudio.Play(buttonSound);
 
-            if (listMakeTea[count - 1] == true) // 선택지가 있을 때
-            {
-                makeTeaBtn.SetActive(true); // 선택지 작동
-            }
+            // 차 제조 작동
+            makeTeaBtn.SetActive(listMakeTea[count - 1]);
+
+            // 기 시스템 작동
+            energyBtn.SetActive(listEnergy[count - 1]);
 
             if (count == dialogue.Length)
             {
