@@ -870,6 +870,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &436399169
 GameObject:
@@ -1020,6 +1021,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &439461066
 GameObject:
@@ -1724,6 +1726,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &674046310
 GameObject:
@@ -2724,6 +2727,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &956665155
 GameObject:
@@ -3342,6 +3346,7 @@ MonoBehaviour:
   rendererDialogueWindow: {fileID: 232576981}
   animDialogueWindow: {fileID: 232576984}
   makeTeaBtn: {fileID: 1904413612}
+  buttonSound: 
   dialogue: []
   talking: 0
 --- !u!114 &1138251841
@@ -3358,8 +3363,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 99473376}
   goImage: {fileID: 826275687}
-  Choice1Image: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
-  Choice2Image: {fileID: 21300000, guid: bfda2f05027170040a75b61adc7ed3c1, type: 3}
   answer_Text:
   - {fileID: 1620892882}
   - {fileID: 735168577}
@@ -3368,7 +3371,7 @@ MonoBehaviour:
   - {fileID: 1524587005}
   - {fileID: 1004624946}
   - {fileID: 868360712}
-  anim: {fileID: 826275689}
+  answerGo: {fileID: 0}
   keySound: 
   enterSound: 
   isChoice: 0
@@ -4269,6 +4272,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &1454371562
 GameObject:
@@ -5176,6 +5180,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &1779643081
 GameObject:
@@ -5853,6 +5858,7 @@ MonoBehaviour:
   TeaIngName: {fileID: 1900647596}
   TeaDes: {fileID: 2025140730}
   TeaDes_Window: {fileID: 1213251836}
+  buttonSound: 
   send_num: 0
 --- !u!1 &2019947922
 GameObject:
