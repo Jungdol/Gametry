@@ -634,6 +634,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 439461067}
     makeTea: 0
+    energy: 0
   - sentences: "\uB124\u2026 \uC5B4\uB5A1\uD558\uBA74 \uC88B\uC744\uAE4C\uC694\n\uB3C4\uC6C0\uC744
       \uCCAD\uD574\uC57C \uB420\uAE4C\uC694?"
     names: "\uACE0\uC591\uC774"
@@ -642,6 +643,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 1617014499}
     makeTea: 0
+    energy: 0
   - sentences: "\uADF8\uAC70 \uAD1C\uCC2E\uC740 \uC0DD\uAC01\uC774\uB124\uC694..\n\uBAB8\uAE4C\uC9C0
       \uC9C0\uCCD0\uAC00\uACE0 \uC788\uC5C8\uAC70\uB4E0\uC694"
     names: "\uACE0\uC591\uC774"
@@ -650,6 +652,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
     makeTea: 0
+    energy: 0
   - sentences: "\uACE0\uBBFC\uC774 \uC313\uC5EC \uBAB8\uC774 \uC9C0\uCE5C \uAC78
       \uAC70\uC608\uC694"
     names: "\uB098"
@@ -658,6 +661,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
     makeTea: 0
+    energy: 0
   - sentences: "\uBD84\uC704\uAE30\uB97C \uC880 \uBC14\uAFD4 \uBCFC\uAC8C\uC694"
     names: "\uB098"
     Sprites: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
@@ -665,6 +669,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
     makeTea: 0
+    energy: 0
 --- !u!4 &221210033
 Transform:
   m_ObjectHideFlags: 0
@@ -5343,6 +5348,7 @@ MonoBehaviour:
   animImage: {fileID: 2019947925}
   rendererDialogueWindow: {fileID: 232576981}
   animDialogueWindow: {fileID: 232576984}
+  energyBtn: {fileID: 1209908536}
   makeTeaBtn: {fileID: 1904413612}
   buttonSound: Button
   dialogue: []
@@ -5412,7 +5418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1209908537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9257,6 +9263,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 439461067}
     makeTea: 0
+    energy: 0
   - sentences: "\uB124\u2026 \uC5B4\uB5A1\uD558\uBA74 \uC88B\uC744\uAE4C\uC694\n\uB3C4\uC6C0\uC744
       \uCCAD\uD574\uC57C \uB420\uAE4C\uC694?"
     names: "\uACE0\uC591\uC774"
@@ -9265,6 +9272,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 1617014499}
     makeTea: 0
+    energy: 0
   - sentences: "\uADF8\uAC70 \uAD1C\uCC2E\uC740 \uC0DD\uAC01\uC774\uB124\uC694..\n\uBAB8\uAE4C\uC9C0
       \uC9C0\uCCD0\uAC00\uACE0 \uC788\uC5C8\uAC70\uB4E0\uC694"
     names: "\uACE0\uC591\uC774"
@@ -9273,6 +9281,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
     makeTea: 0
+    energy: 0
   - sentences: "\uACE0\uBBFC\uC774 \uC313\uC5EC \uBAB8\uC774 \uC9C0\uCE5C \uAC78
       \uAC70\uC608\uC694"
     names: "\uB098"
@@ -9281,6 +9290,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
     makeTea: 0
+    energy: 0
   - sentences: "\uBD84\uC704\uAE30\uB97C \uC880 \uBC14\uAFD4 \uBCFC\uAC8C\uC694"
     names: "\uB098"
     Sprites: {fileID: 21300000, guid: 27e6e1d969e83b443b19bf1e182b891d, type: 3}
@@ -9288,6 +9298,7 @@ MonoBehaviour:
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
     makeTea: 1
+    energy: 0
 --- !u!114 &2067227346
 MonoBehaviour:
   m_ObjectHideFlags: 0

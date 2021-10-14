@@ -18,10 +18,6 @@ public class StageChange : MonoBehaviour
     {
         happyIndex += 10;
     }
-    private void Start()
-    {
-        stageBackground.sprite = stages[0];
-    }
 
     // Update is called once per frame
     void Update()

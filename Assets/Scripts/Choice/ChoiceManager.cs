@@ -57,7 +57,7 @@ public class ChoiceManager : MonoBehaviour
     bool isCoroutine;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
-    private float printWaitTime = 1.25f;
+    private float printWaitTime = 0.75f;
 
     Coroutine moveCoroutine;
 
