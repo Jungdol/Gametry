@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BoliDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler, IBeginDragHandler, IDragHandler
+public class TopDragNDrop : MonoBehaviour
 {
     //버튼 드래그 떄 필요한 것들
     [SerializeField] private Canvas canvas;

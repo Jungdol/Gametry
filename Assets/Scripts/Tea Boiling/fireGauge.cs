@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class fireGauge : MonoBehaviour
 {
+    public BoliDragNDrop boliDragNDrop;
+    public TopDragNDrop topDragNDrop;
+
     public GameObject fireGaugeBar;
     public Image bar;
-    public GameObject backBtn;
 
     private float gauge = 0;
     private float oneClickGauge = 17;
@@ -28,6 +30,8 @@ public class fireGauge : MonoBehaviour
         {
             bar.fillAmount = 1;
             fireGaugeBar.SetActive(false);
+            boliDragNDrop.fireReady = true;
+            topDragNDrop.fireReady = true;
             Debug.Log("불 준비 완료");
         }
     }
