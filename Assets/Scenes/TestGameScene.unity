@@ -510,8 +510,8 @@ GameObject:
   - component: {fileID: 131114016}
   - component: {fileID: 131114015}
   - component: {fileID: 131114014}
-  - component: {fileID: 131114013}
   - component: {fileID: 131114012}
+  - component: {fileID: 131114013}
   m_Layer: 5
   m_Name: BoilPot
   m_TagString: Untagged
@@ -559,12 +559,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 131114010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30570d385e48e5c41a139e52981a02fb, type: 3}
+  m_Script: {fileID: 11500000, guid: abcc3b8dd7aa93048b769d0952e54320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 517394169}
   dontMove: 0
-  fireReady: 0
+  BlazerReady: 0
   originPos: {x: 0, y: 0, z: 0}
 --- !u!114 &131114014
 MonoBehaviour:
@@ -588,9 +588,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4681,7 +4681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boliDragNDrop: {fileID: 1226276485}
-  topDragNDrop: {fileID: 0}
   fireGaugeBar: {fileID: 82157508}
   bar: {fileID: 1237188416}
 --- !u!1 &868360712
@@ -6603,6 +6602,7 @@ GameObject:
   - component: {fileID: 1226276482}
   - component: {fileID: 1226276485}
   - component: {fileID: 1226276486}
+  - component: {fileID: 1226276487}
   m_Layer: 5
   m_Name: BoilBlazerTop
   m_TagString: Untagged
@@ -6651,9 +6651,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6737,6 +6737,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1226276487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226276480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b73eb0af7ebe44588b6aa556f0c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potDragNDrop: {fileID: 131114013}
+  BackToCon: {fileID: 1604030940}
 --- !u!1 &1229416731
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,6 +7391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boliDragNDrop: {fileID: 1226276485}
+  potDragNDrop: {fileID: 131114013}
 --- !u!1 &1307824955
 GameObject:
   m_ObjectHideFlags: 0
@@ -9236,7 +9251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1604030941
 RectTransform:
   m_ObjectHideFlags: 0

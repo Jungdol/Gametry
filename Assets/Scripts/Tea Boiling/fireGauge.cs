@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class fireGauge : MonoBehaviour
 {
     public BoliDragNDrop boliDragNDrop;
-    public TopDragNDrop topDragNDrop;
 
     public GameObject fireGaugeBar;
     public Image bar;
@@ -20,7 +19,6 @@ public class fireGauge : MonoBehaviour
     {
         if(boilStat < 6)
         {
-            Debug.Log(boilStat);
             boilStat += 1;
             fireGaugeBar.SetActive(true);
             gauge += oneClickGauge;
@@ -31,7 +29,6 @@ public class fireGauge : MonoBehaviour
             bar.fillAmount = 1;
             fireGaugeBar.SetActive(false);
             boliDragNDrop.fireReady = true;
-            topDragNDrop.fireReady = true;
             Debug.Log("불 준비 완료");
         }
     }
