@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Dialogue
 {
-    [TextArea(1, 2)]
-    public string sentences;
     public string names;
+    public string[] sentences;
+
     public Sprite Sprites;
 
     public string SpriteState;
@@ -18,4 +18,13 @@ public class Dialogue
     public ChoiceContent choiceContents;
     public bool makeTea;
     public bool energy;
+}
+
+[System.Serializable]
+public class DialogueEvent
+{
+    public string name;
+
+    public Vector2 line;
+    public Dialogue[] dialogues;
 }

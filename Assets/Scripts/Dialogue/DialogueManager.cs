@@ -127,7 +127,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < dialogue.Length; i++)
         {
             // 다이로그 수 만큼 대화, 사람 인원, 이름, 스프라이트, 왼쪽, 오른쪽 이동 스프라이트, 대화창 설정
-            listSentences.Add(dialogue[i].sentences);
+            //listSentences.Add(dialogue[i].sentences);
             listNames.Add(dialogue[i].names);
             listSprites.Add(dialogue[i].Sprites);
             listSpriteState.Add(dialogue[i].SpriteState);
@@ -261,15 +261,8 @@ public class DialogueManager : MonoBehaviour
             // if문 지금 출력하는 대화창 백그라운드와 전 대화창 백그라운드를 비교하고 다를 시 Appear을 껏다 켜 체인지하는 모션 발생
             if (listDialogueWindows[count] != listDialogueWindows[count - 1])
             {
-                // animSprite 부분은 만약 대화창이 이름이 새겨진 대화창일 시 지워줘야 한다.
-                //animSprite.SetBool("Change", true);
-                // animDialogue 까지 주석 처리하는 부분은 대화창 백그라운드를 바꿀 때 체인지 모션을 사용하지 않기 때문이다. (미연시 때문) 
-                //animDialogueWindow.SetBool("Appear", false);
                 yield return new WaitForSeconds(0.2f);
                 rendererDialogueWindow.GetComponent<Image>().sprite = listDialogueWindows[count];
-                //rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
-                //animDialogueWindow.SetBool("Appear", true);
-                //animSprite.SetBool("Change", false);
             }
             else
             {

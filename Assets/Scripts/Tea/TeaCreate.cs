@@ -25,6 +25,18 @@ public class TeaCreate : MonoBehaviour
     [Header("차 대접 버튼 / 텍스트")]
     public GameObject treatBtn;
 
+    [Header("컷씬")]
+    public Image Bg;
+    public GameObject cutscene;
+    public Image[] cutSceneImage;
+
+    [Header("차 완성 이미지")]
+    public Sprite[] TeaImages;
+
+    [Header("차 적용 이미지")]
+    public Image tableTea;
+    public Image finishTea;
+
     Animator finishTeaAnim;
 
     //제어 변수
@@ -47,6 +59,30 @@ public class TeaCreate : MonoBehaviour
            Debug.Log("더 이상 차를 버릴 수 없습니다");
         }
     }
+    public IEnumerator FadeIn(Image fadeImage, int r = 1, int g = 1,int b = 1)
+    {
+        float fadeCount = fadeImage.color.a;
+        while (fadeCount > 0.0f)
+        {
+            fadeCount -= 0.02f;
+            yield return new WaitForSeconds(0.01f);
+            fadeImage.color = new Color(r, g, b, fadeCount);
+        }
+    }
+
+    IEnumerator cutSceneActive()
+    {
+        yield return new WaitForSeconds(0.5f);
+        cutscene.SetActive(true);
+        yield return new WaitForSeconds(1.1f);
+        StartCoroutine(FadeIn(cutSceneImage[0]));
+        StartCoroutine(FadeIn(cutSceneImage[1]));
+        StartCoroutine(FadeIn(cutSceneImage[2]));
+        StartCoroutine(FadeIn(Bg, 0, 0, 0));
+
+        yield return new WaitForSeconds(5f);
+        StopCoroutine("cutSceneActive");
+    }
 
     //차 대접하기
     public void TreatTea()
@@ -61,6 +97,10 @@ public class TeaCreate : MonoBehaviour
         finishTeaAnim = GetComponent<Animator>();
 
         finishTeaAnim.SetBool("Appear", true);
+
+        StartCoroutine("cutSceneActive");
+
+        ChangeTeaImage(teaSelect.send_num - 1);
 
         switch (teaSelect.send_num)
         {
@@ -149,7 +189,12 @@ public class TeaCreate : MonoBehaviour
                 tea_efficacy.text = "낮과 밤의 사이는 누가 가른 걸까요";
                 break;
         }
+
+        void ChangeTeaImage(int num)
+        {
+            tableTea.gameObject.SetActive(true);
+            tableTea.sprite = TeaImages[num];
+            finishTea.sprite = TeaImages[num];
+        }
     }
-
-
 }
