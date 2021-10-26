@@ -10,6 +10,7 @@ public class PotSlot : MonoBehaviour, IDropHandler
 
     //오브젝트
     public GameObject BackToCon;
+    public GameObject Pot;
     
     //화로에다 드랍
     public void OnDrop(PointerEventData eventData)
@@ -17,9 +18,14 @@ public class PotSlot : MonoBehaviour, IDropHandler
         if((eventData.pointerDrag != null) && (potDragNDrop.BlazerReady == true))
         {
             Debug.Log("물 끓이기 완료!");
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            eventData.pointerDrag.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2 (GetComponent<RectTransform>().anchoredPosition.x + 20f, GetComponent<RectTransform>().anchoredPosition.y + 110f);
             potDragNDrop.dontMove = true;
             BackToCon.SetActive(true);
+            Pot.transform.position = potDragNDrop.gameObject.transform.position; // 레이어 이동
+            Pot.SetActive(true);
         }
         else
         {

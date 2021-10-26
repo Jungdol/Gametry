@@ -34,7 +34,7 @@ public class DialogueParser : MonoBehaviour
             }
             while (row[0].ToString() == "");
 
-            dialogue.sentences = sentencesList.ToArray();
+            //dialogue.sentences = sentencesList.ToArray();
 
             dialogueList.Add(dialogue);
             

@@ -20,7 +20,7 @@ public class PotDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     //오브젝트의 원래 위치 구하기(다른 곳에다 드랍 했을 때 원래 위치로 귀환)
     private void Start()
     {
-        originPos = this.transform.position;
+        originPos = this.rectTransform.localPosition;
     }
 
     //대충 어웨이크
@@ -64,7 +64,7 @@ public class PotDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
         canvasGroup.blocksRaycasts = true;
         if(dontMove == false)
         {
-            this.transform.position = originPos;
+            this.rectTransform.localPosition = originPos;
             Debug.Log("넌 못 지나간다");
         }
     }

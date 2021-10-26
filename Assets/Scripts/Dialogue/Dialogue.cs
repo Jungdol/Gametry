@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class Dialogue
 {
     public string names;
-    public string[] sentences;
+    [TextArea]
+    public string sentences;
 
     public Sprite Sprites;
 

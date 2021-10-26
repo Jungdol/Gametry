@@ -96,7 +96,7 @@ public class TeaSelect : MonoBehaviour
                 else if(teaStatus1.name != teaStatus2.name)
                 {
                     Debug.Log("차를 제작할 수 있습니다");
-                    Debug.Log("재료1 : "+ teaStatus1.teaMaterial+" 재료2 : "+teaStatus2.teaMaterial);
+                    Debug.Log("재료1 : " + teaStatus1.teaMaterial + " 재료2 : " + teaStatus2.teaMaterial);
 
                     resetBtn.SetActive(true);
                     makeTeaBtn.SetActive(true);

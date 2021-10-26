@@ -10,6 +10,8 @@ public class Fade : MonoBehaviour
 
     public bool fadeSetActive = false;
 
+    public float waitTime = 0f;
+
     void Start()
     {
         fade.SetActive(fadeSetActive);
@@ -18,6 +20,7 @@ public class Fade : MonoBehaviour
     public IEnumerator FadeIn()
     {
         fade.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
 
         float fadeCount = fadeImage.color.a;
         while (fadeCount > 0.0f)

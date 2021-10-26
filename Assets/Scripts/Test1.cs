@@ -5,14 +5,14 @@ using UnityEngine;
 public class Test1 : MonoBehaviour
 {
     public GameObject Image;
-    //public DialogueTrigger dialogueTrigger;
-    public InteractionEvent interactionEvent;
+    public DialogueTrigger dialogueTrigger;
+    //public InteractionEvent interactionEvent;
     // Start is called before the first frame update
     void Start()
     {
+        dialogueTrigger = GetComponent<DialogueTrigger>();
         StartCoroutine(StartDialouge());
-        //dialogueTrigger = GetComponent<DialogueTrigger>();
-        interactionEvent = GetComponent<InteractionEvent>();
+        //interactionEvent = GetComponent<InteractionEvent>();
     }
 
     IEnumerator StartDialouge()
@@ -21,7 +21,7 @@ public class Test1 : MonoBehaviour
         Image.SetActive(true);
 
         yield return new WaitForSeconds(0.5f);
-        //dialogueTrigger.Trigger();
-        interactionEvent.GetDialogue();
+        dialogueTrigger.Trigger();
+        //interactionEvent.GetDialogue();
     }
 }

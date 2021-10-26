@@ -10,25 +10,62 @@ public class fireGauge : MonoBehaviour
     public GameObject fireGaugeBar;
     public Image bar;
 
+    public GameObject nowCharcoal;
+    public Sprite[] charcoal;
+
+    Image nowCharcoalImage;
+    Animator anim;
+
+    GameObject fireGm;
+    Animator fireAnim;
+
     private float gauge = 0;
     private float oneClickGauge = 17;
-    private int boilStat = 1;
+    private int boilStat = 0;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+
+        nowCharcoalImage = nowCharcoal.GetComponent<Image>();
+        fireGm = nowCharcoal.transform.GetChild(0).gameObject;
+        fireAnim = fireGm.GetComponent<Animator>();
+    }
+
+    public void BoilingBtn()
+    {
+        anim.SetBool("Appear", true);
+    }
+
+    public void BoilingBackBtn()
+    {
+        anim.SetBool("Appear", false);
+    }
 
     public void Boiling()
     {
-        if(boilStat < 6)
+        if(boilStat < 5)
         {
             boilStat += 1;
             fireGaugeBar.SetActive(true);
             gauge += oneClickGauge;
             bar.fillAmount = gauge / 100f;
+
+            nowCharcoalImage.sprite = charcoal[boilStat - 1];
+            
+
+            if (boilStat == 5)
+            {
+                fireGm.SetActive(true);
+            }
         }
         else
         {
             bar.fillAmount = 1;
             fireGaugeBar.SetActive(false);
             boliDragNDrop.fireReady = true;
+            fireAnim.SetBool("Appear", true);
+
             Debug.Log("불 준비 완료");
         }
     }

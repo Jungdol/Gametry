@@ -94,6 +94,8 @@ public class DialogueManager : MonoBehaviour
     // AudioManager 선언
     AudioManager theAudio;
 
+    int i = 0;
+
 
     void Start()
     {
@@ -127,7 +129,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < dialogue.Length; i++)
         {
             // 다이로그 수 만큼 대화, 사람 인원, 이름, 스프라이트, 왼쪽, 오른쪽 이동 스프라이트, 대화창 설정
-            //listSentences.Add(dialogue[i].sentences);
+            listSentences.Add(dialogue[i].sentences);
             listNames.Add(dialogue[i].names);
             listSprites.Add(dialogue[i].Sprites);
             listSpriteState.Add(dialogue[i].SpriteState);
@@ -185,46 +187,49 @@ public class DialogueManager : MonoBehaviour
     {
         if (talking)
         {
-            count++;
-            text.text = "";
-            Name.text = "";
-
             theAudio.Play(buttonSound);
 
-            // 차 제조 작동
-            makeTeaBtn.SetActive(listMakeTea[count - 1]);
-
-            // 기 시스템 작동
-            energyBtn.SetActive(listEnergy[count - 1]);
-
-            if (count == dialogue.Length)
-            {
-                // 대화 수 카운트가 설정한 대화 수일 때 실행
-                if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
-                    listChoiceContents[count - 1].Trigger(); // 선택지 작동
-
-                StopAllCoroutines();
-                Exitdialogue();
-                rendererDialogueWindow.gameObject.SetActive(false);
-            }
-
-            else if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
-            {
-                StartCoroutine(ChoiceCoroutine()); // 선택지 작동
-                rendererDialogueWindow.gameObject.SetActive(false);
-            }
-
-            else
-            {
-                ConvertDialogue();
-            }
-
-            /*
-            if (Input.GetMouseButtonDown(0))
+            if (i < listSentences[count].Length)
             {
                 dialogSpeed = 0.001f;
             }
-            */
+
+            if (i >= listSentences[count].Length)
+            {
+                count++;
+                text.text = "";
+                Name.text = "";
+
+                // 차 제조 작동
+                makeTeaBtn.SetActive(listMakeTea[count - 1]);
+
+                // 기 시스템 작동
+                energyBtn.SetActive(listEnergy[count - 1]);
+
+                if (count == dialogue.Length)
+                {
+                    // 대화 수 카운트가 설정한 대화 수일 때 실행
+                    if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
+                        listChoiceContents[count - 1].Trigger(); // 선택지 작동
+
+                    StopAllCoroutines();
+                    Exitdialogue();
+                    rendererDialogueWindow.gameObject.SetActive(false);
+                }
+
+                else if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
+                {
+                    StartCoroutine(ChoiceCoroutine()); // 선택지 작동
+                    rendererDialogueWindow.gameObject.SetActive(false);
+                }
+
+                else if (i >= listSentences[count].Length)
+                {
+                    ConvertDialogue();
+                }
+            }
+
+            
         }
     }
 
@@ -288,7 +293,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // 한글자씩 출력
-        for (int i = 0; i < listSentences[count].Length; i++)
+        for (i = 0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];
             yield return new WaitForSeconds(dialogSpeed);

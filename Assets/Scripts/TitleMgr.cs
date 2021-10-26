@@ -20,4 +20,9 @@ public class TitleMgr : MonoBehaviour
     {
         StartCoroutine(fade.FadeOut("GameScene"));
     }
+
+    public void ExitBtn()
+    {
+        Application.Quit();
+    }
 }

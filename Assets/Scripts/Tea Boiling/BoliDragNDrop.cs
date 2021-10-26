@@ -7,7 +7,9 @@ public class BoliDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler
 {
     //버튼 드래그 떄 필요한 것들
     [SerializeField] private Canvas canvas;
-    private RectTransform rectTransform;
+
+    [HideInInspector]
+    public RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
     //예외 처리 변수
@@ -20,7 +22,7 @@ public class BoliDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler
     //오브젝트의 원래 위치 구하기(다른 곳에다 드랍 했을 때 원래 위치로 귀환)
     private void Start()
     {
-        originPos = this.transform.position;
+        originPos = this.rectTransform.localPosition;
     }
 
     //대충 어웨이크
@@ -64,7 +66,7 @@ public class BoliDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler
         canvasGroup.blocksRaycasts = true;
         if(dontMove == false)
         {
-            this.transform.position = originPos;
+            this.rectTransform.localPosition = originPos;
             Debug.Log("넌 못 지나간다");
         }
     }

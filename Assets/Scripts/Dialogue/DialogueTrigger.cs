@@ -22,7 +22,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueManager.rendererImage.sprite = firstSprite;
-        dialogueManager.rendererImage.gameObject.SetActive(true);
     }
 }
 
