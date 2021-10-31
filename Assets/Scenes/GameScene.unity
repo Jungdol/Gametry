@@ -4325,7 +4325,7 @@ GameObject:
   - component: {fileID: 741040266}
   - component: {fileID: 741040267}
   m_Layer: 0
-  m_Name: Conversation_3 (1)
+  m_Name: Conversation_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6926,6 +6926,7 @@ MonoBehaviour:
   rendererDialogueWindow: {fileID: 232576981}
   animDialogueWindow: {fileID: 232576984}
   energyBtn: {fileID: 1209908536}
+  energyMgr: {fileID: 681840011}
   makeTeaBtn: {fileID: 1904413612}
   buttonSound: Button
   dialogue: []
@@ -7394,7 +7395,7 @@ MonoBehaviour:
     choiceContents: {fileID: 0}
     makeTea: 0
     energy: 1
-    characterEnergy: 0
+    characterEnergy: 4
     nextDialogues: {fileID: 0}
   energyDialogues:
   - {fileID: 1903473460}
@@ -7944,7 +7945,7 @@ GameObject:
   - component: {fileID: 1354066645}
   - component: {fileID: 1354066646}
   m_Layer: 0
-  m_Name: Conversation_3-1-1
+  m_Name: Conversation_4-1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11734,7 +11735,7 @@ GameObject:
   - component: {fileID: 1960917233}
   - component: {fileID: 1960917234}
   m_Layer: 0
-  m_Name: Conversation_3-1-2
+  m_Name: Conversation_4-1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12382,7 +12383,7 @@ GameObject:
   - component: {fileID: 2026037739}
   - component: {fileID: 2026037740}
   m_Layer: 0
-  m_Name: ChoiceContent_3-1
+  m_Name: ChoiceContent_4-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -52,6 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("기 버튼")]
     public GameObject energyBtn;
+    public EnergyMgr energyMgr;
 
     // 차 제작 버튼 선언
     [Header("차 만들기 버튼")]
@@ -138,7 +139,6 @@ public class DialogueManager : MonoBehaviour
         count = 0;
         for (int i = 0; i < dialogue.Length; i++)
         {
-            Debug.Log(dialogue[i].nextDialogues);
             // 다이로그 수 만큼 대화, 사람 인원, 이름, 스프라이트, 왼쪽, 오른쪽 이동 스프라이트, 대화창 설정
             listSentences.Add(dialogue[i].sentences);
             listNames.Add(dialogue[i].names);
@@ -247,15 +247,11 @@ public class DialogueManager : MonoBehaviour
 
                     else if (listEnergy[count - 1])
                     {
-                        EnergyMgr energyMgr = FindObjectOfType<EnergyMgr>();
-                        DialogueTrigger dialogueTrigger = GetComponent<DialogueTrigger>();
-
                         energyBtn.SetActive(listEnergy[count - 1]);
                         energyMgr.characterEnergy = listCharacterEnergy[count - 1];
-                        dialogueTrigger.energyDialogues[energyMgr.EnergySetting()].Trigger();
-
                         StopAllCoroutines();
                         Exitdialogue();
+                        StartCoroutine(EnergySetting());
                     }
                 }
 
@@ -278,6 +274,23 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         rendererDialogueWindow.gameObject.SetActive(true);
         StartCoroutine(StartDialogueCoroutine());
+    }
+
+    IEnumerator EnergySetting()
+    {
+        //DialogueTrigger dialogueTrigger = dialogue[i].
+        while (!energyMgr.onClick)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Debug.Log("반복");
+            if (energyMgr.onClick)
+            {
+                Debug.Log("선택");
+                Debug.Log(energyMgr.EnergySetting());
+                dialogueTrigger.energyDialogues[energyMgr.EnergySetting()].Trigger();
+                yield break;
+            }
+        }
     }
 
     IEnumerator ChoiceCoroutine()

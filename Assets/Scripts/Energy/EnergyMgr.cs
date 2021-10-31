@@ -20,7 +20,9 @@ public class EnergyMgr : MonoBehaviour
     public GameObject energy_ex;
 
     public Energy nowEnergy;
-    public Energy characterEnergy;
+    public Energy characterEnergy = Energy.Yellow;
+
+    public bool onClick = false;
 
     public void ShowEx()
     {
@@ -58,6 +60,7 @@ public class EnergyMgr : MonoBehaviour
                 Debug.Log("검정!");
                 break;
         }
+        onClick = true;
     }
 
     public int EnergySetting()
