@@ -7,6 +7,8 @@ public class ChoiceContent : MonoBehaviour
     [SerializeField]
     public Choice choice;
 
+    public GameObject[] dialogueTriggers;
+
     public bool flag;
     int result;
     // Start is called before the first frame update
@@ -26,11 +28,17 @@ public class ChoiceContent : MonoBehaviour
         yield return new WaitUntil(() => !system.isChoice);
 
         result = system.GetResult();
+        GetResult();
         flag = false;
     }
 
     public int GetResult()
     {
+        DialogueTrigger dialogueTrigger = dialogueTriggers[result].GetComponent<DialogueTrigger>();
+
+        dialogueTriggers[result].SetActive(true);
+        dialogueTrigger.Trigger();
+
         return result;
     }
 }

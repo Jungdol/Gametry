@@ -19,6 +19,9 @@ public class Dialogue
     public ChoiceContent choiceContents;
     public bool makeTea;
     public bool energy;
+    public Energy characterEnergy;
+
+    public DialogueTrigger nextDialogues;
 }
 
 [System.Serializable]

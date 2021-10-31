@@ -11,6 +11,8 @@ public class Test1 : MonoBehaviour
     void Start()
     {
         dialogueTrigger = GetComponent<DialogueTrigger>();
+        if (dialogueTrigger.firstSprite != null)
+            dialogueTrigger.ImageSetting();
         StartCoroutine(StartDialouge());
         //interactionEvent = GetComponent<InteractionEvent>();
     }

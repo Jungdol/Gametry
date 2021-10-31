@@ -121,6 +121,73 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &583420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 583421}
+  - component: {fileID: 583422}
+  m_Layer: 0
+  m_Name: Conversation_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &583421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583420}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1871245521}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &583422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uD574\uB2EC"
+    sentences: "\uC694\uC998 \uC0B4\uC9DD \uD798\uC774 \uBE60\uC9C0\uB294\uAC70 \uAC19\uC544\uC5EC....\uC544\uC800\uC528...."
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uB098"
+    sentences: "\uAE30 \uBD10\uB4DC\uB9B4\uAC8C\uC694"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 439461067}
+    makeTea: 0
+    energy: 1
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
 --- !u!1 &31172067
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
+  dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
     sentences: 
@@ -684,6 +752,8 @@ MonoBehaviour:
     choiceContents: {fileID: 439461067}
     makeTea: 0
     energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
     sentences: 
     Sprites: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
@@ -692,6 +762,8 @@ MonoBehaviour:
     choiceContents: {fileID: 1617014499}
     makeTea: 0
     energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
     sentences: 
     Sprites: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
@@ -700,6 +772,8 @@ MonoBehaviour:
     choiceContents: {fileID: 0}
     makeTea: 0
     energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
   - names: "\uB098"
     sentences: 
     Sprites: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
@@ -708,6 +782,8 @@ MonoBehaviour:
     choiceContents: {fileID: 0}
     makeTea: 0
     energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
   - names: "\uB098"
     sentences: 
     Sprites: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
@@ -716,6 +792,9 @@ MonoBehaviour:
     choiceContents: {fileID: 0}
     makeTea: 0
     energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
 --- !u!4 &221210033
 Transform:
   m_ObjectHideFlags: 0
@@ -728,7 +807,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221210034
 MonoBehaviour:
@@ -1738,6 +1817,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343539912}
   m_CullTransparentMesh: 0
+--- !u!1 &344945102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344945104}
+  - component: {fileID: 344945103}
+  m_Layer: 0
+  m_Name: Conversation_1-1-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &344945103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344945102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uADF8\uB7F0\uAC00\uC694...?\n\uC0AC\uC2E4 \uC624\uB298 \uAC00\uC871\uB4E4\uACFC
+      \uB3C5\uB9BD \uBB38\uC81C\uB85C \uC2F8\uC6E0\uAC70\uB4E0\uC694..."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 1607716089}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
+--- !u!4 &344945104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344945102}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372672334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,7 +2360,7 @@ GameObject:
   - component: {fileID: 439461068}
   - component: {fileID: 439461067}
   m_Layer: 0
-  m_Name: ChoiceContent
+  m_Name: ChoiceContent1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2243,9 +2380,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choice:
     answers:
-    - "\uACE0\uC0DD\uC774 \uB9CE\uC73C\uC2DC\uB124\uC694"
-    - "\uD5C8\uC5B4 \uB610\uC694?"
-    - asdfasdfasdf
+    - "\uD45C\uC815\uC774 \uC88B\uC740\uAC70 \uBCF4\uB2C8 \uAE30\uBD84\uC88B\uC740
+      \uC77C\uC774 \uC788\uB098\uBD10\uC694?"
+    - "\uC694\uC998\uB530\uB77C \uD558\uACE0 \uC2F6\uC740\uAC70\uB098 \uCDE8\uBBF8
+      \uC788\uC5B4\uC694?"
+  dialogueTriggers:
+  - {fileID: 964019943}
+  - {fileID: 1003232002}
   flag: 0
 --- !u!4 &439461068
 Transform:
@@ -2254,12 +2395,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439461066}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1871245521}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443003149
 GameObject:
@@ -2393,6 +2534,8 @@ MonoBehaviour:
   energy1: {fileID: 0}
   energy2: {fileID: 0}
   energy_ex: {fileID: 1326989627}
+  nowEnergy: 0
+  characterEnergy: 0
 --- !u!114 &462460793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3522,7 +3665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674046310
 GameObject:
@@ -3662,6 +3805,8 @@ MonoBehaviour:
   energy1: {fileID: 1760110714}
   energy2: {fileID: 1247130304}
   energy_ex: {fileID: 1209908536}
+  nowEnergy: 0
+  characterEnergy: 0
 --- !u!114 &681840012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,6 +4314,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738032510}
   m_CullTransparentMesh: 0
+--- !u!1 &741040265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741040266}
+  - component: {fileID: 741040267}
+  m_Layer: 0
+  m_Name: Conversation_3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741040266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741040265}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741040267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741040265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uADF8\uB7FC \uC774\uC81C \uC5B4\uB5A1\uD574\uC57C \uD560\uAE4C\uC694...?\n\uB3C4\uC6C0\uC744
+      \uCCAD\uD574\uC57C \uD560\uAE4C\uC694?"
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
 --- !u!1 &759099424
 GameObject:
   m_ObjectHideFlags: 0
@@ -4963,6 +5166,63 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &875336085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875336087}
+  - component: {fileID: 875336086}
+  m_Layer: 0
+  m_Name: Conversation_2-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &875336086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875336085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uC74C... \uC77C\uB2E8 \uC870\uAE08 \uB354 \uBA38\uB9AC\uB97C \uC2DD\uD600\uBCFC\uAC8C\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 1059246444}
+  energyDialogues: []
+--- !u!4 &875336087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875336085}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891293969
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,6 +5789,100 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963043543}
   m_CullTransparentMesh: 0
+--- !u!1 &964019943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964019946}
+  - component: {fileID: 964019944}
+  m_Layer: 0
+  m_Name: Conversation_1-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &964019944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964019943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uD574\uB2EC"
+    sentences: "\uD07C\uD07C~ \uADF8\uAC8C \uC544\uB2C8\uACE0\n\uAC00\uB2E4\uAC00
+      \uC81C\uAC00 \uC88B\uC740\uAC78 \uBC1C\uACAC\uD588\uAC70\uB4E0\uC5EC~\n\uBCF4\uC5EC\uB4DC\uB9B4\uAE4C\uC5EC?\n\uAF41\uC9DC\uB85C
+      \uBCF4\uC5EC\uC8FC\uAE30 \uADF8\uB7F0\uB370~"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uB098"
+    sentences: "\uADF8\uB7FC \uD55C\uBC88\uB9CC \uBCF4\uC5EC\uC8FC\uB294\uAC74 \uC5B4\uB54C\uC694?
+      \uAD81\uAE08\uD55C\uB370"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uD574\uB2EC"
+    sentences: "\uD5E4\uD5E4~ \uC54C\uACA0\uC5B4\uC5EC~ \n\uC9DC\uC794! \uAC00\uB2E4\uAC00
+      \uC870\uAC1C\uAECD\uB370\uAE30\uB97C \uBC1C\uACAC\uD588\uAC70\uB4E0\uC5EC?
+      \n\uC5C4\uCCAD\uC774\uC058\uC838~\n\uC18C\uC911\uD558\uAC8C \uC8FC\uBA38\uB2C8
+      \uBCF4\uAD00\uD558\uACE0 \uB2E4\uB2D0\uB824\uAD6C\uC5EC!"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uB098"
+    sentences: "\uC640~ , \uC624\uB298\uC740 \uC6B4\uC774 \uC88B\uC740\uB0A0\uC778\uAC00\uBD10\uC694~\n\uC800\uD55C\uD14C\uB3C4
+      \uD589\uC6B4\uC774 \uC624\uBA74 \uC88B\uC744\uD150\uB370"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
+--- !u!4 &964019946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964019943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1871245521}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974829349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,6 +6046,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987238185}
   m_CullTransparentMesh: 0
+--- !u!1 &1003232002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1003232003}
+  - component: {fileID: 1003232004}
+  m_Layer: 0
+  m_Name: Conversation_1-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1003232003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003232002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1871245521}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1003232004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003232002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uD574\uB2EC"
+    sentences: "\uC694\uC998\uC5EC~? \uC694\uC998\uC740 \uADF8\uB0E5 \uC870\uAC1C\uCC3E\uC73C\uB7EC\uB2E4\uB2C8\uAC70\uB098...\n\uBB3C\uB180\uC774\uD558\uAE30?
+      \uC815\uB3C4\uC788\uB294\uAC70 \uAC19\uC740\uB370\n\uC694\uC998\uC740 \uC131\uAC8C\uC7A1\uB294\uAC83\uB3C4
+      \uC7AC\uBC0C\uB354\uB77C\uAD6C\uC5EC~"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uB098"
+    sentences: "\uC624...\uC131\uAC8C\uB97C\uC694..? (\uC11C..\uC131\uAC8C\uB97C
+      \uC7A1\uB294\uB2E4\uB2C8...)"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 439461067}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
 --- !u!1 &1004624946
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,6 +6571,121 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050665662}
   m_CullTransparentMesh: 0
+--- !u!1 &1059246443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059246445}
+  - component: {fileID: 1059246444}
+  m_Layer: 0
+  m_Name: Conversation_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1059246444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059246443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uB098"
+    sentences: "\uADF8\uB7FC \uC774\uC81C \uBB3C\uC744 \uB053\uC774\uACE0 \uC788\uC744\uAC8C\uC694.\n\uACC4\uC18D
+      \uC774\uC57C\uAE30\uD574 \uC8FC\uC138\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
+--- !u!4 &1059246445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059246443}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1075944418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075944419}
+  - component: {fileID: 1075944420}
+  m_Layer: 0
+  m_Name: Conversation_1-2-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075944419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075944418}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075944420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075944418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uB124...\uB9D0 \uD55C \uBC88 \uD588\uC744 \uBFD0\uC778\uB370 \uBB34\uAE30\uB825\uD574\uC9C0\uB124\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 1234730551}
+  energyDialogues: []
 --- !u!1 &1095158454
 GameObject:
   m_ObjectHideFlags: 0
@@ -6461,11 +7000,42 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138251836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f20ef92ce421cc14198c4376e0d77d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1165780920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165780921}
+  m_Layer: 0
+  m_Name: Day 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1165780921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165780920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 455.4297, y: 109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1598850454}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209908536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,6 +7293,112 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1234730549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234730550}
+  - component: {fileID: 1234730551}
+  m_Layer: 0
+  m_Name: Conversation_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234730550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234730549}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234730551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234730549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uBB34\uC791\uC815 \uB3C5\uB9BD\uD558\uB824 \uD55C \uAC83\uB3C4 \uC544\uB2C8\uACE0,\n\uC815\uB9D0
+      \uB9CE\uC774 \uACF5\uBD80\uD588\uAC70\uB4E0\uC694...\n \uADF8\uB9AC\uACE0 \uBC14\uC05C
+      \uC640\uC911\uC5D0\uB3C4 \uC5F4\uC2EC\uD788 \uB3C8\uB3C4 \uBAA8\uC558\uACE0...\n\uC81C
+      \uC790\uC2E0\uC774 \uC815\uB9D0 \uBFCC\uB4EF\uD588\uC5B4\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uC774\uC81C \uB2E4 \uCEF8\uB294\uB370, \uC5B4\uB9AC\uAD11\uCC98\uB7FC
+      \uBCF4\uC77C \uC218 \uC788\uC9C0\uB9CC\n\uADF8\uB798\uB3C4 \uC815\uB9D0 \uB3C5\uB9BD\uD558\uACE0
+      \uC2F6\uC5B4\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uC6A9\uAE30 \uB0B4\uC11C \uB9D0\uD588\uB294\uB370 \uC774\uB807\uAC8C
+      \uB420 \uC904\uC740..."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uB098"
+    sentences: "\uB9CE\uC774 \uD798\uB4DC\uC168\uAD70\uC694...\n\uC774\uB7F4 \uB54C
+      \uBC29\uBB38\uD574\uC8FC\uC154\uC11C \uC815\uB9D0 \uAC10\uC0AC\uD574\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uB098"
+    sentences: "\uC77C\uB2E8 \uAE30\uB97C \uBCF4\uB3C4\uB85D \uD560\uAC8C\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 1
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues:
+  - {fileID: 1903473460}
+  - {fileID: 875336086}
 --- !u!1 &1247130302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6951,6 +7627,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282065497}
   m_CullTransparentMesh: 0
+--- !u!1 &1315937545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1315937546}
+  - component: {fileID: 1315937548}
+  - component: {fileID: 1315937547}
+  m_Layer: 0
+  m_Name: Conversation_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1315937546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315937545}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1315937547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315937545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uB098"
+    sentences: "\uC5B4\uC11C\uC624\uC138\uC694"
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uC548\uB155\uD558\uC138\uC694..."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 2108240184}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
+--- !u!114 &1315937548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315937545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d61f6dc0253ae4594921641b427d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Image: {fileID: 2019947922}
+  dialogueTrigger: {fileID: 0}
 --- !u!1 &1316745078
 GameObject:
   m_ObjectHideFlags: 0
@@ -7175,6 +7933,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342507602}
   m_CullTransparentMesh: 0
+--- !u!1 &1354066644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1354066645}
+  - component: {fileID: 1354066646}
+  m_Layer: 0
+  m_Name: Conversation_3-1-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1354066645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354066644}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354066646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354066644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uADF8\uAC70 \uAD1C\uCC2E\uC740 \uC0DD\uAC01\uC774\uB124\uC694.\n\uB108\uBB34
+      \uAC10\uC815\uC5D0\uB9CC \uCE58\uC6B0\uCCD0\uC788\uC5C8\uB358 \uAC83 \uAC19\uC544\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 1234730551}
+  energyDialogues: []
 --- !u!1 &1371747604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7305,6 +8121,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371747604}
   m_CullTransparentMesh: 0
+--- !u!1 &1399934150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399934152}
+  - component: {fileID: 1399934151}
+  m_Layer: 0
+  m_Name: Conversation_1-1-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1399934151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399934150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uB108\uBB34 \uD53C\uACE4\uD574\uC11C\uC694...\n\uC624\uB298 \uAC00\uC871\uB4E4\uACFC
+      \uB3C5\uB9BD \uBB38\uC81C\uB85C \uC2F8\uC6E0\uAC70\uB4E0\uC694..."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 1607716089}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
+--- !u!4 &1399934152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399934150}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1405665810
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,6 +9040,8 @@ MonoBehaviour:
   energy1: {fileID: 0}
   energy2: {fileID: 0}
   energy_ex: {fileID: 1326989627}
+  nowEnergy: 0
+  characterEnergy: 0
 --- !u!1 &1492819688
 GameObject:
   m_ObjectHideFlags: 0
@@ -8743,6 +9619,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1598850453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598850454}
+  m_Layer: 0
+  m_Name: Afternoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598850454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598850453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1315937546}
+  - {fileID: 2108240185}
+  - {fileID: 344945104}
+  - {fileID: 1399934152}
+  - {fileID: 1607716088}
+  - {fileID: 1075944419}
+  - {fileID: 1790734539}
+  - {fileID: 1234730550}
+  - {fileID: 1903473461}
+  - {fileID: 875336087}
+  - {fileID: 1059246445}
+  - {fileID: 741040266}
+  - {fileID: 2026037739}
+  - {fileID: 1354066645}
+  - {fileID: 1960917233}
+  m_Father: {fileID: 1165780921}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603490118
 GameObject:
   m_ObjectHideFlags: 0
@@ -8872,6 +9793,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603490118}
   m_CullTransparentMesh: 0
+--- !u!1 &1607716087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607716088}
+  - component: {fileID: 1607716089}
+  m_Layer: 0
+  m_Name: ChoiceContent_1-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607716088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607716087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607716089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607716087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ba81fddcc380447847c3418eb2ff71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choice:
+    answers:
+    - "\uACE0\uC0DD\uC774 \uB9CE\uC73C\uC2DC\uB124\uC694. \uB9C8\uC74C\uACE0\uC0DD\uC774
+      \uC2EC\uD558\uC168\uACA0\uC5B4\uC694."
+    - "\uC774\uB7F0... \uB9C8\uBB34\uB9AC\uB294 \uC798 \uB418\uC5C8\uB098\uC694?"
+  dialogueTriggers:
+  - {fileID: 1075944418}
+  - {fileID: 1790734538}
+  flag: 0
 --- !u!1 &1617014498
 GameObject:
   m_ObjectHideFlags: 0
@@ -8883,7 +9856,7 @@ GameObject:
   - component: {fileID: 1617014500}
   - component: {fileID: 1617014499}
   m_Layer: 0
-  m_Name: ChoiceContent2
+  m_Name: ChoiceContent1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8907,6 +9880,7 @@ MonoBehaviour:
       \uBCF4\uC138\uC694"
     - "\uC790\uC2E0\uC774 \uC6D0\uD558\uB294 \uAC8C \uBB54\uC9C0\n\uC2A4\uC2A4\uB85C\uC5D0\uAC8C
       \uBB3C\uC5B4\uBCF4\uC138\uC694 "
+  dialogueTriggers: []
   flag: 0
 --- !u!4 &1617014500
 Transform:
@@ -8916,11 +9890,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617014498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 850, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1871245521}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620892880
 GameObject:
@@ -9838,6 +10812,64 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1790734538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790734539}
+  - component: {fileID: 1790734540}
+  m_Layer: 0
+  m_Name: Conversation_1-2-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1790734539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790734538}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1790734540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790734538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uADF8\uB7F4 \uB9AC\uAC00\uC694...\uAD1C\uD788 \uB9D0\uD55C \uAC83
+      \uAC19\uC544\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 1234730551}
+  energyDialogues: []
 --- !u!1 &1818923926
 GameObject:
   m_ObjectHideFlags: 0
@@ -9893,7 +10925,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1818923929
 MonoBehaviour:
@@ -9969,6 +11001,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1871245520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871245521}
+  m_Layer: 0
+  m_Name: Morning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1871245521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871245520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2067227347}
+  - {fileID: 439461068}
+  - {fileID: 1617014500}
+  - {fileID: 964019946}
+  - {fileID: 1003232003}
+  - {fileID: 583421}
+  m_Father: {fileID: 1897386402}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886498130
 GameObject:
   m_ObjectHideFlags: 0
@@ -10099,6 +11167,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886498130}
   m_CullTransparentMesh: 0
+--- !u!1 &1897386401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1897386402}
+  m_Layer: 0
+  m_Name: Day 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1897386402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897386401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1871245521}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900647594
 GameObject:
   m_ObjectHideFlags: 0
@@ -10177,6 +11276,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900647594}
   m_CullTransparentMesh: 0
+--- !u!1 &1903473459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903473461}
+  - component: {fileID: 1903473460}
+  m_Layer: 0
+  m_Name: Conversation_2-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1903473460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903473459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uC624\uAE38 \uC798\uD55C \uAC83 \uAC19\uB124\uC694.\n\uC870\uAE08
+      \uB9C8\uC74C\uC774 \uD3B8\uD574\uC9C4 \uAC83 \uAC19\uC544\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
+--- !u!4 &1903473461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903473459}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904413612
 GameObject:
   m_ObjectHideFlags: 0
@@ -10566,6 +11723,105 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935008324}
   m_CullTransparentMesh: 0
+--- !u!1 &1960917232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960917233}
+  - component: {fileID: 1960917234}
+  m_Layer: 0
+  m_Name: Conversation_3-1-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960917233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960917232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1960917234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960917232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  dialogueManager: {fileID: 0}
+  dialogue:
+  - names: "\uACE0\uC591\uC774"
+    sentences: "\uAD1C\uCC2E\uC740 \uAC83 \uAC19\uB124\uC694.\n\uC77C\uB2E8 \uC880
+      \uB354 \uC0DD\uAC01 \uC815\uB9AC\uB97C \uD574\uBD10\uC57C\uACA0\uC5B4\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 1234730551}
+  - names: "\uB098"
+    sentences: "\uC774\uC81C \uC2AC\uC2AC \uCC28\uB97C \uB4DC\uB9B4\uAC8C\uC694.
+      \uAE30\uB2E4\uB824\uC8FC\uC138\uC694."
+    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 1234730551}
+  energyDialogues: []
+--- !u!1 &1969011148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969011149}
+  m_Layer: 0
+  m_Name: Day 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1969011149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969011148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 455.4297, y: 109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970859583
 GameObject:
   m_ObjectHideFlags: 0
@@ -11027,7 +12283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fcd6d05de5aaae54d8348ac825734643, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11115,6 +12371,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025140728}
   m_CullTransparentMesh: 0
+--- !u!1 &2026037738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026037739}
+  - component: {fileID: 2026037740}
+  m_Layer: 0
+  m_Name: ChoiceContent_3-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2026037739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026037738}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026037740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026037738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ba81fddcc380447847c3418eb2ff71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choice:
+    answers:
+    - "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uAE34\uBC00\uD788 \uD55C\uBC88 \uB9D0\uC500\uD574
+      \uBCF4\uC138\uC694"
+    - "\uC790\uC2E0\uC774 \uC6D0\uD558\uB294 \uAC8C \uBB54\uC9C0 \uC2A4\uC2A4\uB85C\uC5D0\uAC8C
+      \uBB3C\uC5B4\uBCF4\uC138\uC694."
+  dialogueTriggers:
+  - {fileID: 1354066644}
+  - {fileID: 1960917232}
+  flag: 0
 --- !u!1 &2047975042
 GameObject:
   m_ObjectHideFlags: 0
@@ -11334,12 +12643,12 @@ GameObject:
   - component: {fileID: 2067227346}
   - component: {fileID: 2067227345}
   m_Layer: 0
-  m_Name: Conversation_1.5
+  m_Name: Conversation_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2067227345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11352,48 +12661,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3db5fe594c9122449c5900c94329b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSprite: {fileID: 21300000, guid: 7766aff7239d644459e2d4a79c8969d4, type: 3}
+  firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  dialogueManager: {fileID: 0}
   dialogue:
-  - names: "\uACE0\uC591\uC774"
-    sentences: asfdsadfasdasdfasdfasdfasdfasdfasdfsfsfdasdfasdasdf
-    Sprites: {fileID: 21300000, guid: 7766aff7239d644459e2d4a79c8969d4, type: 3}
+  - names: "\uB098"
+    sentences: "\uC5B4\uC11C\uC624\uC138\uC694~"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+    SpriteState: 
+    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
+    choiceContents: {fileID: 0}
+    makeTea: 0
+    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  - names: "\uD574\uB2EC"
+    sentences: "\uC548\uB155\uD558\uC138\uC5EC~? \uC544\uC800\uC528!"
+    Sprites: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 439461067}
     makeTea: 0
     energy: 0
-  - names: "\uACE0\uC591\uC774"
-    sentences: asdfasdfasdf
-    Sprites: {fileID: 21300000, guid: 7766aff7239d644459e2d4a79c8969d4, type: 3}
-    SpriteState: 
-    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
-    choiceContents: {fileID: 1617014499}
-    makeTea: 0
-    energy: 0
-  - names: "\uACE0\uC591\uC774"
-    sentences: asdfasdfasdf
-    Sprites: {fileID: 21300000, guid: 7766aff7239d644459e2d4a79c8969d4, type: 3}
-    SpriteState: 
-    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
-    choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-  - names: "\uB098"
-    sentences: asdfasdfasdf
-    Sprites: {fileID: 21300000, guid: 29b7ce3b44783e645b3e9266561f15ee, type: 3}
-    SpriteState: 
-    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
-    choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-  - names: "\uB098"
-    sentences: asdfasdsd
-    Sprites: {fileID: 21300000, guid: 7766aff7239d644459e2d4a79c8969d4, type: 3}
-    SpriteState: 
-    dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
-    choiceContents: {fileID: 0}
-    makeTea: 1
-    energy: 0
+    characterEnergy: 0
+    nextDialogues: {fileID: 0}
+  energyDialogues: []
 --- !u!114 &2067227346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11415,12 +12706,64 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067227344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1871245521}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2108240183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2108240185}
+  - component: {fileID: 2108240184}
+  m_Layer: 0
+  m_Name: ChoiceContent1-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2108240184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108240183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ba81fddcc380447847c3418eb2ff71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choice:
+    answers:
+    - "\uC548\uC0C9\uC774 \uC548 \uC88B\uC544 \uBCF4\uC774\uB294\uB370 \uD639\uC2DC
+      \uBB34\uC2A8 \uC77C \uC788\uC73C\uC2E0\uAC00\uC694?"
+    - "\uC624\uB298\uC740 \uBB34\uC2A8 \uC77C\uB85C \uC624\uC168\uC5B4\uC694?"
+  dialogueTriggers:
+  - {fileID: 344945102}
+  - {fileID: 1399934150}
+  flag: 0
+--- !u!4 &2108240185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108240183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -455.4297, y: -109.86328, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598850454}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132907410
 GameObject:
