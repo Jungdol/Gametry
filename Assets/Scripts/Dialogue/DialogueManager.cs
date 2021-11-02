@@ -93,6 +93,8 @@ public class DialogueManager : MonoBehaviour
 
     [HideInInspector]
     public Dialogue[] dialogue;
+    [HideInInspector]
+    public DialogueTrigger dialogueTrigger;
 
     // 말하는 지 안하는 지 체크해주는 bool 선언, 대화하는 동안 키 입력을 금지하는 bool 선언 (RPG에서 대화 시 사용)
     [HideInInspector]
@@ -251,7 +253,11 @@ public class DialogueManager : MonoBehaviour
                         energyMgr.characterEnergy = listCharacterEnergy[count - 1];
                         StopAllCoroutines();
                         Exitdialogue();
-                        StartCoroutine(EnergySetting());
+                    }
+
+                    else
+                    {
+                        Exitdialogue();
                     }
                 }
 
@@ -276,21 +282,9 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDialogueCoroutine());
     }
 
-    IEnumerator EnergySetting()
+    public void EnergySetting()
     {
-        //DialogueTrigger dialogueTrigger = dialogue[i].
-        while (!energyMgr.onClick)
-        {
-            yield return new WaitForSeconds(0.1f);
-            Debug.Log("반복");
-            if (energyMgr.onClick)
-            {
-                Debug.Log("선택");
-                Debug.Log(energyMgr.EnergySetting());
-                dialogueTrigger.energyDialogues[energyMgr.EnergySetting()].Trigger();
-                yield break;
-            }
-        }
+        dialogueTrigger.energyDialogues[energyMgr.EnergySetting()].Trigger();
     }
 
     IEnumerator ChoiceCoroutine()

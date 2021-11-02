@@ -2536,6 +2536,8 @@ MonoBehaviour:
   energy_ex: {fileID: 1326989627}
   nowEnergy: 0
   characterEnergy: 0
+  makeTeaBtn: {fileID: 0}
+  onClick: 0
 --- !u!114 &462460793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3807,6 +3809,8 @@ MonoBehaviour:
   energy_ex: {fileID: 1209908536}
   nowEnergy: 0
   characterEnergy: 0
+  makeTeaBtn: {fileID: 1209908536}
+  onClick: 0
 --- !u!114 &681840012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3852,6 +3856,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 681840011}
         m_MethodName: changeMood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1138251840}
+        m_MethodName: EnergySetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6930,6 +6945,7 @@ MonoBehaviour:
   makeTeaBtn: {fileID: 1904413612}
   buttonSound: Button
   dialogue: []
+  dialogueTrigger: {fileID: 0}
   talking: 0
 --- !u!114 &1138251841
 MonoBehaviour:
@@ -9043,6 +9059,8 @@ MonoBehaviour:
   energy_ex: {fileID: 1326989627}
   nowEnergy: 0
   characterEnergy: 0
+  makeTeaBtn: {fileID: 1209908536}
+  onClick: 0
 --- !u!1 &1492819688
 GameObject:
   m_ObjectHideFlags: 0
@@ -11319,7 +11337,7 @@ MonoBehaviour:
     makeTea: 0
     energy: 0
     characterEnergy: 0
-    nextDialogues: {fileID: 0}
+    nextDialogues: {fileID: 1059246444}
   energyDialogues: []
 --- !u!4 &1903473461
 Transform:

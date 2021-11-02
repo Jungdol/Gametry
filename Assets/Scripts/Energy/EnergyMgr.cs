@@ -22,6 +22,8 @@ public class EnergyMgr : MonoBehaviour
     public Energy nowEnergy;
     public Energy characterEnergy = Energy.Yellow;
 
+    public GameObject makeTeaBtn;
+
     public bool onClick = false;
 
     public void ShowEx()
@@ -60,7 +62,7 @@ public class EnergyMgr : MonoBehaviour
                 Debug.Log("검정!");
                 break;
         }
-        onClick = true;
+        makeTeaBtn.SetActive(false);
     }
 
     public int EnergySetting()

@@ -24,6 +24,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         var system = FindObjectOfType<DialogueManager>();
         system.dialogue = dialogue;
+        system.dialogueTrigger = this;
         system.ShowDialogue();
     }
 }
