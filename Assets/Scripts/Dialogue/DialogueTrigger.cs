@@ -14,6 +14,11 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue[] dialogue;
     public DialogueTrigger[] energyDialogues;
 
+    public void OnTrigger() // 버튼 전용
+    {
+        Trigger();
+    }
+
     public void ImageSetting()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();

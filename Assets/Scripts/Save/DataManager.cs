@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    private static DataManager instance = null;
+    public static DataManager instance = null;
     //[HideInInspector]
     //public AbilityManager abilityManager;
-    public int stage = 0;
+    public int a_Few_Days = 0;
+    public int tree_Level = 0;
+    public day now_Day = day.morning;
+    public int happy_Index = 0;
     [HideInInspector]
     public bool isData = false;
 
@@ -22,27 +25,27 @@ public class DataManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        //abilityManager = GetComponent<AbilityManager>();
         CheckData();
     }
 
     public void SaveData()
     {
         SaveData save = new SaveData();
-        //abilityManager.AbilityApply();
-        //save.nowAbilitys = abilityManager.nowAbilitys;
-        //save.abilityPoint = abilityManager.abilityPoint;
-        save.stage = stage;
+        save.a_Few_Days = a_Few_Days;
+        save.tree_Level = tree_Level;
+        save.now_Day = now_Day;
+        save.happy_Index = happy_Index;
         SaveManager.Save(save);
     }
 
     public void LoadData()
     {
         SaveData save = SaveManager.Load();
-        //abilityManager.nowAbilitys = save.nowAbilitys;
-        //abilityManager.abilityPoint = save.abilityPoint;
-        stage = save.stage;
-        //abilityManager.AbilityApply();
+        a_Few_Days = save.a_Few_Days;
+        tree_Level = save.tree_Level;
+        now_Day = save.now_Day;
+        happy_Index = save.happy_Index;
+        save.tree_Level = tree_Level;
     }
 
     public void CheckData()
@@ -57,10 +60,10 @@ public class DataManager : MonoBehaviour
     public void ResetData()
     {
         SaveData save = new SaveData();
-        //abilityManager.AbilityApply();
-        //System.Array.Clear(save.nowAbilitys, 0, 12);
-        //save.abilityPoint = 1;
-        save.stage = 0;
+        a_Few_Days = 0;
+        tree_Level = 0;
+        now_Day = day.morning;
+        happy_Index = 0;
         SaveManager.Save(save);
     }
 }

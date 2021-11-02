@@ -18,6 +18,13 @@ public class TitleMgr : MonoBehaviour
 
     public void StartBtn()
     {
+        DataManager.instance.ResetData();
+        StartCoroutine(fade.FadeOut("GameScene"));
+    }
+
+    public void ReStartBtn()
+    {
+        DataManager.instance.LoadData();
         StartCoroutine(fade.FadeOut("GameScene"));
     }
 
