@@ -21,11 +21,19 @@ public class IngameMgr : MonoBehaviour
     public GameObject[] nowDay; // 시간 (아침, 점심, 저녁)
 
     StageChange stageChange;
+
+    DialogueManager dialogueManager;
+
+    AudioManager audioManager;
+
     WaitForSeconds waitforSec = new WaitForSeconds(0.375f);
 
     void Start()
     {
         stageChange = GetComponent<StageChange>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+
         fade = GetComponent<Fade>();
         StartCoroutine(fade.FadeIn());
         DataManager.instance.LoadData();
@@ -44,6 +52,8 @@ public class IngameMgr : MonoBehaviour
         //    nowDay[i] = aFewDays[_aFewDays].transform.GetChild(i).gameObject;
         nowDay[_nowDay] = aFewDays[_aFewDays].transform.GetChild(_nowDay).gameObject;
         nowDay[_nowDay].SetActive(true);
+
+        Debug.Log(_aFewDays + " " + _nowDay);
     }
 
     public void FadeIn()
@@ -68,9 +78,40 @@ public class IngameMgr : MonoBehaviour
         StartCoroutine(SetActiveDelay());
     }
 
+    void AudioStop()
+    {
+        audioManager.Stop("Red");
+        audioManager.Stop("Green");
+        audioManager.Stop("Blue");
+        audioManager.Stop("Yellow");
+        audioManager.Stop("Black");
+    }
+
+    public void NextDayBtn()
+    {
+        AudioStop();
+        DataManager.instance.a_Few_Days += 1;
+        //DataManager.instance.happy_Index = ;
+        DataManager.instance.SaveData();
+        LoadingSceneController.LoadScene("GameScene");
+    }
+
+    public void ExitDayBtn()
+    {
+        AudioStop();
+        DataManager.instance.a_Few_Days = 0;
+        DataManager.instance.a_Few_Days += 1;
+        //DataManager.instance.happy_Index = ;
+
+        DataManager.instance.SaveData();
+        LoadingSceneController.LoadScene("FinishScene");
+    }
+
     IEnumerator SetActiveDelay()
     {
         yield return waitforSec;
         MakeTeaWindow.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+        dialogueManager.TeaDialogue();
     }
 }

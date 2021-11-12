@@ -8,6 +8,9 @@ public class Fade : MonoBehaviour
     public GameObject fade;
     public Image fadeImage;
 
+    GameObject tempFade;
+    Image tempFadeImage;
+
     public bool fadeSetActive = false;
 
     public float waitTime = 0f;
@@ -15,15 +18,23 @@ public class Fade : MonoBehaviour
     void Start()
     {
         fade.SetActive(fadeSetActive);
+        tempFade = fade;
+        tempFadeImage = fadeImage;
     }
 
-    public IEnumerator FadeIn()
+    public void FadeReset()
+    {
+        fade = tempFade;
+        fadeImage = tempFadeImage;
+    }
+
+    public IEnumerator FadeIn(float fadeCountMax = 0.0f)
     {
         fade.SetActive(true);
         yield return new WaitForSeconds(waitTime);
 
         float fadeCount = fadeImage.color.a;
-        while (fadeCount > 0.0f)
+        while (fadeCount > fadeCountMax)
         {
             fadeCount -= 0.02f;
             yield return new WaitForSeconds(0.01f);
@@ -32,12 +43,12 @@ public class Fade : MonoBehaviour
         fade.SetActive(false);
     }
 
-    public IEnumerator FadeOut(string _scene)
+    public IEnumerator FadeOut(float fadeCountMax = 1.0f, string _scene = "")
     {
         fade.SetActive(true);
 
         float fadeCount = 0;
-        while (fadeCount < 1.0f)
+        while (fadeCount < fadeCountMax)
         {
             fadeCount += 0.02f;
             yield return new WaitForSeconds(0.01f);

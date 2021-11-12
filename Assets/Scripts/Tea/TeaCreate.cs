@@ -39,10 +39,15 @@ public class TeaCreate : MonoBehaviour
 
     Animator finishTeaAnim;
 
+    DialogueManager dialogueManager;
+
     //제어 변수
     public static int throw_awayChance = 2;
 
-
+    private void Start()
+    {
+        dialogueManager = FindObjectOfType<DialogueManager>();
+    }
     //차 버리기
     public void ThrowAway()
     {
@@ -87,7 +92,22 @@ public class TeaCreate : MonoBehaviour
     //차 대접하기
     public void TreatTea()
     {
+        StartCoroutine("TeaFinish");
+    }
+
+    IEnumerator TeaFinish()
+    {
+        Animator teaBoilingAnim = FindObjectOfType<fireGauge>().gameObject.GetComponent<Animator>();
+        teaBoilingAnim.SetBool("Appear", false);
+        yield return new WaitForSeconds(0.25f);
+
+        finishTeaAnim = GetComponent<Animator>();
+        finishTeaAnim.SetBool("Appear", false);
+        yield return new WaitForSeconds(0.25f);
+
+        dialogueManager.TeaFinishDialogue();
         Debug.Log("차 제조 끝!");
+        StopCoroutine("TeaFinish");
     }
 
     //결과 출력

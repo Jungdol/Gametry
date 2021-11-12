@@ -10,6 +10,8 @@ public class PotDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
+    Animator Anim;
+
     //예외 처리 변수
     public bool dontMove = false;
     public bool BlazerReady = false;
@@ -28,6 +30,8 @@ public class PotDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
+        Anim = GetComponent<Animator>();
     }
 
     //드래그 시작!
@@ -79,5 +83,11 @@ public class PotDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     public void OnDrop(PointerEventData eventData)
     {
         throw new System.NotImplementedException();
+    }
+
+    // 물 끓는 애니메이션 적용
+    public void BoilingAnim()
+    {
+        Anim.SetBool("Appear", true);
     }
 }

@@ -2,29 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    #region Singleton
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            NewMethod();
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-
-        void NewMethod()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-    #endregion Singleton
 
     // 활성, 비활성화, 대화창 이동 목적
     [Header("대화창")]
@@ -52,15 +34,30 @@ public class DialogueManager : MonoBehaviour
 
     [Header("기 버튼")]
     public GameObject energyBtn;
+    public GameObject energyBg;
     public EnergyMgr energyMgr;
+
+    [Header("기 페이드")]
+    public GameObject energyFade;
 
     // 차 제작 버튼 선언
     [Header("차 만들기 버튼")]
     public GameObject makeTeaBtn;
 
+    [Header("물 완료 버튼")]
+    public GameObject boilTeaBtn;
+
+    [Header("다음 시간 넘기는 버튼")]
+    public GameObject nextDayButton;
+
+    [Header("영업 종료하는 버튼")]
+    public GameObject exitDayButton;
+
     // 사운드 선언
     [Header("사운드")]
     public string buttonSound;
+
+    Fade fade;
 
     // 대화창 중 대화 내용들, 이름들을 List<Sprite>로 선언
     private List<string> listNames;
@@ -86,6 +83,10 @@ public class DialogueManager : MonoBehaviour
     // 기 버튼 SetActive List<bool> 설정
     private List<bool> listEnergy;
 
+    private List<bool> listFinishTea;
+
+    private List<bool> listChoiceTea;
+
     private List<Energy> listCharacterEnergy;
 
     // 대화 진행 상황 카운트 int 선언
@@ -103,8 +104,15 @@ public class DialogueManager : MonoBehaviour
     // AudioManager 선언
     AudioManager theAudio;
 
-    int i = 0;
+    DialogueTrigger tempTrigger;
 
+    Image energyBgImage;
+
+    Button buttonDialogueWindow;
+
+    ColorBlock buttonColor;
+
+    int i = 0;
 
     void Start()
     {
@@ -130,11 +138,30 @@ public class DialogueManager : MonoBehaviour
 
         listEnergy = new List<bool>();
 
+        listFinishTea = new List<bool>();
+
+        listChoiceTea = new List<bool>();
+
         listCharacterEnergy = new List<Energy>();
 
         dialogSpeedSave();
-    }
+        
+        fade = GetComponent<Fade>();
 
+        energyBgImage = energyBg.GetComponent<Image>();
+
+        buttonDialogueWindow = rendererDialogueWindow.gameObject.GetComponent<Button>();
+
+        buttonColor = buttonDialogueWindow.colors;
+    }
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "GameScene")
+            if (rendererImage.sprite == null && rendererImage.gameObject.activeSelf)
+            {
+                rendererImage.gameObject.SetActive(false);
+            }
+    }
     public void ShowDialogue()
     {
         talking = true;
@@ -151,10 +178,13 @@ public class DialogueManager : MonoBehaviour
             listNextDialogues.Add(dialogue[i].nextDialogues);
             listMakeTea.Add(dialogue[i].makeTea);
             listEnergy.Add(dialogue[i].energy);
+            listChoiceTea.Add(dialogue[i].choiceTea);
+            listFinishTea.Add(dialogue[i].finishTea);
             listCharacterEnergy.Add(dialogue[i].characterEnergy);
         }
         // 스프라이트 애니메이션 실행
         //NextDialogue(dialogue);
+
         go.SetActive(true);
         rendererDialogueWindow.gameObject.SetActive(true);
         StartCoroutine(StartDialogueCoroutine());
@@ -172,6 +202,8 @@ public class DialogueManager : MonoBehaviour
         listNextDialogues.Clear();
         listMakeTea.Clear();
         listEnergy.Clear();
+        listChoiceTea.Clear();
+        listFinishTea.Clear();
         listCharacterEnergy.Clear();
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
@@ -193,6 +225,8 @@ public class DialogueManager : MonoBehaviour
             animSprite.SetBool("Right", false);
             animSprite.SetBool("Left", false);
         }*/
+
+        
         animDialogueWindow.SetBool("Appear", true);
     }
     void ExitSprite()
@@ -223,8 +257,18 @@ public class DialogueManager : MonoBehaviour
 
                 if (count == dialogue.Length)
                 {
-                    // 대화 수 카운트가 설정한 대화 수일 때 실행
-                    if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
+                    if (listMakeTea[count - 1] && listEnergy[count - 1] && listFinishTea[count - 1] && listChoiceTea[count - 1])
+                    {
+                        Exitdialogue();
+
+                        if (DataManager.instance.now_Day == day.afternoon)
+                            exitDayButton.SetActive(true);
+                        else
+                            nextDayButton.SetActive(true);
+                    }
+
+                        // 대화 수 카운트가 설정한 대화 수일 때 실행
+                    else if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
                     {
                         listChoiceContents[count - 1].Trigger(); // 선택지 작동
                         StopAllCoroutines();
@@ -232,33 +276,56 @@ public class DialogueManager : MonoBehaviour
                         rendererDialogueWindow.gameObject.SetActive(false);
                     }
 
-                    else if (listNextDialogues[count - 1] != null) // 다음 다이로그 있을 때
-                    {
-                        DialogueTrigger tempTrigger = listNextDialogues[count - 1];
-                        StopAllCoroutines();
-                        Exitdialogue();
-                        tempTrigger.Trigger(); // 다음 다이로그 작동
-                    }
-
                     else if (listMakeTea[count - 1])
                     {
                         makeTeaBtn.SetActive(listMakeTea[count - 1]);
+
+                        if (listNextDialogues[count - 1] != null)
+                            tempTrigger = listNextDialogues[count - 1];
+
                         StopAllCoroutines();
                         Exitdialogue();
                     }
 
                     else if (listEnergy[count - 1])
                     {
-                        energyBtn.SetActive(listEnergy[count - 1]);
-                        energyMgr.characterEnergy = listCharacterEnergy[count - 1];
+                        StopAllCoroutines();
+                        StartCoroutine(EnergyStart());
+                        StartCoroutine(fade.FadeOut(0.75f));
+                        Exitdialogue();
+                    }
+
+                    else if (listFinishTea[count - 1])
+                    {
+                        if (listNextDialogues[count - 1] != null)
+                            tempTrigger = listNextDialogues[count - 1];
+
                         StopAllCoroutines();
                         Exitdialogue();
+                    }
+
+                    else if (listChoiceTea[count - 1] == true)
+                    {
+                        dialogueTrigger = listNextDialogues[count - 1];
+                        StopAllCoroutines();
+                        Exitdialogue();
+                        dialogueTrigger.TeaChoiceDialogue();
+                    }
+
+                    else if (listNextDialogues[count - 1] != null && !listMakeTea[count - 1] || listNextDialogues[count - 1] != null && !listFinishTea[count - 1]) // 다음 다이로그 있을 때
+                    {
+                        tempTrigger = listNextDialogues[count - 1];
+                        StopAllCoroutines();
+                        Exitdialogue();
+                        tempTrigger.Trigger(); // 다음 다이로그 작동
                     }
 
                     else
                     {
                         Exitdialogue();
                     }
+
+                    
                 }
 
                 else if (listChoiceContents[count - 1] != null) // 선택지가 있을 때
@@ -267,10 +334,26 @@ public class DialogueManager : MonoBehaviour
                     rendererDialogueWindow.gameObject.SetActive(false);
                 }
 
+                else if (listChoiceTea[count - 1] == true)
+                {
+                    dialogueTrigger = listNextDialogues[count - 1];
+                    dialogueTrigger.TeaChoiceDialogue();
+                }
+
                 else
                 {
                     ConvertDialogue();
                 }
+
+                try
+                {
+                    if (listNextDialogues[count - 1] != null && listFinishTea[count - 1] == true)
+                    {
+                        tempTrigger = listNextDialogues[count - 1];
+                    }
+                }
+
+                catch { }
             }
         }
     }
@@ -282,8 +365,65 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(StartDialogueCoroutine());
     }
 
+    public void TeaFinishDialogue()
+    {
+        tempTrigger.Trigger(); // 다음 다이로그 작동
+    }
+
+    public void TeaDialogue()
+    {
+        makeTeaBtn.SetActive(false);
+        tempTrigger.Trigger(); // 다음 다이로그 작동
+    }
+
     public void EnergySetting()
     {
+        StartCoroutine(EnergyEnd());
+    }
+
+    void EnergyColor()
+    {
+        Image energyBg2Image = energyBgImage.transform.GetChild(0).GetComponent<Image>();
+        switch(listCharacterEnergy[count - 1])
+        {
+            case Energy.Red:
+                energyBgImage.color = Color.red;
+                energyBg2Image.color = Color.red;
+                break;
+            case Energy.Green:
+                energyBgImage.color = Color.green;
+                energyBg2Image.color = Color.green;
+                break;
+            case Energy.Blue:
+                energyBgImage.color = Color.blue;
+                energyBg2Image.color = Color.blue;
+                break;
+            case Energy.Yellow:
+                energyBgImage.color = Color.yellow;
+                energyBg2Image.color = Color.yellow;
+                break;
+            case Energy.Black:
+                energyBgImage.color = Color.black;
+                energyBg2Image.color = Color.black;
+                break;
+        }
+    }
+
+    IEnumerator EnergyStart()
+    {
+        fade.fade = energyFade;
+        fade.fadeImage = energyFade.GetComponent<Image>();
+        energyMgr.characterEnergy = listCharacterEnergy[count - 1];
+        EnergyColor();
+        yield return new WaitForSeconds(0.5f);
+        energyBtn.SetActive(true);
+        energyBg.SetActive(true);
+    }
+
+    IEnumerator EnergyEnd()
+    {
+        StartCoroutine(fade.FadeIn());
+        yield return new WaitForSeconds(1f);
         dialogueTrigger.energyDialogues[energyMgr.EnergySetting()].Trigger();
     }
 
@@ -298,11 +438,32 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialogueCoroutine()
     {
+        void DialogueColor(float r, float g, float b, float a)
+        {
+            Color buttonColors = new Color(r, g, b, a);
+            rendererDialogueWindow.color = buttonColors;
+
+            buttonColor.normalColor = buttonColors;
+            buttonColor.highlightedColor = buttonColors;
+            buttonColor.pressedColor = buttonColors;
+            buttonColor.selectedColor = buttonColors;
+            buttonColor.disabledColor = buttonColors;
+
+            buttonDialogueWindow.colors = buttonColor;
+        }
         Name.text += listNames[count];
         if (listNames[count] == "나")
+        {
             goRectTr.anchoredPosition = new Vector2(0, -1200);
+            DialogueColor(1, 1, 1, 1);
+        }
+        
         else
+        {
             goRectTr.anchoredPosition = new Vector2(0, 0);
+            DialogueColor(1, 1, 1, 0.5f);
+        }
+            
 
         StartSprite();
         yield return new WaitForSeconds(0.1f);
@@ -319,6 +480,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 // if문은 다 지금 출력하는 스프라이트와 전 스프라이트를 비교하고 다를 시 Change 함수를 실행, 아닐 시 시간 0.005 딜레이를 줌. 3가지 다 각각의 스프라이트이다
+
                 if (listSprites[count] != listSprites[count - 1])
                 {
                     animImage.SetBool("Change", true);
@@ -345,6 +507,15 @@ public class DialogueManager : MonoBehaviour
             text.text += listSentences[count][i];
             yield return new WaitForSeconds(dialogSpeed);
         }
+
+        try
+        {
+            if (listFinishTea[(count + 1)])
+                boilTeaBtn.SetActive(true);
+            else if (listChoiceTea[(count + 1)])
+                boilTeaBtn.SetActive(false);
+        }
+        catch { }
     }
 
     // 대화창 출력 속도를 temp에 저장

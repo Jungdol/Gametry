@@ -60,10 +60,10 @@ public class DataManager : MonoBehaviour
     public void ResetData()
     {
         SaveData save = new SaveData();
-        a_Few_Days = 0;
-        tree_Level = 0;
-        now_Day = day.morning;
-        happy_Index = 0;
+        save.a_Few_Days = 1;
+        save.tree_Level = 0;
+        save.now_Day = day.afternoon;
+        save.happy_Index = 0;
         SaveManager.Save(save);
     }
 }

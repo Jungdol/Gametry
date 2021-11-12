@@ -19,7 +19,9 @@ public class Test1 : MonoBehaviour
 
     IEnumerator StartDialouge()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.instance.Play("DoorBell");
+        yield return new WaitForSeconds(0.5f);
         Image.SetActive(true);
 
         yield return new WaitForSeconds(0.5f);

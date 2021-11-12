@@ -31,6 +31,7 @@ public class TeaSelect : MonoBehaviour
 
     AudioManager theAudio;
 
+    Animator potAnim;
 
     public static int tea_number = 0;
     public int send_num;
@@ -38,6 +39,7 @@ public class TeaSelect : MonoBehaviour
     private void Start()
     {
         theAudio = FindObjectOfType<AudioManager>();
+        potAnim = FindObjectOfType<PotDragNDrop>().gameObject.GetComponent<Animator>();
     }
 
     bool isTwoCases(TeaMaterial _teaMaterial1, TeaMaterial _teaMaterial2)
@@ -222,9 +224,12 @@ public class TeaSelect : MonoBehaviour
 
     public void TeaMake()
     {
-        Debug.Log("차 번호 : " + tea_number);
-        send_num = tea_number;
+        if (potAnim.GetBool("Appear"))
+        {
+            Debug.Log("차 번호 : " + tea_number);
+            send_num = tea_number;
 
-        teaCreate.FinishTea();
+            teaCreate.FinishTea();
+        }
     }
 }

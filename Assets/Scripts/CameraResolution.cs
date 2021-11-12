@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class CameraResolution : MonoBehaviour
 {
-    /*
+    public SpriteRenderer background;
     void Awake()
     {
         Camera camera = GetComponent<Camera>();
-        Rect rect = camera.rect;
-        float scaleheight = ((float)Screen.width / Screen.height) / ((float)9 / 16);
-        float scalewidth = 1f / scaleheight;
-        if (scaleheight < 1)
-        {
-            rect.height = scaleheight;
-            rect.y = (1f - scaleheight) / 2f;
-        }
-        else
-        {
-            rect.width = scalewidth;
-            rect.x = (1f - scalewidth) / 2f;
-        }
-        camera.rect = rect;
+        float scaleheight = ((float)Screen.width / Screen.height) / ((float)3 / 4);
+        float scalewidth = 1f * scaleheight;
+        float spriteHeight = 1f * scalewidth;
+
+        background.transform.localScale = new Vector3 (scalewidth, spriteHeight, background.transform.localScale.z);
     }
-    */
+    
 }

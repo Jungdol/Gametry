@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum Energy
 {
-    Yellow,
-    Blue,
     Red,
     Green,
+    Blue,
+    Yellow,
     Black
 }
 
@@ -23,6 +23,7 @@ public class EnergyMgr : MonoBehaviour
     public Energy characterEnergy = Energy.Yellow;
 
     public GameObject makeTeaBtn;
+    public GameObject energyBg;
 
     public bool onClick = false;
 
@@ -63,6 +64,7 @@ public class EnergyMgr : MonoBehaviour
                 break;
         }
         makeTeaBtn.SetActive(false);
+        energyBg.SetActive(false);
     }
 
     public int EnergySetting()
