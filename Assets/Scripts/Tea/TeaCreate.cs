@@ -27,7 +27,7 @@ public class TeaCreate : MonoBehaviour
 
     [Header("컷씬")]
     public Image Bg;
-    public GameObject cutscene;
+    public GameObject cutScene;
     public Image[] cutSceneImage;
 
     [Header("차 완성 이미지")]
@@ -41,12 +41,15 @@ public class TeaCreate : MonoBehaviour
 
     DialogueManager dialogueManager;
 
+    UIResolution uiResolution;
+
     //제어 변수
     public static int throw_awayChance = 2;
 
     private void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
+        uiResolution = FindObjectOfType<UIResolution>();
     }
     //차 버리기
     public void ThrowAway()
@@ -77,9 +80,12 @@ public class TeaCreate : MonoBehaviour
 
     IEnumerator cutSceneActive()
     {
+        Animator cutSceneAnim = cutScene.GetComponent<Animator>();
         yield return new WaitForSeconds(0.5f);
-        cutscene.SetActive(true);
+        cutScene.SetActive(true);
+        cutSceneAnim.SetBool("is3:4", uiResolution.is3_4);
         yield return new WaitForSeconds(1.1f);
+
         StartCoroutine(FadeIn(cutSceneImage[0]));
         StartCoroutine(FadeIn(cutSceneImage[1]));
         StartCoroutine(FadeIn(cutSceneImage[2]));

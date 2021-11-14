@@ -89,5 +89,7 @@ public class PotDragNDrop : MonoBehaviour, IPointerDownHandler, IEndDragHandler,
     public void BoilingAnim()
     {
         Anim.SetBool("Appear", true);
+        AudioManager.instance.Play("Boiling");
+        AudioManager.instance.Play("Fire");
     }
 }

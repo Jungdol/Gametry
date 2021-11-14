@@ -6,7 +6,7 @@ public class ChoiceContent : MonoBehaviour
 {
     [SerializeField]
     public Choice choice;
-
+    public int correctAnswer;
     public GameObject[] dialogueTriggers;
 
     public bool flag;
@@ -38,6 +38,12 @@ public class ChoiceContent : MonoBehaviour
 
         dialogueTriggers[result].SetActive(true);
         dialogueTrigger.Trigger();
+
+        if (result == correctAnswer)
+        {
+            StageChange.instance.happyIndex += 10; // 맞는 답이면 행복지수 10 증가
+        }
+            
 
         return result;
     }

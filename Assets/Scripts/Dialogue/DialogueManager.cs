@@ -4,6 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum SystemState
+{
+    NONE,
+    ENERGY,
+    MAKE_TEA,
+    FINISH_TEA,
+    //TASTE_TEA,
+    CHOICE_TEA,
+    EXIT
+}
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
@@ -77,15 +88,7 @@ public class DialogueManager : MonoBehaviour
     // 다음 다이로그 선언
     private List<DialogueTrigger> listNextDialogues;
 
-    // 차 제작 버튼 SetActive List<bool> 설정
-    private List<bool> listMakeTea;
-
-    // 기 버튼 SetActive List<bool> 설정
-    private List<bool> listEnergy;
-
-    private List<bool> listFinishTea;
-
-    private List<bool> listChoiceTea;
+    public List<SystemState> listSystemState;
 
     private List<Energy> listCharacterEnergy;
 
@@ -134,13 +137,7 @@ public class DialogueManager : MonoBehaviour
 
         listNextDialogues = new List<DialogueTrigger>();
 
-        listMakeTea = new List<bool>();
-
-        listEnergy = new List<bool>();
-
-        listFinishTea = new List<bool>();
-
-        listChoiceTea = new List<bool>();
+        listSystemState = new List<SystemState>();
 
         listCharacterEnergy = new List<Energy>();
 
@@ -176,10 +173,7 @@ public class DialogueManager : MonoBehaviour
             listDialogueWindows.Add(dialogue[i].dialogueWindows);
             listChoiceContents.Add(dialogue[i].choiceContents);
             listNextDialogues.Add(dialogue[i].nextDialogues);
-            listMakeTea.Add(dialogue[i].makeTea);
-            listEnergy.Add(dialogue[i].energy);
-            listChoiceTea.Add(dialogue[i].choiceTea);
-            listFinishTea.Add(dialogue[i].finishTea);
+            listSystemState.Add(dialogue[i].systemState);
             listCharacterEnergy.Add(dialogue[i].characterEnergy);
         }
         // 스프라이트 애니메이션 실행
@@ -200,10 +194,7 @@ public class DialogueManager : MonoBehaviour
         listDialogueWindows.Clear();
         listChoiceContents.Clear();
         listNextDialogues.Clear();
-        listMakeTea.Clear();
-        listEnergy.Clear();
-        listChoiceTea.Clear();
-        listFinishTea.Clear();
+        listSystemState.Clear();
         listCharacterEnergy.Clear();
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
@@ -257,7 +248,7 @@ public class DialogueManager : MonoBehaviour
 
                 if (count == dialogue.Length)
                 {
-                    if (listMakeTea[count - 1] && listEnergy[count - 1] && listFinishTea[count - 1] && listChoiceTea[count - 1])
+                    if (listSystemState[count-1] == SystemState.EXIT)
                     {
                         Exitdialogue();
 
@@ -276,9 +267,9 @@ public class DialogueManager : MonoBehaviour
                         rendererDialogueWindow.gameObject.SetActive(false);
                     }
 
-                    else if (listMakeTea[count - 1])
+                    else if (listSystemState[count - 1] == SystemState.MAKE_TEA)
                     {
-                        makeTeaBtn.SetActive(listMakeTea[count - 1]);
+                        makeTeaBtn.SetActive(true);
 
                         if (listNextDialogues[count - 1] != null)
                             tempTrigger = listNextDialogues[count - 1];
@@ -287,7 +278,7 @@ public class DialogueManager : MonoBehaviour
                         Exitdialogue();
                     }
 
-                    else if (listEnergy[count - 1])
+                    else if (listSystemState[count - 1] == SystemState.ENERGY)
                     {
                         StopAllCoroutines();
                         StartCoroutine(EnergyStart());
@@ -295,7 +286,7 @@ public class DialogueManager : MonoBehaviour
                         Exitdialogue();
                     }
 
-                    else if (listFinishTea[count - 1])
+                    else if (listSystemState[count - 1] == SystemState.FINISH_TEA)
                     {
                         if (listNextDialogues[count - 1] != null)
                             tempTrigger = listNextDialogues[count - 1];
@@ -304,15 +295,12 @@ public class DialogueManager : MonoBehaviour
                         Exitdialogue();
                     }
 
-                    else if (listChoiceTea[count - 1] == true)
+                    else if (listSystemState[count - 1] == SystemState.CHOICE_TEA)
                     {
-                        dialogueTrigger = listNextDialogues[count - 1];
-                        StopAllCoroutines();
-                        Exitdialogue();
-                        dialogueTrigger.TeaChoiceDialogue();
+                        StartCoroutine(TasteTea());
                     }
 
-                    else if (listNextDialogues[count - 1] != null && !listMakeTea[count - 1] || listNextDialogues[count - 1] != null && !listFinishTea[count - 1]) // 다음 다이로그 있을 때
+                    else if (listNextDialogues[count - 1] != null && listSystemState[count - 1] != SystemState.MAKE_TEA || listNextDialogues[count - 1] != null && listSystemState[count - 1] != SystemState.FINISH_TEA) // 다음 다이로그 있을 때
                     {
                         tempTrigger = listNextDialogues[count - 1];
                         StopAllCoroutines();
@@ -334,7 +322,7 @@ public class DialogueManager : MonoBehaviour
                     rendererDialogueWindow.gameObject.SetActive(false);
                 }
 
-                else if (listChoiceTea[count - 1] == true)
+                else if (listSystemState[count - 1] == SystemState.CHOICE_TEA)
                 {
                     dialogueTrigger = listNextDialogues[count - 1];
                     dialogueTrigger.TeaChoiceDialogue();
@@ -347,7 +335,7 @@ public class DialogueManager : MonoBehaviour
 
                 try
                 {
-                    if (listNextDialogues[count - 1] != null && listFinishTea[count - 1] == true)
+                    if (listNextDialogues[count - 1] != null && listSystemState[count - 1] == SystemState.FINISH_TEA)
                     {
                         tempTrigger = listNextDialogues[count - 1];
                     }
@@ -409,6 +397,30 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    IEnumerator TasteTea()
+    {
+        tempTrigger = listNextDialogues[count - 1];
+        Exitdialogue();
+        animImage.SetBool("Change", true);
+        yield return new WaitForSeconds(0.5f);
+
+        rendererImage.sprite = dialogueTrigger.tasteTeaSprite;
+        animImage.SetBool("Change", false);
+        yield return new WaitForSeconds(1.5f);
+
+        animImage.SetBool("Change", true);
+        yield return new WaitForSeconds(0.5f);
+        TeaChoiceDialogue();
+    }
+
+    void TeaChoiceDialogue()
+    {
+        StopAllCoroutines();
+        Exitdialogue();
+        tempTrigger.TeaChoiceDialogue();
+        animImage.SetBool("Change", false);
+    }
+
     IEnumerator EnergyStart()
     {
         fade.fade = energyFade;
@@ -451,10 +463,12 @@ public class DialogueManager : MonoBehaviour
 
             buttonDialogueWindow.colors = buttonColor;
         }
+
+        dialogSpeedImport();
         Name.text += listNames[count];
         if (listNames[count] == "나")
         {
-            goRectTr.anchoredPosition = new Vector2(0, -1200);
+            goRectTr.anchoredPosition = new Vector2(0, -1150);
             DialogueColor(1, 1, 1, 1);
         }
         
@@ -463,11 +477,10 @@ public class DialogueManager : MonoBehaviour
             goRectTr.anchoredPosition = new Vector2(0, 0);
             DialogueColor(1, 1, 1, 0.5f);
         }
-            
 
         StartSprite();
         yield return new WaitForSeconds(0.1f);
-        dialogSpeedImport();
+
         // if문 만약 count가 0보다 클 시 실행
         if (count > 0)
         {
@@ -510,9 +523,9 @@ public class DialogueManager : MonoBehaviour
 
         try
         {
-            if (listFinishTea[(count + 1)])
+            if (listSystemState[count + 1] == SystemState.FINISH_TEA)
                 boilTeaBtn.SetActive(true);
-            else if (listChoiceTea[(count + 1)])
+            else if (listSystemState[count + 1] == SystemState.CHOICE_TEA)
                 boilTeaBtn.SetActive(false);
         }
         catch { }

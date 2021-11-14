@@ -5,6 +5,27 @@ using UnityEngine.UI;
 
 public class StageChange : MonoBehaviour
 {
+    public static StageChange instance;
+    #region Singleton
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            NewMethod();
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+        void NewMethod()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    #endregion Singleton
+
     [Header("행복지수 이미지")]
     public Image happyBar;
 
@@ -25,9 +46,10 @@ public class StageChange : MonoBehaviour
     public float happyIndex = 0;
 
     float happyMax = 100;
+    int treeLevel;
+
     [HideInInspector]
     public int nowDay;
-    int treeLevel;
 
     private void Start()
     {

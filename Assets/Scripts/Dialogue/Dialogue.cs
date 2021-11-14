@@ -17,10 +17,8 @@ public class Dialogue
 
     public Sprite dialogueWindows;
     public ChoiceContent choiceContents;
-    public bool makeTea;
-    public bool energy;
-    public bool finishTea;
-    public bool choiceTea;
+
+    public SystemState systemState;
 
     public Energy characterEnergy;
 

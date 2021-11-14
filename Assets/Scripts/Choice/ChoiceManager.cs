@@ -6,25 +6,6 @@ using UnityEngine.UI;
 public class ChoiceManager : MonoBehaviour
 {
     public static ChoiceManager instance;
-    #region Singleton
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            NewMethod();
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-
-        void NewMethod()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-    #endregion Singleton
 
     private AudioManager theAudio;
     private List<string> answerList;

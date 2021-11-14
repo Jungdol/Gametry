@@ -7,6 +7,9 @@ public class DialogueTrigger : MonoBehaviour
     [Header("맨 처음 등장할 때")]
     public Sprite firstSprite;
 
+    [Header("차 마시는 이미지")]
+    public Sprite tasteTeaSprite;
+
     [HideInInspector]
     public DialogueManager dialogueManager;
 
@@ -21,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        teaCreate = FindObjectOfType<TeaCreate>().GetComponent<TeaCreate>();
+        teaCreate = FindObjectOfType<TeaCreate>();
     }
     public void OnTrigger() // 버튼 전용
     {
@@ -33,7 +36,26 @@ public class DialogueTrigger : MonoBehaviour
         for (int i = 0; i < teaFinishNum.Length; i++)
         {
             if (teaCreate.teaSelect.send_num == teaFinishNum[i])
+            {
                 teaFinishDialogues[i].Trigger();
+                TeaHappyIndex(i);
+            }
+        }
+    }
+
+    void TeaHappyIndex(int i)
+    {
+        switch (teaFinishNum[i])
+        {
+            case 0:
+                StageChange.instance.happyIndex += 20;
+                break;
+            case 1:
+                StageChange.instance.happyIndex += 10;
+                break;
+            case 2:
+                StageChange.instance.happyIndex += -10;
+                break;
         }
     }
 

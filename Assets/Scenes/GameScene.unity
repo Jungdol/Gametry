@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uD574\uB2EC"
@@ -173,10 +174,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -185,10 +183,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 1
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -464,8 +459,9 @@ RectTransform:
   - {fileID: 2063196623}
   - {fileID: 1018202205}
   - {fileID: 826275685}
+  - {fileID: 1993978057}
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -502,7 +498,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -576,12 +572,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1020}
-  m_SizeDelta: {x: 1440, y: 2048}
+  m_AnchoredPosition: {x: 0, y: 960}
+  m_SizeDelta: {x: 1440, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117019719
 MonoBehaviour:
@@ -812,7 +808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 340, y: -790}
+  m_AnchoredPosition: {x: 250, y: -760}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144178935
@@ -861,6 +857,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1919227052}
         m_MethodName: TreatTea
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1342507602}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -937,12 +944,12 @@ RectTransform:
   - {fileID: 694618839}
   - {fileID: 1970859586}
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &221210031
 GameObject:
@@ -975,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: 209a415be8bbe83479c10bb5a7978d66, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -983,10 +991,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 439461067}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -995,10 +1000,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 1617014499}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -1007,10 +1009,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -1019,10 +1018,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -1031,10 +1027,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -1052,7 +1045,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221210034
 MonoBehaviour:
@@ -1106,7 +1099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 540.35}
+  m_AnchoredPosition: {x: 0, y: 540}
   m_SizeDelta: {x: 1080, y: 840}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232576980
@@ -1783,7 +1776,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2049,6 +2042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -2058,10 +2052,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 1607716089}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -2590,6 +2581,7 @@ MonoBehaviour:
       \uC77C\uC774 \uC788\uB098\uBD10\uC694?"
     - "\uC694\uC998\uB530\uB77C \uD558\uACE0 \uC2F6\uC740\uAC70\uB098 \uCDE8\uBBF8
       \uC788\uC5B4\uC694?"
+  correctAnswer: 0
   dialogueTriggers:
   - {fileID: 964019943}
   - {fileID: 1003232002}
@@ -3091,6 +3083,7 @@ GameObject:
   - component: {fileID: 517394169}
   - component: {fileID: 517394168}
   - component: {fileID: 517394167}
+  - component: {fileID: 517394171}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3169,14 +3162,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1875786708}
   - {fileID: 543431774}
-  - {fileID: 1779643082}
-  - {fileID: 772972459}
-  - {fileID: 1707451917}
-  - {fileID: 1919227051}
-  - {fileID: 1229416732}
-  - {fileID: 595621888}
-  - {fileID: 891293970}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 1, y: 0, z: 0}
@@ -3185,6 +3172,79 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &517394171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517394166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2652fcfb48f7d8d4fbe4e63725ce7c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiSize: {fileID: 1875786708}
+  Scene: 
+  is3_4: 1
+--- !u!1 &523090554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523090556}
+  - component: {fileID: 523090555}
+  m_Layer: 0
+  m_Name: StageChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &523090555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523090554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2af9a058c91774eb57c7f54b472701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happyBar: {fileID: 2135709556}
+  stageBackground: {fileID: 670687555}
+  table: {fileID: 117019719}
+  stages:
+  - {fileID: 21300000, guid: 6346a87f51c715d4b8e1e4cfc73989c5, type: 3}
+  - {fileID: 21300000, guid: 57047cf48425dd74392e194c025191ed, type: 3}
+  - {fileID: 21300000, guid: 51a7a3d527d5ea64ea9b4fe630a5405c, type: 3}
+  tables:
+  - {fileID: 21300000, guid: ab1c561311bda3b428702dbacefe32c9, type: 3}
+  - {fileID: 21300000, guid: a8810432ca6c54149ac6f025cbfab9e0, type: 3}
+  - {fileID: 21300000, guid: 8389800fdc2b9ff43baa6762863aabbf, type: 3}
+  tree: {fileID: 0}
+  treeSprites: []
+  happyIndex: 0
+  nowDay: 0
+--- !u!4 &523090556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523090554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543431773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,7 +3277,7 @@ RectTransform:
   m_Children:
   - {fileID: 443003150}
   m_Father: {fileID: 517394170}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3267,7 +3327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1138251842}
+      - m_Target: {fileID: 0}
         m_MethodName: Trigger
         m_Mode: 1
         m_Arguments:
@@ -3380,7 +3440,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1536, y: 2048}
+  m_SizeDelta: {x: 1440, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578297134
 MonoBehaviour:
@@ -3508,14 +3568,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595621887}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1114989780}
   - {fileID: 271159331}
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 6
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4073,7 +4133,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4095,8 +4155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f27dbe24b63eb34da7983cd1a81102a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy1: {fileID: 1760110714}
-  energy2: {fileID: 1247130304}
+  energy1: {fileID: 2015789372}
+  energy2: {fileID: 760984454}
   energy_ex: {fileID: 1209908536}
   nowEnergy: 0
   characterEnergy: 0
@@ -4186,9 +4246,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1489195497}
   m_Father: {fileID: 1209908537}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4619,7 +4680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 7.499999}
+  m_AnchoredPosition: {x: 0, y: 7.5}
   m_SizeDelta: {x: 0, y: -15.000002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735168577
@@ -4825,6 +4886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -4834,10 +4896,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 2026037740}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -4929,6 +4988,8 @@ GameObject:
   - component: {fileID: 760984453}
   - component: {fileID: 760984457}
   - component: {fileID: 760984456}
+  - component: {fileID: 760984455}
+  - component: {fileID: 760984454}
   m_Layer: 5
   m_Name: right_Energy
   m_TagString: Untagged
@@ -4947,14 +5008,98 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1247130303}
-  m_RootOrder: 0
+  m_Father: {fileID: 1209908537}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -650}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -200, y: -650}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &760984454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760984452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8360d1d9f9881f4eba7ad2276048b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 681840010}
+  sprite:
+  - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
+  - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
+  - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
+  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
+  - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
+--- !u!114 &760984455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760984452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 760984456}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 760984454}
+        m_MethodName: nextEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 760984454}
+        m_MethodName: EnergyBgm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &760984456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5090,7 +5235,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772972458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5099,8 +5244,8 @@ RectTransform:
   - {fileID: 312115766}
   - {fileID: 1213251837}
   - {fileID: 128636808}
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 2
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5307,7 +5452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -660}
+  m_AnchoredPosition: {x: 0, y: -600}
   m_SizeDelta: {x: 1080, y: 840}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826275687
@@ -5323,7 +5468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5666,6 +5811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -5674,10 +5820,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1059246444}
   energyDialogues: []
@@ -5726,8 +5869,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 7
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5890,11 +6033,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1288, y: -340}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -340}
   m_SizeDelta: {x: 175, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929526814
@@ -6174,8 +6317,8 @@ GameObject:
   - component: {fileID: 956665158}
   - component: {fileID: 956665157}
   - component: {fileID: 956665156}
-  - component: {fileID: 956665160}
   - component: {fileID: 956665161}
+  - component: {fileID: 956665160}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6219,7 +6362,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 10.24
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6261,9 +6404,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lensFlareType: 2
-  saturation: 0.25
-  threshold: 0.75
-  flareIntensity: 0.72
+  saturation: 0.76
+  threshold: 0.804
+  flareIntensity: 2.47
   bloomIntensity: 0.99
   iterations: 0
   blurSpread: 0
@@ -6283,10 +6426,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lensFlareType: 1
-  saturation: -0.6
-  threshold: 0.934
-  flareIntensity: 1.46
-  bloomIntensity: 2.45
+  saturation: -0.17
+  threshold: 0.939
+  flareIntensity: 5.27
+  bloomIntensity: 5
   iterations: 0
   blurSpread: 0
   downsample: 6
@@ -6430,6 +6573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uD574\uB2EC"
@@ -6440,10 +6584,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -6453,10 +6594,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uD574\uB2EC"
@@ -6468,10 +6606,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -6481,10 +6616,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 583422}
   energyDialogues: []
@@ -6541,7 +6673,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1536, y: 2048}
+  m_SizeDelta: {x: 1440, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974829351
 MonoBehaviour:
@@ -6711,6 +6843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uD574\uB2EC"
@@ -6721,10 +6854,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -6734,10 +6864,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 583422}
   energyDialogues: []
@@ -6917,6 +7044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -6925,10 +7053,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1574942093}
   energyDialogues: []
@@ -6969,7 +7094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: -635}
+  m_AnchoredPosition: {x: 465, y: -600}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018202206
@@ -7215,7 +7340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 7.499999}
+  m_AnchoredPosition: {x: 0, y: 7.5}
   m_SizeDelta: {x: 0, y: -15.000002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050665664
@@ -7289,6 +7414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uB098"
@@ -7298,10 +7424,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 1
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 2
     characterEnergy: 0
     nextDialogues: {fileID: 741040267}
   energyDialogues: []
@@ -7365,6 +7488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -7373,10 +7497,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1234730551}
   energyDialogues: []
@@ -7541,7 +7662,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1138251839}
   - component: {fileID: 1138251838}
-  - component: {fileID: 1138251842}
   - component: {fileID: 1138251837}
   - component: {fileID: 1138251841}
   - component: {fileID: 1138251840}
@@ -7604,7 +7724,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1138251840
 MonoBehaviour:
@@ -7662,36 +7782,10 @@ MonoBehaviour:
   nextDayButton: {fileID: 13403995}
   exitDayButton: {fileID: 733566602}
   buttonSound: Button
+  listSystemState: 
   dialogue: []
   dialogueTrigger: {fileID: 0}
   talking: 0
---- !u!114 &1138251842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138251836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2af9a058c91774eb57c7f54b472701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  happyBar: {fileID: 2135709556}
-  stageBackground: {fileID: 670687555}
-  table: {fileID: 117019719}
-  stages:
-  - {fileID: 21300000, guid: 6346a87f51c715d4b8e1e4cfc73989c5, type: 3}
-  - {fileID: 21300000, guid: 57047cf48425dd74392e194c025191ed, type: 3}
-  - {fileID: 21300000, guid: 51a7a3d527d5ea64ea9b4fe630a5405c, type: 3}
-  tables:
-  - {fileID: 21300000, guid: ab1c561311bda3b428702dbacefe32c9, type: 3}
-  - {fileID: 21300000, guid: a8810432ca6c54149ac6f025cbfab9e0, type: 3}
-  - {fileID: 21300000, guid: 8389800fdc2b9ff43baa6762863aabbf, type: 3}
-  tree: {fileID: 0}
-  treeSprites: []
-  happyIndex: 0
-  nowDay: 0
 --- !u!1 &1165780920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7723,7 +7817,7 @@ Transform:
   - {fileID: 1598850454}
   - {fileID: 1727032703}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209908536
 GameObject:
@@ -7752,10 +7846,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2015789376}
+  - {fileID: 760984453}
   - {fileID: 681840014}
-  - {fileID: 1760110713}
-  - {fileID: 1247130303}
-  - {fileID: 1489195497}
   - {fileID: 1326989628}
   m_Father: {fileID: 1779643082}
   m_RootOrder: 15
@@ -7996,8 +8089,8 @@ RectTransform:
   - {fileID: 33680237}
   - {fileID: 594460287}
   - {fileID: 1687469072}
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 5
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -8104,6 +8197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -8115,10 +8209,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -8129,10 +8220,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -8142,10 +8230,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -8155,10 +8240,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -8167,178 +8249,14 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 1
-    finishTea: 0
-    choiceTea: 0
-    characterEnergy: 4
+    systemState: 1
+    characterEnergy: 1
     nextDialogues: {fileID: 0}
   energyDialogues:
   - {fileID: 1903473460}
   - {fileID: 875336086}
   teaFinishNum: 
   teaFinishDialogues: []
---- !u!1 &1247130302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1247130303}
-  - component: {fileID: 1247130307}
-  - component: {fileID: 1247130306}
-  - component: {fileID: 1247130305}
-  - component: {fileID: 1247130304}
-  m_Layer: 5
-  m_Name: right_EnergyBtn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1247130303
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247130302}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 760984453}
-  m_Father: {fileID: 1209908537}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
-  m_SizeDelta: {x: 400, y: 1920}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1247130304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247130302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8360d1d9f9881f4eba7ad2276048b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 681840010}
-  sprite:
-  - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
-  - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
-  - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
-  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
-  - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
---- !u!114 &1247130305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247130302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1247130306}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1247130304}
-        m_MethodName: nextEnergy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1247130304}
-        m_MethodName: EnergyBgm
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1247130306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247130302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1247130307
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247130302}
-  m_CullTransparentMesh: 0
 --- !u!1 &1282065497
 GameObject:
   m_ObjectHideFlags: 0
@@ -8540,6 +8458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uB098"
@@ -8548,10 +8467,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -8560,10 +8476,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 2108240184}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -8689,7 +8602,7 @@ RectTransform:
   - {fileID: 1680611924}
   - {fileID: 462460791}
   m_Father: {fileID: 1209908537}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8764,7 +8677,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 2
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -8828,6 +8741,17 @@ MonoBehaviour:
       - m_Target: {fileID: 283639359}
         m_MethodName: BoilingAnim
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 842385000}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8917,6 +8841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -8926,10 +8851,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -8939,10 +8861,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 1
-    choiceTea: 0
+    systemState: 3
     characterEnergy: 0
     nextDialogues: {fileID: 1758580197}
   energyDialogues: []
@@ -8980,7 +8899,7 @@ RectTransform:
   m_Children:
   - {fileID: 695972296}
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9122,6 +9041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -9130,10 +9050,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1574942093}
   energyDialogues: []
@@ -9183,19 +9100,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
     sentences: "\uC790\uC2E0\uAC10\uC774 \uC0DD\uAE30\uB294 \uAC83 \uAC19\uC544\uC694.
       \uB9C8\uC74C\uB3C4 \uD3B8\uC548\uD558\uAD6C\uC694. "
-    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    Sprites: {fileID: 21300000, guid: d5432450589c343498957933eb4d38fa, type: 3}
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1574942093}
   energyDialogues: []
@@ -9231,6 +9146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -9240,10 +9156,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 1607716089}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -10041,12 +9954,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1209908537}
-  m_RootOrder: 3
+  m_Father: {fileID: 681840014}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -810}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 40, y: -10.000061}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489195498
@@ -10781,6 +10694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uB098"
@@ -10789,10 +10703,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -10802,10 +10713,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uACE0\uC591\uC774"
@@ -10815,10 +10723,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -10827,10 +10732,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1594764507}
   energyDialogues: []
@@ -10880,6 +10782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 0}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uB098"
@@ -10888,10 +10791,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 1
-    energy: 1
-    finishTea: 1
-    choiceTea: 1
+    systemState: 5
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -10996,6 +10896,7 @@ MonoBehaviour:
     - "\uACE0\uC0DD\uC774 \uB9CE\uC73C\uC2DC\uB124\uC694. \uB9C8\uC74C\uACE0\uC0DD\uC774
       \uC2EC\uD558\uC168\uACA0\uC5B4\uC694."
     - "\uC774\uB7F0... \uB9C8\uBB34\uB9AC\uB294 \uC798 \uB418\uC5C8\uB098\uC694?"
+  correctAnswer: 0
   dialogueTriggers:
   - {fileID: 1075944418}
   - {fileID: 1790734538}
@@ -11035,6 +10936,7 @@ MonoBehaviour:
       \uBCF4\uC138\uC694"
     - "\uC790\uC2E0\uC774 \uC6D0\uD558\uB294 \uAC8C \uBB54\uC9C0\n\uC2A4\uC2A4\uB85C\uC5D0\uAC8C
       \uBB3C\uC5B4\uBCF4\uC138\uC694 "
+  correctAnswer: 0
   dialogueTriggers: []
   flag: 0
 --- !u!4 &1617014500
@@ -11085,7 +10987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 7.499999}
+  m_AnchoredPosition: {x: 0, y: 7.5}
   m_SizeDelta: {x: 0, y: -15.000002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620892882
@@ -11567,13 +11469,13 @@ RectTransform:
   - {fileID: 1443275823}
   - {fileID: 1415518184}
   - {fileID: 842385001}
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 3
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1745, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1750, y: 0}
+  m_SizeDelta: {x: -0.00012207031, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707451918
 MonoBehaviour:
@@ -11842,6 +11744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 21300000, guid: 5bc2f69b07945af41be22f6d6f48287f, type: 3}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uB098"
@@ -11850,10 +11753,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 1
+    systemState: 4
     characterEnergy: 0
     nextDialogues: {fileID: 1758580197}
   energyDialogues: []
@@ -11862,167 +11762,6 @@ MonoBehaviour:
   - {fileID: 1397001357}
   - {fileID: 1011946901}
   - {fileID: 1377498115}
---- !u!1 &1760110712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1760110713}
-  - component: {fileID: 1760110717}
-  - component: {fileID: 1760110716}
-  - component: {fileID: 1760110715}
-  - component: {fileID: 1760110714}
-  m_Layer: 5
-  m_Name: left_EnergyBtn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1760110713
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760110712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2015789376}
-  m_Father: {fileID: 1209908537}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 400, y: 1920}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1760110714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760110712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8360d1d9f9881f4eba7ad2276048b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 681840010}
-  sprite:
-  - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
-  - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
-  - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
-  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
-  - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
---- !u!114 &1760110715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760110712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1760110716}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1760110714}
-        m_MethodName: preEnergy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1760110714}
-        m_MethodName: EnergyBgm
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1760110716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760110712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1760110717
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760110712}
-  m_CullTransparentMesh: 0
 --- !u!1 &1779643081
 GameObject:
   m_ObjectHideFlags: 0
@@ -12046,13 +11785,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779643081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 243624070}
   - {fileID: 674046311}
-  - {fileID: 1342507603}
   - {fileID: 110634339}
   - {fileID: 1998193229}
   - {fileID: 2019947923}
@@ -12064,12 +11802,13 @@ RectTransform:
   - {fileID: 168318813}
   - {fileID: 99473377}
   - {fileID: 1371747605}
+  - {fileID: 1342507603}
   - {fileID: 1904413613}
   - {fileID: 1209908537}
   - {fileID: 13403996}
   - {fileID: 733566603}
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 1
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12120,6 +11859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -12129,10 +11869,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1234730551}
   energyDialogues: []
@@ -12184,7 +11921,7 @@ MonoBehaviour:
     loop: 0
   - name: DoorBell
     clip: {fileID: 8300000, guid: 954e0dd9796f1784bbf8e8a6d0697071, type: 3}
-    volumn: 0.25
+    volumn: 0.2
     output: SFX
     loop: 0
   - name: Red
@@ -12212,6 +11949,16 @@ MonoBehaviour:
     volumn: 0.2
     output: BGM
     loop: 1
+  - name: Boiling
+    clip: {fileID: 8300000, guid: 1d45fb52f93732442bb0ef4dbea6bd97, type: 3}
+    volumn: 0.7
+    output: SFX
+    loop: 1
+  - name: Fire
+    clip: {fileID: 8300000, guid: 74da5657acc04e64784c301e51988405, type: 3}
+    volumn: 0.3
+    output: SFX
+    loop: 1
 --- !u!4 &1818923928
 Transform:
   m_ObjectHideFlags: 0
@@ -12220,11 +11967,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818923926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.775124, y: 948.0661, z: -831.38257}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1818923929
 MonoBehaviour:
@@ -12276,7 +12023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824522431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12297,7 +12044,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1440, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1824522432
 Animator:
@@ -12354,6 +12101,62 @@ Transform:
   m_Father: {fileID: 1897386402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1875786707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875786708}
+  - component: {fileID: 1875786709}
+  m_Layer: 5
+  m_Name: Resolution
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1875786708
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875786707}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1779643082}
+  - {fileID: 772972459}
+  - {fileID: 1707451917}
+  - {fileID: 1919227051}
+  - {fileID: 1229416732}
+  - {fileID: 595621888}
+  - {fileID: 891293970}
+  m_Father: {fileID: 517394170}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1440, y: 1920}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1875786709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875786707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &1886498130
 GameObject:
   m_ObjectHideFlags: 0
@@ -12515,7 +12318,7 @@ Transform:
   - {fileID: 1475696832}
   - {fileID: 2133846845}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900647594
 GameObject:
@@ -12625,19 +12428,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
     sentences: "\uC624\uAE38 \uC798\uD55C \uAC83 \uAC19\uB124\uC694.\n\uC870\uAE08
       \uB9C8\uC74C\uC774 \uD3B8\uD574\uC9C4 \uAC83 \uAC19\uC544\uC694."
-    Sprites: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+    Sprites: {fileID: 21300000, guid: bb071248c045af549b1bfc015e4bbe03, type: 3}
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 1059246444}
   energyDialogues: []
@@ -12822,13 +12623,13 @@ RectTransform:
   - {fileID: 31172068}
   - {fileID: 618868404}
   - {fileID: 974829350}
-  m_Father: {fileID: 517394170}
-  m_RootOrder: 4
+  m_Father: {fileID: 1875786708}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1750, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -0.00012207031, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919227052
 MonoBehaviour:
@@ -12852,7 +12653,7 @@ MonoBehaviour:
   throw_awayText: {fileID: 1568078353}
   treatBtn: {fileID: 144178933}
   Bg: {fileID: 974829351}
-  cutscene: {fileID: 1824522430}
+  cutScene: {fileID: 1824522430}
   cutSceneImage:
   - {fileID: 1545749043}
   - {fileID: 336858040}
@@ -12960,6 +12761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: aa448dc142023f54ab6bc15029931ed4, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uACE0\uC591\uC774"
@@ -12969,10 +12771,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uB098"
@@ -12982,10 +12781,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 1
-    choiceTea: 0
+    systemState: 3
     characterEnergy: 0
     nextDialogues: {fileID: 1758580197}
   energyDialogues: []
@@ -13022,7 +12818,7 @@ Transform:
   - {fileID: 571700189}
   - {fileID: 708839066}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970859583
 GameObject:
@@ -13099,9 +12895,103 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 560}
-  m_SizeDelta: {x: 750, y: 365}
+  m_AnchoredPosition: {x: 0, y: 555}
+  m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1993978056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993978057}
+  - component: {fileID: 1993978060}
+  - component: {fileID: 1993978059}
+  - component: {fileID: 1993978058}
+  m_Layer: 0
+  m_Name: ChoiceBorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1993978057
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993978056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 99473377}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -600}
+  m_SizeDelta: {x: 1080, y: 840}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1993978058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993978056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 733b96f160af33c4590959468a1ba06c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1993978059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993978056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
+  m_RaycastTarget: 0
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 30ddd76afd0243e40a65ed90d63b0a2a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1993978060
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993978056}
+  m_CullTransparentMesh: 0
 --- !u!1 &1994585567
 GameObject:
   m_ObjectHideFlags: 0
@@ -13226,11 +13116,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1288, y: -340}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -340}
   m_SizeDelta: {x: 175, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1996503046
@@ -13302,11 +13192,11 @@ RectTransform:
   m_Children:
   - {fileID: 1994585568}
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 198}
+  m_AnchoredPosition: {x: 0, y: 125}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998193230
@@ -13527,6 +13417,8 @@ GameObject:
   - component: {fileID: 2015789376}
   - component: {fileID: 2015789375}
   - component: {fileID: 2015789374}
+  - component: {fileID: 2015789373}
+  - component: {fileID: 2015789372}
   m_Layer: 5
   m_Name: left_Energy
   m_TagString: Untagged
@@ -13534,6 +13426,90 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2015789372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015789371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8360d1d9f9881f4eba7ad2276048b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 681840010}
+  sprite:
+  - {fileID: 21300000, guid: f5a478190dbc311479fc1a7e6b91b0d4, type: 3}
+  - {fileID: 21300000, guid: a1a78044471310349b8b64b3a2d40d74, type: 3}
+  - {fileID: 21300000, guid: 32db9c464389df048afb69f657249d0c, type: 3}
+  - {fileID: 21300000, guid: f44f9fb3886ab7f4c84020ecde1654bc, type: 3}
+  - {fileID: 21300000, guid: ca09aa80e2ce9c64fa50b008706ba000, type: 3}
+--- !u!114 &2015789373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015789371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2015789374}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2015789372}
+        m_MethodName: preEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2015789372}
+        m_MethodName: EnergyBgm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2015789374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13578,16 +13554,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015789371}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1760110713}
+  m_Father: {fileID: 1209908537}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -650}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: -650}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2019947922
@@ -13621,11 +13597,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2019947924
@@ -13807,10 +13783,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choice:
     answers:
-    - "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uAE34\uBC00\uD788 \uD55C\uBC88 \uB9D0\uC500\uD574
-      \uBCF4\uC138\uC694"
     - "\uC790\uC2E0\uC774 \uC6D0\uD558\uB294 \uAC8C \uBB54\uC9C0 \uC2A4\uC2A4\uB85C\uC5D0\uAC8C
       \uBB3C\uC5B4\uBCF4\uC138\uC694."
+    - "\uAC00\uC871\uB4E4\uC5D0\uAC8C \uAE34\uBC00\uD788 \uD55C\uBC88 \uB9D0\uC500\uD574
+      \uBCF4\uC138\uC694"
+  correctAnswer: 1
   dialogueTriggers:
   - {fileID: 1354066644}
   - {fileID: 1960917232}
@@ -13928,7 +13905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -465, y: -635}
+  m_AnchoredPosition: {x: -465, y: -600}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2063196624
@@ -14053,6 +14030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSprite: {fileID: 21300000, guid: cf809c32b72c6314a9f440faafdccf0c, type: 3}
+  tasteTeaSprite: {fileID: 0}
   dialogueManager: {fileID: 0}
   dialogue:
   - names: "\uB098"
@@ -14061,10 +14039,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 0}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   - names: "\uD574\uB2EC"
@@ -14073,10 +14048,7 @@ MonoBehaviour:
     SpriteState: 
     dialogueWindows: {fileID: 21300000, guid: 3253e9af090bfec45bc29aa24ef37940, type: 3}
     choiceContents: {fileID: 439461067}
-    makeTea: 0
-    energy: 0
-    finishTea: 0
-    choiceTea: 0
+    systemState: 0
     characterEnergy: 0
     nextDialogues: {fileID: 0}
   energyDialogues: []
@@ -14144,6 +14116,7 @@ MonoBehaviour:
     - "\uC548\uC0C9\uC774 \uC548 \uC88B\uC544 \uBCF4\uC774\uB294\uB370 \uD639\uC2DC
       \uBB34\uC2A8 \uC77C \uC788\uC73C\uC2E0\uAC00\uC694?"
     - "\uC624\uB298\uC740 \uBB34\uC2A8 \uC77C\uB85C \uC624\uC168\uC5B4\uC694?"
+  correctAnswer: 0
   dialogueTriggers:
   - {fileID: 344945102}
   - {fileID: 1399934150}
@@ -14289,7 +14262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -340, y: -790}
+  m_AnchoredPosition: {x: -250, y: -760}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2133846844
@@ -14352,11 +14325,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1779643082}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1288, y: -340}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -340}
   m_SizeDelta: {x: 175, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135709556

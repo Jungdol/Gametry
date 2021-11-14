@@ -32,7 +32,7 @@ public class fireGauge : MonoBehaviour
         fireAnim = fireGm.GetComponent<Animator>();
     }
 
-    public void BoilingBtn()
+    public void BoilingBtn() // 물이 다 끓었을 때
     {
         anim.SetBool("Appear", true);
     }
@@ -40,6 +40,7 @@ public class fireGauge : MonoBehaviour
     public void BoilingBackBtn()
     {
         anim.SetBool("Appear", false);
+        AudioManager.instance.Stop("Fire");
     }
 
     public void Boiling()
@@ -67,6 +68,7 @@ public class fireGauge : MonoBehaviour
             fireAnim.SetBool("Appear", true);
 
             Debug.Log("불 준비 완료");
+            AudioManager.instance.Play("Fire");
         }
     }
 }

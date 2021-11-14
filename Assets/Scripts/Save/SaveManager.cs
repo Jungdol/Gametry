@@ -10,7 +10,7 @@ public static class SaveManager
     public static void Save(SaveData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Path.Combine(Application.dataPath, "Save.bin");
+        string path = Path.Combine(Application.persistentDataPath, "Save.bin"); // PC¸é .dataPath
         FileStream stream = File.Create(path);
         formatter.Serialize(stream, data);
         stream.Close();

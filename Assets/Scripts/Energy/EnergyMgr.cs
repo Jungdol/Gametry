@@ -43,20 +43,22 @@ public class EnergyMgr : MonoBehaviour
         switch(Energy_switch.Energy_num)
         {
             case 0:
-                nowEnergy = Energy.Yellow;
-                Debug.Log("노랑!");
-                break;
-            case 1:
-                nowEnergy = Energy.Blue;
-                Debug.Log("파랑!");
-                break;
-            case 2:
                 nowEnergy = Energy.Red;
                 Debug.Log("빨강!");
                 break;
-            case 3:
+                
+            case 1:
                 nowEnergy = Energy.Green;
                 Debug.Log("초록!");
+                break;
+                
+            case 2:
+                nowEnergy = Energy.Blue;
+                Debug.Log("파랑!");
+                break;
+            case 3:
+                nowEnergy = Energy.Yellow;
+                Debug.Log("노랑!");
                 break;
             case 4:
                 nowEnergy = Energy.Black;
@@ -70,7 +72,10 @@ public class EnergyMgr : MonoBehaviour
     public int EnergySetting()
     {
         if (nowEnergy == characterEnergy)
+        {
+            StageChange.instance.happyIndex += 20;
             return 0;
+        }
         else
             return 1;
     }

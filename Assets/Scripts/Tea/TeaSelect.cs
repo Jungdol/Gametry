@@ -229,6 +229,8 @@ public class TeaSelect : MonoBehaviour
             Debug.Log("차 번호 : " + tea_number);
             send_num = tea_number;
 
+            AudioManager.instance.Stop("Boiling");
+            AudioManager.instance.Stop("Fire");
             teaCreate.FinishTea();
         }
     }
