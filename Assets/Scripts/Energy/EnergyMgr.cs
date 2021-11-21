@@ -27,6 +27,13 @@ public class EnergyMgr : MonoBehaviour
 
     public bool onClick = false;
 
+    StageChange stageChange;
+
+    private void Start()
+    {
+        stageChange = FindObjectOfType<StageChange>();
+    }
+
     public void ShowEx()
     {
         energy_ex.SetActive(true);
@@ -73,7 +80,7 @@ public class EnergyMgr : MonoBehaviour
     {
         if (nowEnergy == characterEnergy)
         {
-            StageChange.instance.happyIndex += 20;
+            stageChange.HappyIndexPlus(20);
             return 0;
         }
         else

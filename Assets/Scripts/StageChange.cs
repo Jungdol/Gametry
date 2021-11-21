@@ -5,29 +5,11 @@ using UnityEngine.UI;
 
 public class StageChange : MonoBehaviour
 {
-    public static StageChange instance;
-    #region Singleton
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            NewMethod();
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-
-        void NewMethod()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-    #endregion Singleton
-
     [Header("행복지수 이미지")]
     public Image happyBar;
+
+    [Header("행복지수 빛")]
+    public GameObject happyLight;
 
     [Header("스테이지, 테이블 UI")]
     public SpriteRenderer stageBackground;
@@ -37,40 +19,35 @@ public class StageChange : MonoBehaviour
     public Sprite[] stages;
     public Sprite[] tables;
 
-    [Header("나무 UI")]
-    public Image tree;
-
-    [Header("나무 이미지")]
-    public Sprite[] treeSprites;
-
-    public float happyIndex = 0;
-
-    float happyMax = 100;
-    int treeLevel;
+    public GameManager gameManager;
 
     [HideInInspector]
     public int nowDay;
 
-    private void Start()
+    void Start()
     {
-        nowDay = (int)DataManager.instance.now_Day;
+        //nowDay = (int)DataManager.instance.now_Day;
         stageBackground.sprite = stages[nowDay];
         table.sprite = tables[nowDay];
 
-        happyIndex = DataManager.instance.happy_Index;
-        treeLevel = DataManager.instance.tree_Level;
+        gameManager = FindObjectOfType<GameManager>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        happyBar.fillAmount = happyIndex / happyMax;
+        happyBar.fillAmount = (float)gameManager.happyIndex / (float)gameManager.happyMax;
+    }
 
-        if (happyIndex >= 100)
-        {
-            treeLevel++;
-            tree.sprite = treeSprites[treeLevel];
+    public void HappyIndexPlus(int _value)
+    {
+        GameManager.instance.happyIndex += _value;
+        StartCoroutine("HappyLight");
+    }
 
-            happyIndex = 0;
-        }
+    IEnumerator HappyLight()
+    {
+        happyLight.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        happyLight.SetActive(false);
     }
 }

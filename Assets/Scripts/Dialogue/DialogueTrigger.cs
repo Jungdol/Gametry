@@ -21,10 +21,12 @@ public class DialogueTrigger : MonoBehaviour
     public DialogueTrigger[] teaFinishDialogues;
 
     TeaCreate teaCreate;
+    StageChange stageChange;
 
     private void Start()
     {
         teaCreate = FindObjectOfType<TeaCreate>();
+        stageChange = FindObjectOfType<StageChange>();
     }
     public void OnTrigger() // 버튼 전용
     {
@@ -48,13 +50,13 @@ public class DialogueTrigger : MonoBehaviour
         switch (teaFinishNum[i])
         {
             case 0:
-                StageChange.instance.happyIndex += 20;
+                stageChange.HappyIndexPlus(20);
                 break;
             case 1:
-                StageChange.instance.happyIndex += 10;
+                stageChange.HappyIndexPlus(10);
                 break;
             case 2:
-                StageChange.instance.happyIndex += -10;
+                stageChange.HappyIndexPlus(-10);
                 break;
         }
     }

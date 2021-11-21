@@ -38,6 +38,9 @@ public class DialogueManager : MonoBehaviour
     public Image rendererImage;
     public Animator animImage;
 
+    [Header("차 이미지")]
+    public GameObject TeaGameObject;
+
     // 대화창 이미지 선언
     [Header("대화창 이미지, 애니메이션")]
     public Image rendererDialogueWindow;
@@ -401,6 +404,7 @@ public class DialogueManager : MonoBehaviour
     {
         tempTrigger = listNextDialogues[count - 1];
         Exitdialogue();
+        TeaGameObject.SetActive(false);
         animImage.SetBool("Change", true);
         yield return new WaitForSeconds(0.5f);
 
@@ -410,6 +414,7 @@ public class DialogueManager : MonoBehaviour
 
         animImage.SetBool("Change", true);
         yield return new WaitForSeconds(0.5f);
+        TeaGameObject.SetActive(true);
         TeaChoiceDialogue();
     }
 

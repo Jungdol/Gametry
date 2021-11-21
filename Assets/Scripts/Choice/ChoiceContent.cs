@@ -9,9 +9,14 @@ public class ChoiceContent : MonoBehaviour
     public int correctAnswer;
     public GameObject[] dialogueTriggers;
 
+    StageChange stageChange;
+
     public bool flag;
     int result;
-    // Start is called before the first frame update
+    private void Start()
+    {
+        stageChange = FindObjectOfType<StageChange>();
+    }
     public void Trigger()
     {
         if (!flag)
@@ -41,7 +46,7 @@ public class ChoiceContent : MonoBehaviour
 
         if (result == correctAnswer)
         {
-            StageChange.instance.happyIndex += 10; // 맞는 답이면 행복지수 10 증가
+            stageChange.HappyIndexPlus(10); // 맞는 답이면 행복지수 10 증가
         }
             
 

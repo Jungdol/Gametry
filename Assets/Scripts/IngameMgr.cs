@@ -91,7 +91,7 @@ public class IngameMgr : MonoBehaviour
     {
         AudioStop();
         DataManager.instance.a_Few_Days += 1;
-        //DataManager.instance.happy_Index = ;
+        DataManager.instance.happy_Index = GameManager.instance.happyIndex;
         DataManager.instance.SaveData();
         LoadingSceneController.LoadScene("GameScene");
     }
@@ -101,7 +101,7 @@ public class IngameMgr : MonoBehaviour
         AudioStop();
         DataManager.instance.a_Few_Days = 0;
         DataManager.instance.a_Few_Days += 1;
-        //DataManager.instance.happy_Index = ;
+        DataManager.instance.happy_Index = GameManager.instance.happyIndex;
 
         DataManager.instance.SaveData();
         LoadingSceneController.LoadScene("FinishScene");

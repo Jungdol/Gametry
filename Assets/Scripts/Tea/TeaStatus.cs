@@ -43,13 +43,13 @@ public class TeaStatus
                 teaStatus = new TeaStatus(TeaMaterial.B, "보랏빛 버섯", "불안함을 없앤다.");
                 break;
             case TeaMaterial.C:
-                teaStatus = new TeaStatus(TeaMaterial.C, "요상한 잡초", "식욕이 돌아오게 한다.");
+                teaStatus = new TeaStatus(TeaMaterial.C, "요상한 잡초", "타인에 대해 이해하는 감정이 생긴다.");
                 break;
             case TeaMaterial.D:
                 teaStatus = new TeaStatus(TeaMaterial.D, "자작나무 껍질", "무기력함을 없앤다.");
                 break;
             case TeaMaterial.E:
-                teaStatus = new TeaStatus(TeaMaterial.E, "이슬", "소화를 돕는다.");
+                teaStatus = new TeaStatus(TeaMaterial.E, "이슬", "자신감이 생긴다.");
                 break;
             case TeaMaterial.F:
                 teaStatus = new TeaStatus(TeaMaterial.F, "선인장의 꽃", "몸을 개운하게 만든다.");

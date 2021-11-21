@@ -9,6 +9,7 @@ public class TitleMgr : MonoBehaviour
     void Start()
     {
         fade = GetComponent<Fade>();
+        AudioManager.instance.Play("Title");
     }
 
     public void FadeIn()
@@ -18,18 +19,21 @@ public class TitleMgr : MonoBehaviour
 
     public void StartBtn()
     {
+        AudioManager.instance.Stop("Title");
         DataManager.instance.ResetData();
-        StartCoroutine(fade.FadeOut(1.0f, "GameScene"));
+        StartCoroutine(fade.FadeOut(1.0f, "CutScene"));
     }
 
     public void ReStartBtn()
     {
+        AudioManager.instance.Stop("Title");
         DataManager.instance.LoadData();
         StartCoroutine(fade.FadeOut(1.0f, "GameScene"));
     }
 
     public void ExitBtn()
     {
+        AudioManager.instance.Stop("Title");
         Application.Quit();
     }
 }
