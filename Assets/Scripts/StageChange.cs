@@ -19,7 +19,13 @@ public class StageChange : MonoBehaviour
     public Sprite[] stages;
     public Sprite[] tables;
 
+    [Header("배경화면 스프라이트")]
+    public  SpriteRenderer background;
+
+    [HideInInspector]
     public GameManager gameManager;
+
+    UIResolution uiResolution;
 
     [HideInInspector]
     public int nowDay;
@@ -31,6 +37,18 @@ public class StageChange : MonoBehaviour
         table.sprite = tables[nowDay];
 
         gameManager = FindObjectOfType<GameManager>();
+        uiResolution = FindObjectOfType<UIResolution>();
+
+        if (uiResolution.SetUiRatio(true) == 1080)
+        {
+            Debug.Log("작동");
+            background.size = new Vector2(1.1f, 1.1f);
+        }
+        else
+        {
+            Debug.Log("작동");
+            background.transform.localScale = new Vector2(1.5f, 1.5f);
+        }
     }
 
     void Update()

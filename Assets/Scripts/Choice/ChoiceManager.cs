@@ -14,6 +14,9 @@ public class ChoiceManager : MonoBehaviour
     public GameObject go; // 평소 비활성화 목적
     public Image goImage;
 
+    [Header("선택창 테두리")]
+    public Animator borderAnim;
+
     [Header("답변 텍스트")]
     public Text[] answer_Text;
     [Header("답변 버튼")]
@@ -54,6 +57,12 @@ public class ChoiceManager : MonoBehaviour
         }
     }
 
+    void AnimSetBool(bool _isTrue)
+    {
+        anim.SetBool("Appear", _isTrue);
+        borderAnim.SetBool("Appear", _isTrue);
+    }
+
     public void ShowChoice(Choice _choice)
     {
         go.SetActive(true);
@@ -68,7 +77,7 @@ public class ChoiceManager : MonoBehaviour
             count = i;
         }
 
-        anim.SetBool("Appear", true);
+        AnimSetBool(true);
         StartCoroutine(TypingAnswer_0(0.5f));
         //StartCoroutine(ChoiceCoroutine());
     }
@@ -84,7 +93,7 @@ public class ChoiceManager : MonoBehaviour
 
         isChoice = false;
         answerList.Clear();
-        anim.SetBool("Appear", false);
+        AnimSetBool(false);
     }
 
     public int GetResult()

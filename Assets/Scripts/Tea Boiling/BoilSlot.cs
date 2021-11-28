@@ -16,6 +16,7 @@ public class BoilSlot : MonoBehaviour, IDropHandler
     {
         if((eventData.pointerDrag != null) && (boliDragNDrop.fireReady == true))
         {
+            AudioManager.instance.Play("BrazierLid");
             Debug.Log("뚜껑 올리기 완료!");
             eventData.pointerDrag.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);

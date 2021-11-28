@@ -31,7 +31,11 @@ public class CutSceneManager : MonoBehaviour
 
     void ShowCutScene()
     {
-        count = 0;
+        if (DataManager.instance.a_Few_Days == 3)
+            count = 4;
+        else
+            count = 0;
+
         StartCoroutine(StartCutScene());
     }
 
@@ -48,7 +52,7 @@ public class CutSceneManager : MonoBehaviour
             count++;
             text.text = "";
 
-            if (count == listSentences.Count)
+            if (DataManager.instance.a_Few_Days != 3 && count == 3)
             {
                 AudioManager.instance.Stop("CutScene");
                 LoadingSceneController.LoadScene("GameScene");

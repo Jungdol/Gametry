@@ -67,6 +67,12 @@ public class DialogueManager : MonoBehaviour
     [Header("영업 종료하는 버튼")]
     public GameObject exitDayButton;
 
+    [Header("비어있는 찻잔")]
+    public Sprite emptyTea;
+
+    [Header("대화창 배경이미지")]
+    public Sprite DialogueBackground;
+
     // 사운드 선언
     [Header("사운드")]
     public string buttonSound;
@@ -173,7 +179,7 @@ public class DialogueManager : MonoBehaviour
             listNames.Add(dialogue[i].names);
             listSprites.Add(dialogue[i].Sprites);
             listSpriteState.Add(dialogue[i].SpriteState);
-            listDialogueWindows.Add(dialogue[i].dialogueWindows);
+            listDialogueWindows.Add(DialogueBackground);
             listChoiceContents.Add(dialogue[i].choiceContents);
             listNextDialogues.Add(dialogue[i].nextDialogues);
             listSystemState.Add(dialogue[i].systemState);
@@ -402,6 +408,8 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TasteTea()
     {
+        Image TeaImage = TeaGameObject.GetComponent<Image>();
+
         tempTrigger = listNextDialogues[count - 1];
         Exitdialogue();
         TeaGameObject.SetActive(false);
@@ -414,6 +422,7 @@ public class DialogueManager : MonoBehaviour
 
         animImage.SetBool("Change", true);
         yield return new WaitForSeconds(0.5f);
+        TeaImage.sprite = emptyTea;
         TeaGameObject.SetActive(true);
         TeaChoiceDialogue();
     }
