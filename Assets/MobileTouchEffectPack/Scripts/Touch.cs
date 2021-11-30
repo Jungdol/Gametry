@@ -5,27 +5,6 @@ namespace MobileTouchEffectPack
 {
     public class Touch : MonoBehaviour
     {
-        public static Touch instance;
-        #region Singleton
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                NewMethod();
-                instance = this;
-            }
-            else
-            {
-                Destroy(this.gameObject);
-            }
-
-            void NewMethod()
-            {
-                DontDestroyOnLoad(gameObject);
-            }
-        }
-        #endregion Singleton
-
         public Transform particle_transform;
         public ParticleSystem particle_particle;
         public bool dragPlayMode;
@@ -61,7 +40,7 @@ namespace MobileTouchEffectPack
         void MoveParticlePosition()
         {
             pos_particle = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pos_particle.z = -5f;
+            pos_particle.z = 0;
 
             particle_transform.localPosition = pos_particle;
         }
