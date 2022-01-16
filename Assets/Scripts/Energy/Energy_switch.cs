@@ -47,28 +47,23 @@ public class Energy_switch : MonoBehaviour
         switch(Energy_num)
         {
             case 0:
-                audioManager.Stop("Green"); // 그 전의 기 소리 멈춤
-                audioManager.Stop("Black"); // 다음 기 소리 멈춤
+                audioManager.AllStop();
                 audioManager.Play("Red");
                 break;
             case 1:
-                audioManager.Stop("Blue"); // 그 전의 기 소리 멈춤
-                audioManager.Stop("Red"); // 다음 기 소리 멈춤
+                audioManager.AllStop();
                 audioManager.Play("Green");
                 break;
             case 2:
-                audioManager.Stop("Yellow"); // 그 전의 기 소리 멈춤
-                audioManager.Stop("Green"); // 다음 기 소리 멈춤
+                audioManager.AllStop();
                 audioManager.Play("Blue");
                 break;
             case 3:
-                audioManager.Stop("Black"); // 그 전의 기 소리 멈춤
-                audioManager.Stop("Blue"); // 다음 기 소리 멈춤
+                audioManager.AllStop();
                 audioManager.Play("Yellow");
                 break;
             case 4:
-                audioManager.Stop("Red"); // 그 전의 기 소리 멈춤
-                audioManager.Stop("Yellow"); // 다음 기 소리 멈춤
+                audioManager.AllStop();
                 audioManager.Play("Black");
                 break;
 

@@ -16,16 +16,18 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField]
     public Dialogue[] dialogue;
     public DialogueTrigger[] energyDialogues;
-    [Header("차 좋음, 보통, 별로")] 
-    public int[] teaFinishNum;
+    [Header("차 좋음, 보통")] 
+    public TeaMaterial[] teaFinishNum;
     public DialogueTrigger[] teaFinishDialogues;
 
     TeaCreate teaCreate;
+    TeaSelect teaSelect;
     StageChange stageChange;
 
     private void Start()
     {
         teaCreate = FindObjectOfType<TeaCreate>();
+        teaSelect = FindObjectOfType<TeaSelect>();
         stageChange = FindObjectOfType<StageChange>();
     }
     public void OnTrigger() // 버튼 전용
@@ -35,30 +37,42 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TeaChoiceDialogue()
     {
-        for (int i = 0; i < teaFinishNum.Length; i++)
+        Debug.Log(teaFinishNum.Length);
+        Debug.Log(teaCreate.teaSelect.send_num);
+        for (int i = 0; i < teaFinishNum.Length - 1; i++)
         {
-            if (teaCreate.teaSelect.send_num == teaFinishNum[i])
+            Debug.Log(teaSelect.TeaSelectCases(teaFinishNum[i], teaFinishNum[i + 1], "비교"));
+            if (teaCreate.teaSelect.send_num == teaSelect.TeaSelectCases(teaFinishNum[i], teaFinishNum[i+1], "비교"))
             {
                 teaFinishDialogues[i].Trigger();
                 TeaHappyIndex(i);
+                break;
+            }
+            else if (i == teaFinishNum.Length - 2)
+            {
+                teaFinishDialogues[2].Trigger();
+                stageChange.HappyIndexPlus(-10);
+                break;
             }
         }
     }
 
     void TeaHappyIndex(int i)
     {
-        switch (teaFinishNum[i])
+        bool isTwoCases(TeaMaterial _teaMaterial1, TeaMaterial _teaMaterial2, TeaMaterial _tempTeaMaterial1 = 0, TeaMaterial _tempTeaMaterial2 = 0)
         {
-            case 0:
-                stageChange.HappyIndexPlus(20);
-                break;
-            case 1:
-                stageChange.HappyIndexPlus(10);
-                break;
-            case 2:
-                stageChange.HappyIndexPlus(-10);
-                break;
+            if (_tempTeaMaterial1 == _teaMaterial1 && _tempTeaMaterial2 == _teaMaterial2 || _tempTeaMaterial1 == _teaMaterial2 && _tempTeaMaterial2 == _teaMaterial1)
+                return true;
+            else
+                return false;
         }
+
+        if (isTwoCases(teaFinishNum[0], teaFinishNum[1], teaFinishNum[i], teaFinishNum[i + 1]))
+            stageChange.HappyIndexPlus(20);
+        else if (isTwoCases(teaFinishNum[1], teaFinishNum[2], teaFinishNum[i], teaFinishNum[i + 1]))
+            stageChange.HappyIndexPlus(10);
+        else
+            stageChange.HappyIndexPlus(-10);
     }
 
     public void ImageSetting()

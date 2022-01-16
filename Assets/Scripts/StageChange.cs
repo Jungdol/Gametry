@@ -32,7 +32,7 @@ public class StageChange : MonoBehaviour
 
     void Start()
     {
-        //nowDay = (int)DataManager.instance.now_Day;
+        nowDay = (int)DataManager.instance.now_Day;
         stageBackground.sprite = stages[nowDay];
         table.sprite = tables[nowDay];
 
@@ -41,12 +41,10 @@ public class StageChange : MonoBehaviour
 
         if (uiResolution.SetUiRatio(true) == 1080)
         {
-            Debug.Log("작동");
             background.size = new Vector2(1.1f, 1.1f);
         }
         else
         {
-            Debug.Log("작동");
             background.transform.localScale = new Vector2(1.5f, 1.5f);
         }
     }

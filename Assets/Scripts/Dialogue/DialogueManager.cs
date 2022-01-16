@@ -261,7 +261,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         Exitdialogue();
 
-                        if (DataManager.instance.now_Day == day.afternoon)
+                        if (DataManager.instance.now_Day == day.evening)
                             exitDayButton.SetActive(true);
                         else
                             nextDayButton.SetActive(true);
@@ -488,7 +488,7 @@ public class DialogueManager : MonoBehaviour
         
         else
         {
-            goRectTr.anchoredPosition = new Vector2(0, 0);
+            goRectTr.anchoredPosition = new Vector2(0, 100);
             DialogueColor(1, 1, 1, 0.5f);
         }
 

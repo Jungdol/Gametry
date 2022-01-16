@@ -52,7 +52,7 @@ public class CutSceneManager : MonoBehaviour
             count++;
             text.text = "";
 
-            if (DataManager.instance.a_Few_Days != 3 && count == 3)
+            if (DataManager.instance.a_Few_Days != 3 && count == 4)
             {
                 AudioManager.instance.Stop("CutScene");
                 LoadingSceneController.LoadScene("GameScene");

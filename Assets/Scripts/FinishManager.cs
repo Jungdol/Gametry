@@ -51,6 +51,9 @@ public class FinishManager : MonoBehaviour
 
         sentences.Add("다시 한번 감사합니다... 많이 힐링했어요.  선생님 생각이 많이 날 거예요. 어쩌면 오늘밤에 많은 생각이 날거 같기도 하네요..꼭 다음에 다시 들를게요. 좋은 밤 보내세요.");
         guestNames.Add("고양이가");
+
+        sentences.Add("감사합니다... 선생님 덕분에  오늘 많이 힐링했네요.  좋은 밤 보내세요.");
+        guestNames.Add("To. 토끼");
     }
 
     public void PlusHappyIndex()
@@ -60,6 +63,13 @@ public class FinishManager : MonoBehaviour
 
     public void NextDay()
     {
-        LoadingSceneController.LoadScene("GameScene");
+        if (DataManager.instance.a_Few_Days >= 3)
+        {
+            LoadingSceneController.LoadScene("CutScene");
+        }
+        else
+        {
+            LoadingSceneController.LoadScene("GameScene");
+        }
     }
 }

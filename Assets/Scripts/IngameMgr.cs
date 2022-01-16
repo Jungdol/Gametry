@@ -90,7 +90,7 @@ public class IngameMgr : MonoBehaviour
     public void NextDayBtn()
     {
         AudioStop();
-        DataManager.instance.a_Few_Days += 1;
+        DataManager.instance.now_Day += 1;
         DataManager.instance.happy_Index = GameManager.instance.happyIndex;
         DataManager.instance.SaveData();
         LoadingSceneController.LoadScene("GameScene");
@@ -99,12 +99,13 @@ public class IngameMgr : MonoBehaviour
     public void ExitDayBtn()
     {
         AudioStop();
-        DataManager.instance.a_Few_Days = 0;
+        DataManager.instance.now_Day = 0;
         DataManager.instance.a_Few_Days += 1;
         DataManager.instance.happy_Index = GameManager.instance.happyIndex;
 
-        DataManager.instance.SaveData();
         LoadingSceneController.LoadScene("FinishScene");
+        DataManager.instance.SaveData();
+        
     }
 
     IEnumerator SetActiveDelay()
